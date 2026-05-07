@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>BUILDORA Trading | Premium Building Materials – Dubai, UAE</title>
+  <meta name="description" content="BUILDORA Trading – your complete supply partner for premium building materials in Dubai, UAE. Cables, electrical, plumbing, HVAC, lighting, safety, tools and more." />
+  <meta name="keywords" content="building materials Dubai, electrical supplies UAE, cables UAE, plumbing materials Dubai, HVAC accessories, lighting Dubai, safety equipment UAE, BUILDORA" />
+  <meta name="author" content="BUILDORA Trading" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.buildoramaterials.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BUILDORA Trading | Premium Building Materials" />
+  <meta property="og:description" content="Where Every Project Begins. Comprehensive building materials for residential, commercial & industrial projects across UAE." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.buildoramaterials.com/" />
+  <meta property="og:image" content="https://www.buildoramaterials.com/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BUILDORA Trading" />
+  <meta name="twitter:description" content="Where Every Project Begins. Premium building materials in Dubai, UAE." />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BUILDORA Trading",
+    "url": "https://www.buildoramaterials.com",
+    "logo": "https://www.buildoramaterials.com/logo.svg",
+    "description": "Comprehensive range of premium building materials in Dubai, UAE.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "AE",
+      "addressRegion": "Dubai"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "sales@buildoramaterials.com"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0e0f11;
+      color: #f0ede8;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── CSS VARIABLES ── */
+    :root {
+      --amber: #f5a623;
+      --amber-light: #ffc147;
+      --amber-dark: #c4820f;
+      --charcoal: #0e0f11;
+      --charcoal-2: #161820;
+      --charcoal-3: #1e2028;
+      --steel: #2a2d38;
+      --steel-light: #3a3e50;
+      --cream: #f0ede8;
+      --gray: #9096a8;
+      --border: rgba(245,166,35,0.15);
+      --glow: 0 0 40px rgba(245,166,35,0.12);
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--charcoal); }
+    ::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 2px; }
+
+    /* ── TYPOGRAPHY ── */
+    .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; line-height: 0.95; }
+    .condensed { font-family: 'Barlow Condensed', sans-serif; }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4vw;
+      height: 72px;
+      background: rgba(14,15,17,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo svg { width: 44px; height: 44px; }
+    .nav-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+    }
+    .nav-brand span { color: var(--amber); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-cta {
+      background: var(--amber);
+      color: #000;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--amber-light); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--cream); border-radius: 1px; transition: 0.3s; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 72px 4vw 0;
+    }
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245,166,35,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,166,35,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(245,166,35,0.08) 0%, transparent 70%),
+                  linear-gradient(180deg, transparent 60%, var(--charcoal) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--steel);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--amber);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+    .hero-badge span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 10vw, 9rem);
+      letter-spacing: 0.02em;
+      line-height: 0.9;
+      color: var(--cream);
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+    .hero-title .accent { color: var(--amber); }
+    .hero-title .outline {
+      -webkit-text-stroke: 2px var(--amber);
+      color: transparent;
+    }
+    .hero-motto {
+      margin-top: 1.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray);
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+    .hero-motto strong { color: var(--amber); font-weight: 700; }
+    .hero-desc {
+      margin-top: 1.5rem;
+      max-width: 520px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--gray);
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.4s ease both;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--amber);
+      color: #000;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: var(--amber-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,0.3); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--steel-light);
+      color: var(--cream);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--amber); color: var(--amber); transform: translateY(-2px); }
+    .hero-stats {
+      position: absolute;
+      right: 4vw;
+      bottom: 8vh;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      animation: fadeLeft 0.8s 0.5s ease both;
+      z-index: 2;
+    }
+    .stat {
+      text-align: right;
+      border-right: 2px solid var(--amber);
+      padding-right: 1.2rem;
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: var(--amber);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+      animation: fadeUp 1s 0.8s ease both;
+    }
+    .hero-scroll span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(var(--amber), transparent);
+      animation: scrollDown 1.6s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(24px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 4vw; }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .section-label::before {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background: var(--amber);
+    }
+    .section-label span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      letter-spacing: 0.02em;
+      color: var(--cream);
+      line-height: 1;
+    }
+    .section-sub {
+      margin-top: 0.8rem;
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-section {
+      padding: 0;
+      background: var(--amber);
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 22s linear infinite;
+      width: max-content;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 14px 2.5rem;
+      white-space: nowrap;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      color: #000;
+    }
+    .marquee-item .dot { width: 6px; height: 6px; background: rgba(0,0,0,0.3); border-radius: 50%; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--charcoal-2);
+      position: relative;
+      overflow: hidden;
+    }
+    #about::before {
+      content: 'BUILDORA';
+      position: absolute;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18vw;
+      color: rgba(255,255,255,0.02);
+      right: -2vw;
+      top: 50%;
+      transform: translateY(-50%);
+      letter-spacing: 0.05em;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-box {
+      background: var(--steel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--amber), var(--amber-light), var(--amber));
+    }
+    .about-box-icon {
+      width: 56px; height: 56px;
+      background: rgba(245,166,35,0.1);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+    }
+    .about-box h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .about-box p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    .about-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .about-text p {
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-top: 1.2rem;
+    }
+    .about-text p strong { color: var(--amber); font-weight: 600; }
+
+    /* ── PRODUCTS ── */
+    #products {
+      background: var(--charcoal);
+    }
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--steel);
+      border: 1px solid var(--steel);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .product-card {
+      background: var(--charcoal-3);
+      padding: 2rem 1.8rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+    .product-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--amber);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .product-card:hover { background: var(--steel); }
+    .product-card:hover::after { transform: scaleX(1); }
+    .product-card:hover .product-icon { color: var(--amber); background: rgba(245,166,35,0.12); }
+    .product-icon {
+      width: 52px; height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      background: var(--steel);
+      border-radius: 4px;
+      margin-bottom: 1.2rem;
+      transition: all 0.3s;
+    }
+    .product-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+    }
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .product-tag {
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      background: var(--steel-light);
+      border-radius: 2px;
+      color: var(--gray);
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── BRANDS ── */
+    #brands {
+      background: var(--charcoal-2);
+      overflow: hidden;
+    }
+    .brands-marquee-wrap {
+      margin-top: 3rem;
+      position: relative;
+    }
+    .brands-marquee-wrap::before,
+    .brands-marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+    }
+    .brands-marquee-wrap::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--charcoal-2), transparent);
+    }
+    .brands-marquee-wrap::after {
+      right: 0;
+      background: linear-gradient(-90deg, var(--charcoal-2), transparent);
+    }
+    .brands-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+    .brand-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 2.5rem;
+      height: 72px;
+      background: var(--steel);
+      border: 1px solid var(--steel-light);
+      border-radius: 4px;
+      margin: 0 8px;
+      min-width: 140px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+    .brand-pill:hover { color: var(--amber); border-color: var(--border); }
+
+    /* ── WHY US ── */
+    #why {
+      background: var(--charcoal);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .why-card {
+      background: var(--charcoal-2);
+      border: 1px solid var(--steel);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .why-card:hover { border-color: var(--amber); transform: translateY(-4px); }
+    .why-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      color: rgba(245,166,35,0.07);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      line-height: 1;
+    }
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+    }
+    .why-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 0.7rem;
+    }
+    .why-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ── CTA BANNER ── */
+    #cta {
+      background: var(--amber);
+      padding: 80px 4vw;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .cta-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .cta-inner h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: #000;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #000;
+      color: var(--amber);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .btn-dark:hover { background: #1a1a1a; transform: translateY(-2px); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--charcoal-2);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .contact-info-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: var(--steel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-info-item h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 4px;
+    }
+    .contact-info-item p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--steel);
+      border: 1px solid var(--steel-light);
+      border-radius: 2px;
+      padding: 12px 16px;
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--gray); }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--amber); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select option { background: var(--steel); }
+    .form-submit {
+      background: var(--amber);
+      color: #000;
+      border: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .form-submit:hover { background: var(--amber-light); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080909;
+      border-top: 1px solid var(--steel);
+      padding: 60px 4vw 30px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4vw;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--steel);
+      margin-bottom: 2rem;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .footer-brand svg { width: 36px; height: 36px; }
+    .footer-brand-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+    }
+    .footer-brand-name span { color: var(--amber); }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.6;
+      max-width: 260px;
+    }
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col ul li a {
+      font-size: 0.88rem;
+      color: var(--gray);
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--amber); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--steel-light);
+    }
+    .footer-bottom a { color: var(--amber); }
+    .social-links {
+      display: flex;
+      gap: 0.8rem;
+    }
+    .social-link {
+      width: 36px; height: 36px;
+      background: var(--steel);
+      border: 1px solid var(--steel-light);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--gray);
+      transition: all 0.2s;
+    }
+    .social-link:hover { background: var(--amber); color: #000; border-color: var(--amber); }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE NAV ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(14,15,17,0.97);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--amber); }
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem; right: 4vw;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--gray);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .products-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-stats { display: none; }
+    }
+    @media (max-width: 600px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-boxes { grid-template-columns: 1fr; }
+      .hero-title { font-size: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <!-- BUILDORA SVG Logo -->
+      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="44" height="44" rx="3" fill="#F5A623"/>
+        <path d="M8 10H22C26.4 10 30 13.6 30 18C30 20.2 29.1 22.2 27.6 23.6C29.8 25 31.4 27.4 31.4 30.2C31.4 34.8 27.7 38.4 23 38.4L8 38.4V10Z" fill="#000" opacity="0.9"/>
+        <path d="M13 15H22C24.2 15 26 16.8 26 19C26 21.2 24.2 23 22 23H13V15Z" fill="#F5A623"/>
+        <path d="M13 27H23C25.4 27 27.4 29 27.4 31.2C27.4 33.4 25.4 35.4 23 35.4H13V27Z" fill="#F5A623"/>
+        <rect x="32" y="10" width="4" height="28" rx="2" fill="#000" opacity="0.6"/>
+      </svg>
+      <div class="nav-brand">BUILD<span>ORA</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" onclick="toggleMenu()">✕</span>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#products" onclick="toggleMenu()">Products</a>
+    <a href="#brands" onclick="toggleMenu()">Brands</a>
+    <a href="#why" onclick="toggleMenu()">Why Us</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Dubai, United Arab Emirates</span>
+      </div>
+      <h1 class="hero-title">
+        BUILD<span class="accent">ORA</span><br/>
+        <span class="outline">TRADING</span>
+      </h1>
+      <p class="hero-motto">— <strong>Where Every Project Begins</strong> —</p>
+      <p class="hero-desc">
+        Your comprehensive supply partner for premium building materials across UAE.
+        Electrical, plumbing, HVAC, lighting, safety and beyond — all under one roof.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">
+          Explore Products
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-outline">
+          Get a Quote
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">14+</div>
+        <div class="stat-label">Product Categories</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Global Brands</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">UAE</div>
+        <div class="stat-label">Dubai Based</div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section" aria-hidden="true">
+    <div style="display:flex; overflow:hidden;">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-item">Electrical<div class="dot"></div></div>
+        <div class="marquee-item">Cables<div class="dot"></div></div>
+        <div class="marquee-item">Plumbing<div class="dot"></div></div>
+        <div class="marquee-item">HVAC<div class="dot"></div></div>
+        <div class="marquee-item">Lighting<div class="dot"></div></div>
+        <div class="marquee-item">Safety<div class="dot"></div></div>
+        <div class="marquee-item">Tools<div class="dot"></div></div>
+        <div class="marquee-item">Pumps<div class="dot"></div></div>
+        <div class="marquee-item">Hardware<div class="dot"></div></div>
+        <div class="marquee-item">Sanitary<div class="dot"></div></div>
+        <div class="marquee-item">Painting<div class="dot"></div></div>
+        <div class="marquee-item">Earthing<div class="dot"></div></div>
+        <!-- duplicate for seamless loop -->
+        <div class="marquee-item">Electrical<div class="dot"></div></div>
+        <div class="marquee-item">Cables<div class="dot"></div></div>
+        <div class="marquee-item">Plumbing<div class="dot"></div></div>
+        <div class="marquee-item">HVAC<div class="dot"></div></div>
+        <div class="marquee-item">Lighting<div class="dot"></div></div>
+        <div class="marquee-item">Safety<div class="dot"></div></div>
+        <div class="marquee-item">Tools<div class="dot"></div></div>
+        <div class="marquee-item">Pumps<div class="dot"></div></div>
+        <div class="marquee-item">Hardware<div class="dot"></div></div>
+        <div class="marquee-item">Sanitary<div class="dot"></div></div>
+        <div class="marquee-item">Painting<div class="dot"></div></div>
+        <div class="marquee-item">Earthing<div class="dot"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div>
+        <div class="section-label reveal"><span>About Buildora</span></div>
+        <h2 class="section-title reveal">PREMIUM<br/>SUPPLY<br/>PARTNER</h2>
+        <div class="about-text reveal">
+          <p>At <strong>BUILDORA Trading</strong>, we are a leading provider of premium building materials dedicated to supporting construction and renovation needs across the UAE.</p>
+          <p>From <strong>durable electrical systems</strong> to <strong>sustainable insulation solutions</strong> and stylish finishes — residential, commercial, or industrial — we supply the materials and expertise to bring your vision to life.</p>
+          <p>Our commitment: <strong>personalized service, expert advice, and timely delivery</strong>. Sustainability is at the heart of everything we do.</p>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-boxes">
+          <div class="about-box">
+            <div class="about-box-icon">🏗️</div>
+            <h3>All Sectors</h3>
+            <p>Residential, commercial and industrial projects of any scale.</p>
+          </div>
+          <div class="about-box">
+            <div class="about-box-icon">🌿</div>
+            <h3>Eco-Friendly</h3>
+            <p>Sustainable materials and practices that minimize environmental impact.</p>
+          </div>
+          <div class="about-box">
+            <div class="about-box-icon">⚡</div>
+            <h3>Fast Delivery</h3>
+            <p>Timely and reliable supply to keep your project on schedule.</p>
+          </div>
+          <div class="about-box">
+            <div class="about-box-icon">🏆</div>
+            <h3>Top Brands</h3>
+            <p>Over 50 globally recognized manufacturers under one roof.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="products-header">
+      <div>
+        <div class="section-label reveal"><span>What We Supply</span></div>
+        <h2 class="section-title reveal">PRODUCT<br/>CATEGORIES</h2>
+      </div>
+      <p class="section-sub reveal" style="margin-top:0; text-align:right;">14 categories covering every material need for your next project.</p>
+    </div>
+    <div class="products-grid reveal">
+
+      <div class="product-card">
+        <div class="product-icon">⚡</div>
+        <h3>Low Voltage Energy Distribution</h3>
+        <div class="product-tags">
+          <span class="product-tag">Distribution Boards</span>
+          <span class="product-tag">Circuit Breakers</span>
+          <span class="product-tag">Isolators</span>
+          <span class="product-tag">Control Components</span>
+          <span class="product-tag">Capacitor Banks</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🔌</div>
+        <h3>Cable Management</h3>
+        <div class="product-tags">
+          <span class="product-tag">Cable Trays</span>
+          <span class="product-tag">PVC Conduits</span>
+          <span class="product-tag">Cable Glands</span>
+          <span class="product-tag">Trunking</span>
+          <span class="product-tag">Steel Conduits</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🔶</div>
+        <h3>Cables</h3>
+        <div class="product-tags">
+          <span class="product-tag">Solar Cables</span>
+          <span class="product-tag">XLPE Cables</span>
+          <span class="product-tag">Fire Performance</span>
+          <span class="product-tag">Fibre-Optic</span>
+          <span class="product-tag">Data Cables</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🚿</div>
+        <h3>Plumbing Accessories</h3>
+        <div class="product-tags">
+          <span class="product-tag">PPR</span>
+          <span class="product-tag">UPVC</span>
+          <span class="product-tag">HDPE</span>
+          <span class="product-tag">Pex Pipes</span>
+          <span class="product-tag">Drainage</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🔋</div>
+        <h3>Switch Sockets</h3>
+        <div class="product-tags">
+          <span class="product-tag">Waterproof</span>
+          <span class="product-tag">Smart Switch</span>
+          <span class="product-tag">Grid Switch</span>
+          <span class="product-tag">Metal Clad</span>
+          <span class="product-tag">Pop-up</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🎨</div>
+        <h3>Painting</h3>
+        <div class="product-tags">
+          <span class="product-tag">Interior Emulsion</span>
+          <span class="product-tag">Exterior Emulsion</span>
+          <span class="product-tag">Enamel</span>
+          <span class="product-tag">Primers</span>
+          <span class="product-tag">Anti-Fungal</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🔧</div>
+        <h3>Hand & Power Tools</h3>
+        <div class="product-tags">
+          <span class="product-tag">Angle Grinders</span>
+          <span class="product-tag">Drills</span>
+          <span class="product-tag">Impact Wrench</span>
+          <span class="product-tag">Jig Saw</span>
+          <span class="product-tag">Hilti</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">⚡</div>
+        <h3>Earthing & Lightning</h3>
+        <div class="product-tags">
+          <span class="product-tag">Lightning Protection</span>
+          <span class="product-tag">Earthing System</span>
+          <span class="product-tag">Copper Tape</span>
+          <span class="product-tag">Air Terminals</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🚽</div>
+        <h3>Sanitary Fittings</h3>
+        <div class="product-tags">
+          <span class="product-tag">Water Heaters</span>
+          <span class="product-tag">Sensor Taps</span>
+          <span class="product-tag">Ceramics</span>
+          <span class="product-tag">Valves</span>
+          <span class="product-tag">Mixer Taps</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🦺</div>
+        <h3>Safety Equipment</h3>
+        <div class="product-tags">
+          <span class="product-tag">Safety Shoes</span>
+          <span class="product-tag">Helmets</span>
+          <span class="product-tag">Harness</span>
+          <span class="product-tag">Ear Plugs</span>
+          <span class="product-tag">Coveralls</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">❄️</div>
+        <h3>HVAC Accessories</h3>
+        <div class="product-tags">
+          <span class="product-tag">Copper Coils</span>
+          <span class="product-tag">Insulation</span>
+          <span class="product-tag">Refrigerant Gas</span>
+          <span class="product-tag">Aerofoam</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">💡</div>
+        <h3>Lighting Accessories</h3>
+        <div class="product-tags">
+          <span class="product-tag">Track Light</span>
+          <span class="product-tag">Panel Light</span>
+          <span class="product-tag">Down Light</span>
+          <span class="product-tag">LED Strips</span>
+          <span class="product-tag">Linear Light</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">💧</div>
+        <h3>Pumps</h3>
+        <div class="product-tags">
+          <span class="product-tag">Water Pumps</span>
+          <span class="product-tag">Booster Pump</span>
+          <span class="product-tag">Submersible</span>
+          <span class="product-tag">Transfer Pump</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🔩</div>
+        <h3>Hardwares</h3>
+        <div class="product-tags">
+          <span class="product-tag">Nuts & Bolts</span>
+          <span class="product-tag">Anchor Bolts</span>
+          <span class="product-tag">Ladders</span>
+          <span class="product-tag">Tapes</span>
+          <span class="product-tag">Scaffolding</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section id="brands">
+    <div class="section-label reveal"><span>Trusted Partners</span></div>
+    <h2 class="section-title reveal">BRANDS WE<br/>CARRY</h2>
+    <p class="section-sub reveal">We stock products from over 50 globally trusted manufacturers.</p>
+    <div class="brands-marquee-wrap">
+      <div style="display:flex; overflow:hidden;">
+        <div class="brands-track" id="brandsTrack">
+          <div class="brand-pill">ABB</div>
+          <div class="brand-pill">Schneider</div>
+          <div class="brand-pill">Hager</div>
+          <div class="brand-pill">Havells</div>
+          <div class="brand-pill">Alfanar</div>
+          <div class="brand-pill">Legrand</div>
+          <div class="brand-pill">Nexans</div>
+          <div class="brand-pill">Belden</div>
+          <div class="brand-pill">Prysmian</div>
+          <div class="brand-pill">D-Link</div>
+          <div class="brand-pill">Philips</div>
+          <div class="brand-pill">OSRAM</div>
+          <div class="brand-pill">Makita</div>
+          <div class="brand-pill">Bosch</div>
+          <div class="brand-pill">DeWalt</div>
+          <div class="brand-pill">Stanley</div>
+          <div class="brand-pill">Hilti</div>
+          <div class="brand-pill">Grundfos</div>
+          <div class="brand-pill">GROHE</div>
+          <div class="brand-pill">Jotun</div>
+          <div class="brand-pill">Asian Paints</div>
+          <div class="brand-pill">Furse</div>
+          <div class="brand-pill">Hepworth</div>
+          <div class="brand-pill">RAK Ceramics</div>
+          <div class="brand-pill">Panasonic</div>
+          <div class="brand-pill">Ariston</div>
+          <div class="brand-pill">Honeywell</div>
+          <!-- Duplicate -->
+          <div class="brand-pill">ABB</div>
+          <div class="brand-pill">Schneider</div>
+          <div class="brand-pill">Hager</div>
+          <div class="brand-pill">Havells</div>
+          <div class="brand-pill">Alfanar</div>
+          <div class="brand-pill">Legrand</div>
+          <div class="brand-pill">Nexans</div>
+          <div class="brand-pill">Belden</div>
+          <div class="brand-pill">Prysmian</div>
+          <div class="brand-pill">D-Link</div>
+          <div class="brand-pill">Philips</div>
+          <div class="brand-pill">OSRAM</div>
+          <div class="brand-pill">Makita</div>
+          <div class="brand-pill">Bosch</div>
+          <div class="brand-pill">DeWalt</div>
+          <div class="brand-pill">Stanley</div>
+          <div class="brand-pill">Hilti</div>
+          <div class="brand-pill">Grundfos</div>
+          <div class="brand-pill">GROHE</div>
+          <div class="brand-pill">Jotun</div>
+          <div class="brand-pill">Asian Paints</div>
+          <div class="brand-pill">Furse</div>
+          <div class="brand-pill">Hepworth</div>
+          <div class="brand-pill">RAK Ceramics</div>
+          <div class="brand-pill">Panasonic</div>
+          <div class="brand-pill">Ariston</div>
+          <div class="brand-pill">Honeywell</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="section-label reveal"><span>Our Promise</span></div>
+    <h2 class="section-title reveal">WHY CHOOSE<br/>BUILDORA</h2>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-num">01</div>
+        <div class="why-icon">🏭</div>
+        <h3>Premium Quality</h3>
+        <p>Every product we carry meets the highest standards of quality and performance — sourced from globally certified manufacturers.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">02</div>
+        <div class="why-icon">🚚</div>
+        <h3>Timely Delivery</h3>
+        <p>We understand that delays cost money. Our logistics network ensures your materials arrive on time, every time.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">03</div>
+        <div class="why-icon">🤝</div>
+        <h3>Expert Advice</h3>
+        <p>Our experienced team provides personalized guidance — helping you choose the right product for your specific application.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">04</div>
+        <div class="why-icon">🌿</div>
+        <h3>Sustainability Focus</h3>
+        <p>We prioritize eco-friendly materials and practices that minimize environmental impact without compromising on quality.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">05</div>
+        <div class="why-icon">📦</div>
+        <h3>One-Stop Supply</h3>
+        <p>14+ product categories and 50+ brands. From foundation to finish — everything your project needs in one place.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">06</div>
+        <div class="why-icon">🌍</div>
+        <h3>UAE Based</h3>
+        <p>Locally established in Dubai with deep knowledge of regional standards, regulations, and project requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div id="cta">
+    <div class="cta-inner">
+      <h2>READY TO START<br/>YOUR PROJECT?</h2>
+      <div>
+        <p style="font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; color:rgba(0,0,0,0.65); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.2rem;">Get a personalized quote today</p>
+        <a href="#contact" class="btn-dark">
+          Contact Us Now
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label reveal"><span>Get In Touch</span></div>
+    <h2 class="section-title reveal">LET'S BUILD<br/>TOGETHER</h2>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p style="color:var(--gray); line-height:1.8; margin-bottom:2.5rem;">
+          Whether you need a bulk quote, product specifications, or expert guidance — our team is ready to help. Reach out today.
+        </p>
+        <div class="contact-info-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Dubai, United Arab Emirates</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p>sales@buildoramaterials.com</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">🌐</div>
+          <div>
+            <h4>Website</h4>
+            <p>www.buildoramaterials.com</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <h4>Business Hours</h4>
+            <p>Sunday – Thursday: 8:00 AM – 6:00 PM<br/>Saturday: 9:00 AM – 2:00 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Doe" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@company.com" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+971 50 000 0000" />
+        </div>
+        <div class="form-group">
+          <label>Product Category</label>
+          <select>
+            <option value="">Select a category...</option>
+            <option>Low Voltage / Electrical</option>
+            <option>Cable Management</option>
+            <option>Cables</option>
+            <option>Plumbing Accessories</option>
+            <option>Switch Sockets</option>
+            <option>Painting</option>
+            <option>Hand & Power Tools</option>
+            <option>Earthing & Lightning Protection</option>
+            <option>Sanitary Fittings</option>
+            <option>Safety Equipment</option>
+            <option>HVAC Accessories</option>
+            <option>Lighting Accessories</option>
+            <option>Pumps</option>
+            <option>Hardware</option>
+            <option>Multiple / General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us about your project and material requirements..."></textarea>
+        </div>
+        <button class="form-submit" type="button" onclick="handleSubmit(this)">
+          Send Inquiry
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="3" fill="#F5A623"/>
+            <path d="M8 10H22C26.4 10 30 13.6 30 18C30 20.2 29.1 22.2 27.6 23.6C29.8 25 31.4 27.4 31.4 30.2C31.4 34.8 27.7 38.4 23 38.4L8 38.4V10Z" fill="#000" opacity="0.9"/>
+            <path d="M13 15H22C24.2 15 26 16.8 26 19C26 21.2 24.2 23 22 23H13V15Z" fill="#F5A623"/>
+            <path d="M13 27H23C25.4 27 27.4 29 27.4 31.2C27.4 33.4 25.4 35.4 23 35.4H13V27Z" fill="#F5A623"/>
+            <rect x="32" y="10" width="4" height="28" rx="2" fill="#000" opacity="0.6"/>
+          </svg>
+          <div class="footer-brand-name">BUILD<span>ORA</span></div>
+        </div>
+        <p class="footer-tagline">Where Every Project Begins. Premium building materials and comprehensive supply solutions across the United Arab Emirates.</p>
+        <div class="social-links" style="margin-top:1.5rem;">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Instagram">ig</a>
+          <a href="#" class="social-link" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">Electrical Systems</a></li>
+          <li><a href="#products">Cable Management</a></li>
+          <li><a href="#products">Plumbing</a></li>
+          <li><a href="#products">HVAC</a></li>
+          <li><a href="#products">Lighting</a></li>
+          <li><a href="#products">Safety</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#brands">Our Brands</a></li>
+          <li><a href="#why">Why Buildora</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:sales@buildoramaterials.com">sales@buildoramaterials.com</a></li>
+          <li><a href="#">Dubai, UAE</a></li>
+          <li><a href="#">buildoramaterials.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BUILDORA Trading. All rights reserved.</p>
+      <p>Designed for <a href="#">buildoramaterials.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Nav background on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 60) {
+        nav.style.background = 'rgba(14,15,17,0.98)';
+      } else {
+        nav.style.background = 'rgba(14,15,17,0.92)';
+      }
+    });
+
+    // Form submit handler (static - no backend)
+    function handleSubmit(btn) {
+      btn.textContent = '✓ Message Sent!';
+      btn.style.background = '#22c55e';
+      btn.style.color = '#fff';
+      setTimeout(() => {
+        btn.innerHTML = 'Send Inquiry <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 3000);
+    }
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => toggleMenu());
+    });
+  </script>
+</body>
+</html>
