@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "npx serve . -p 5500",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },

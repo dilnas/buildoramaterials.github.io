@@ -1,0 +1,20 @@
+{
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/",
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.ts",
+    "node_modules/**",
+    "__tests__/**"
+  ],
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "files.associations": {
+    "*.html": "html"
+  }
+}
