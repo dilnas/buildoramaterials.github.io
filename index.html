@@ -765,24 +765,36 @@
       gap: 12px;
     }
     .brand-badge {
-      border: 1.5px solid var(--green);
+      border: 1.5px solid #e4e8e4;
       border-radius: var(--radius-sm);
-      padding: 12px 10px;
+      padding: 16px 12px;
       text-align: center;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 0.03em;
       background: var(--white);
-      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
       cursor: default;
+      min-height: 72px;
+    }
+    .brand-badge img {
+      max-width: 120px;
+      max-height: 44px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(30%);
+      opacity: 0.85;
+      transition: filter 0.2s, opacity 0.2s;
     }
     .brand-badge:hover {
-      background: var(--green);
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(26,92,80,0.12);
+      border-color: var(--green);
+    }
+    .brand-badge:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
     }
 
     /* =========================================================
@@ -1547,30 +1559,30 @@
       <p class="section-subtitle">We stock products from 50+ internationally certified manufacturers — ensuring quality, availability and competitive pricing.</p>
     </div>
     <div class="brands-grid" role="list">
-      <div class="brand-badge" role="listitem">ABB</div>
-      <div class="brand-badge" role="listitem">Schneider Electric</div>
-      <div class="brand-badge" role="listitem">Hager</div>
-      <div class="brand-badge" role="listitem">Havells</div>
-      <div class="brand-badge" role="listitem">Alfanar</div>
-      <div class="brand-badge" role="listitem">Legrand</div>
-      <div class="brand-badge" role="listitem">Ducab</div>
-      <div class="brand-badge" role="listitem">Nexans</div>
-      <div class="brand-badge" role="listitem">Belden</div>
-      <div class="brand-badge" role="listitem">Prysmian</div>
-      <div class="brand-badge" role="listitem">Makita</div>
-      <div class="brand-badge" role="listitem">Bosch</div>
-      <div class="brand-badge" role="listitem">DeWalt</div>
-      <div class="brand-badge" role="listitem">Philips</div>
-      <div class="brand-badge" role="listitem">OSRAM</div>
-      <div class="brand-badge" role="listitem">Grundfos</div>
-      <div class="brand-badge" role="listitem">GROHE</div>
-      <div class="brand-badge" role="listitem">Jotun</div>
-      <div class="brand-badge" role="listitem">RAK Ceramics</div>
-      <div class="brand-badge" role="listitem">Honeywell</div>
-      <div class="brand-badge" role="listitem">Ariston</div>
-      <div class="brand-badge" role="listitem">Furse</div>
-      <div class="brand-badge" role="listitem">Hepworth</div>
-      <div class="brand-badge" role="listitem">Vaultex</div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/abb.svg" alt="ABB"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/schneider.svg" alt="Schneider Electric"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/hager.svg" alt="Hager"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/havells.svg" alt="Havells"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/alfanar.svg" alt="Alfanar"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/legrand.svg" alt="Legrand"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/ducab.svg" alt="Ducab"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/nexans.svg" alt="Nexans"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/belden.svg" alt="Belden"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/prysmian.svg" alt="Prysmian"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/makita.svg" alt="Makita"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/bosch.svg" alt="Bosch"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/dewalt.svg" alt="DeWalt"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/philips.svg" alt="Philips"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/osram.svg" alt="OSRAM"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/grundfos.svg" alt="Grundfos"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/grohe.svg" alt="GROHE"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/jotun.svg" alt="Jotun"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/rak-ceramics.svg" alt="RAK Ceramics"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/honeywell.svg" alt="Honeywell"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/ariston.svg" alt="Ariston"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/furse.svg" alt="Furse"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/hepworth.svg" alt="Hepworth"></div>
+      <div class="brand-badge" role="listitem"><img src="assets/images/brands/vaultex.svg" alt="Vaultex"></div>
     </div>
   </div>
 </section>
