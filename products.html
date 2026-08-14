@@ -520,7 +520,8 @@
     }
     .item-card {
       background: var(--white);
-      padding: 1.2rem;
+      padding: 0;
+      overflow: hidden;
       position: relative;
       cursor: pointer;
       border-left: 3px solid transparent;
@@ -528,6 +529,16 @@
     }
     .item-card:hover { background: rgba(26,92,80,0.05); border-left-color: var(--orange); }
     .item-card.hidden { display: none; }
+
+    .item-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .item-card:hover .item-img { transform: scale(1.04); }
+    .item-body { padding: 1.2rem; }
     .item-name {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 0.9rem;
@@ -954,46 +965,60 @@
       <div class="cat-brands">Brands: <strong>ABB · Hager · Schneider Electric · Havells · Alfanar</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Modular Distribution Board Components')">
+          <img class="item-img" src="assets/images/products/prod-dist-board.jpg" alt="Modular Distribution Board Components" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Modular Distribution Board Components</div>
           <div class="item-detail">MCB, RCCB, RCBO, isolators for residential and commercial panels</div>
           <span class="item-brand">ABB · Hager</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Main Distribution Panel Board Circuit Breakers')">
+          <img class="item-img" src="assets/images/products/prod-circuit-breaker.jpg" alt="Main Distribution Panel Board Circuit Breakers" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Main Distribution Panel Board Circuit Breakers</div>
           <div class="item-detail">ACB, MCCB for main distribution boards up to 6300A</div>
           <span class="item-brand">Schneider · ABB</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Load Break Isolators')">
+          <img class="item-img" src="assets/images/products/prod-isolator.jpg" alt="Load Break Isolators" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Load Break Isolators</div>
           <div class="item-detail">Enclosed isolators and changeover switches</div>
           <span class="item-brand">Havells · Alfanar</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Control Components')">
+          <img class="item-img" src="assets/images/products/prod-control-panel.jpg" alt="Control Components" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Control Components</div>
           <div class="item-detail">Contactors, relays, timers, push buttons, indicator lights</div>
           <span class="item-brand">Schneider · ABB</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Power Factor Capacitor Bank Components')">
+          <img class="item-img" src="assets/images/products/prod-capacitor.jpg" alt="Power Factor Capacitor Bank Components" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Power Factor Capacitor Bank Components</div>
           <div class="item-detail">Capacitors, controllers, contactors for PFC panels</div>
           <span class="item-brand">Alfanar</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Distribution Boards &amp; Enclosures')">
+          <img class="item-img" src="assets/images/products/prod-enclosure.jpg" alt="Distribution Boards &amp; Enclosures" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Distribution Boards &amp; Enclosures</div>
           <div class="item-detail">Flush and surface mounted consumer units and DB enclosures</div>
           <span class="item-brand">Hager · Schneider</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Panel Board Accessories')">
+          <img class="item-img" src="assets/images/products/prod-panel-acc.jpg" alt="Panel Board Accessories" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Panel Board Accessories</div>
           <div class="item-detail">Busbars, din rails, cable ducts, ferrules, terminal blocks</div>
           <span class="item-brand">Havells · ABB</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1008,52 +1033,68 @@
       <div class="cat-brands">Brands: <strong>Decoduct · BICC · Cellpack · Caparo · Delta · Unitech · Yuvix · Marshall Tufflex · Bicon · Hex India</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Cable Glands Lugs &amp; Connectors')">
+          <img class="item-img" src="assets/images/products/prod-cable-gland.jpg" alt="Cable Glands Lugs &amp; Connectors" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Cable Glands, Lugs &amp; Connectors</div>
           <div class="item-detail">Brass, nickel-plated, stainless steel cable glands; compression lugs</div>
           <span class="item-brand">Cellpack · Bicon</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Cable Trays &amp; Ladders')">
+          <img class="item-img" src="assets/images/products/prod-cable-tray.jpg" alt="Cable Trays &amp; Ladders" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Cable Trays &amp; Ladders</div>
           <div class="item-detail">Hot-dip galvanized, perforated, solid bottom cable trays and ladders</div>
           <span class="item-brand">Caparo · Delta</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Steel Support Systems')">
+          <img class="item-img" src="assets/images/products/prod-steel-support.jpg" alt="Steel Support Systems" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Steel Support Systems</div>
           <div class="item-detail">Channel support, unistrut, cable clamps and fixings</div>
           <span class="item-brand">Hex India · BICC</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('PVC Conduit &amp; Trunking Systems')">
+          <img class="item-img" src="assets/images/products/prod-conduit-pvc.jpg" alt="PVC Conduit &amp; Trunking Systems" loading="lazy">
+          <div class="item-body">
 <div class="item-name">PVC Conduit &amp; Trunking Systems</div>
           <div class="item-detail">Heavy gauge PVC conduit, trunking, accessories in all sizes</div>
           <span class="item-brand">Decoduct · Unitech</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Cable Ties &amp; Pulling Springs')">
+          <img class="item-img" src="assets/images/products/prod-cable-ties.jpg" alt="Cable Ties &amp; Pulling Springs" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Cable Ties &amp; Pulling Springs</div>
           <div class="item-detail">Nylon cable ties in all sizes; steel cable pulling springs</div>
           <span class="item-brand">Yuvix</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Floor Distribution Systems')">
+          <img class="item-img" src="assets/images/products/prod-floor-dist.jpg" alt="Floor Distribution Systems" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Floor Distribution Systems</div>
           <div class="item-detail">Underfloor cable distribution boxes and accessories</div>
           <span class="item-brand">Marshall Tufflex</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Cable Jointing Systems')">
+          <img class="item-img" src="assets/images/products/prod-cable-joint.jpg" alt="Cable Jointing Systems" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Cable Jointing Systems</div>
           <div class="item-detail">Heat shrink, cold shrink joints and termination kits</div>
           <span class="item-brand">Cellpack · BICC</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Steel Conduit &amp; Wiring Boxes')">
+          <img class="item-img" src="assets/images/products/prod-steel-conduit.jpg" alt="Steel Conduit &amp; Wiring Boxes" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Steel Conduit &amp; Wiring Boxes</div>
           <div class="item-detail">GI steel conduit, junction boxes, pull boxes</div>
           <span class="item-brand">Unitech · Delta</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1068,58 +1109,76 @@
       <div class="cat-brands">Brands: <strong>Ducab · Nexans · Belden · CopperPlus · Prysmian · Oman Cables · Paige · Top Cable · D-Link</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Solar Cables')">
+          <img class="item-img" src="assets/images/products/prod-solar-cable.jpg" alt="Solar Cables" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Solar Cables</div>
           <div class="item-detail">PV1-F solar DC cables, UV resistant, double insulated</div>
           <span class="item-brand">Nexans · Prysmian</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Co-axial Cables')">
+          <img class="item-img" src="assets/images/products/prod-coaxial.jpg" alt="Co-axial Cables" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Co-axial Cables</div>
           <div class="item-detail">RG6, RG11, RG59 coaxial cables for TV and CCTV</div>
           <span class="item-brand">Belden · D-Link</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Single Core Wires')">
+          <img class="item-img" src="assets/images/products/prod-single-wire.jpg" alt="Single Core Wires" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Single Core Wires</div>
           <div class="item-detail">1.5mm² to 300mm² single core PVC and XLPE insulated</div>
           <span class="item-brand">Ducab · CopperPlus</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('XLPE Insulated Cables')">
+          <img class="item-img" src="assets/images/products/prod-xlpe-cable.jpg" alt="XLPE Insulated Cables" loading="lazy">
+          <div class="item-body">
 <div class="item-name">XLPE Insulated Cables</div>
           <div class="item-detail">0.6/1kV to 33kV XLPE power cables, armoured and unarmoured</div>
           <span class="item-brand">Ducab · Nexans</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Fire Performance Cables')">
+          <img class="item-img" src="assets/images/products/prod-fire-cable.jpg" alt="Fire Performance Cables" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Fire Performance Cables</div>
           <div class="item-detail">Fire resistant, LSZH, Enhanced Fire cables to BS standards</div>
           <span class="item-brand">Prysmian · Top Cable</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Multicore Industrial Cables')">
+          <img class="item-img" src="assets/images/products/prod-multicore.jpg" alt="Multicore Industrial Cables" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Multicore Industrial Cables</div>
           <div class="item-detail">2 to 61 core control cables, screened and unscreened</div>
           <span class="item-brand">Belden · Oman Cables</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Rubber &amp; Welding Cables')">
+          <img class="item-img" src="assets/images/products/prod-welding-cable.jpg" alt="Rubber &amp; Welding Cables" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Rubber &amp; Welding Cables</div>
           <div class="item-detail">Flexible rubber cables, welding cables, EPR insulated</div>
           <span class="item-brand">Nexans · CopperPlus</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Panel Switchboard &amp; Battery Cables')">
+          <img class="item-img" src="assets/images/products/prod-battery-cable.jpg" alt="Panel Switchboard &amp; Battery Cables" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Panel, Switchboard &amp; Battery Cables</div>
           <div class="item-detail">Flexible panel wiring cables, battery interconnect cables</div>
           <span class="item-brand">Ducab · Paige</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Data Fibre-optic &amp; Instrumentation Cables')">
+          <img class="item-img" src="assets/images/products/prod-fiber-optic.jpg" alt="Data Fibre-optic &amp; Instrumentation Cables" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Data, Fibre-optic &amp; Instrumentation Cables</div>
           <div class="item-detail">Cat6, Cat6A, OS2 fibre, PLTC instrumentation cables</div>
           <span class="item-brand">Belden · D-Link</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1134,46 +1193,60 @@
       <div class="cat-brands">Brands: <strong>Novatherm · Hepworth · RAKtherm · Cosmoplast · Terrain · Prime</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('PPR Pipes &amp; Fittings')">
+          <img class="item-img" src="assets/images/products/prod-ppr-pipe.jpg" alt="PPR Pipes &amp; Fittings" loading="lazy">
+          <div class="item-body">
 <div class="item-name">PPR Pipes &amp; Fittings</div>
           <div class="item-detail">PN20 PPR pipes and fittings for hot and cold water systems</div>
           <span class="item-brand">Novatherm · RAKtherm</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('UPVC Pipes &amp; Fittings')">
+          <img class="item-img" src="assets/images/products/prod-upvc-pipe.jpg" alt="UPVC Pipes &amp; Fittings" loading="lazy">
+          <div class="item-body">
 <div class="item-name">UPVC Pipes &amp; Fittings</div>
           <div class="item-detail">UPVC pressure pipes, Class B, C and D for water supply</div>
           <span class="item-brand">Hepworth · Cosmoplast</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('HDPE Pipes &amp; Fittings')">
+          <img class="item-img" src="assets/images/products/prod-hdpe-pipe.jpg" alt="HDPE Pipes &amp; Fittings" loading="lazy">
+          <div class="item-body">
 <div class="item-name">HDPE Pipes &amp; Fittings</div>
           <div class="item-detail">PE100 HDPE pipes for water mains and sewerage</div>
           <span class="item-brand">Prime · Cosmoplast</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Pex Pipes')">
+          <img class="item-img" src="assets/images/products/prod-pex-pipe.jpg" alt="Pex Pipes" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Pex Pipes</div>
           <div class="item-detail">Cross-linked polyethylene pipes for underfloor heating and plumbing</div>
           <span class="item-brand">RAKtherm</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('PVC White Pipes')">
+          <img class="item-img" src="assets/images/products/prod-pvc-pipe.jpg" alt="PVC White Pipes" loading="lazy">
+          <div class="item-body">
 <div class="item-name">PVC White Pipes</div>
           <div class="item-detail">PVC conduit and pipe systems for general plumbing</div>
           <span class="item-brand">Cosmoplast · Prime</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('High Pressure Pipes')">
+          <img class="item-img" src="assets/images/products/prod-hp-pipe.jpg" alt="High Pressure Pipes" loading="lazy">
+          <div class="item-body">
 <div class="item-name">High Pressure Pipes</div>
           <div class="item-detail">High pressure water supply systems for industrial applications</div>
           <span class="item-brand">Hepworth</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Drainage Pipes &amp; Systems')">
+          <img class="item-img" src="assets/images/products/prod-drainage.jpg" alt="Drainage Pipes &amp; Systems" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Drainage Pipes &amp; Systems</div>
           <div class="item-detail">UPVC soil and waste drainage, underground drainage pipes</div>
           <span class="item-brand">Terrain · Hepworth</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1188,46 +1261,60 @@
       <div class="cat-brands">Brands: <strong>ABB · Legrand · Crabtree · Schneider Electric · Panasonic · MK by Honeywell</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Waterproof Switch Sockets')">
+          <img class="item-img" src="assets/images/products/prod-switch-wp.jpg" alt="Waterproof Switch Sockets" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Waterproof Switch Sockets</div>
           <div class="item-detail">IP44 and IP66 rated weatherproof switches and sockets</div>
           <span class="item-brand">ABB · Schneider</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Pop-up Switches')">
+          <img class="item-img" src="assets/images/products/prod-popup-switch.jpg" alt="Pop-up Switches" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Pop-up Switches</div>
           <div class="item-detail">Flush pop-up socket outlets for desks and worktops</div>
           <span class="item-brand">Legrand</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Switch Sockets Standard')">
+          <img class="item-img" src="assets/images/products/prod-socket.jpg" alt="Switch Sockets Standard" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Switch Sockets (Standard)</div>
           <div class="item-detail">1G, 2G, 3G switches and 13A socket outlets, various finishes</div>
           <span class="item-brand">MK · Crabtree</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Smart Switches')">
+          <img class="item-img" src="assets/images/products/prod-smart-switch.jpg" alt="Smart Switches" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Smart Switches</div>
           <div class="item-detail">Wi-Fi enabled smart switches compatible with Alexa and Google</div>
           <span class="item-brand">Schneider · Panasonic</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Grid Switches &amp; Modules')">
+          <img class="item-img" src="assets/images/products/prod-grid-switch.jpg" alt="Grid Switches &amp; Modules" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Grid Switches &amp; Modules</div>
           <div class="item-detail">Grid switch systems for modular wiring installations</div>
           <span class="item-brand">MK · Legrand</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Metal Clad Switches')">
+          <img class="item-img" src="assets/images/products/prod-metal-switch.jpg" alt="Metal Clad Switches" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Metal Clad Switches</div>
           <div class="item-detail">Industrial grade metal clad switches for commercial use</div>
           <span class="item-brand">ABB · Crabtree</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Isolators')">
+          <img class="item-img" src="assets/images/products/prod-sw-isolator.jpg" alt="Isolators" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Isolators</div>
           <div class="item-detail">DP and TP switch isolators for A/C and equipment isolation</div>
           <span class="item-brand">MK · Schneider</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1242,58 +1329,76 @@
       <div class="cat-brands">Brands: <strong>Jotun · Asian Paints · National Paints</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Anti-Fungal Anti-Bacterial Paint')">
+          <img class="item-img" src="assets/images/products/prod-antifungal-paint.jpg" alt="Anti-Fungal Anti-Bacterial Paint" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Anti-Fungal / Anti-Bacterial Paint</div>
           <div class="item-detail">Moisture resistant paint for bathrooms, kitchens and hospitals</div>
           <span class="item-brand">Jotun · Asian Paints</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Exterior Emulsion')">
+          <img class="item-img" src="assets/images/products/prod-exterior-paint.jpg" alt="Exterior Emulsion" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Exterior Emulsion</div>
           <div class="item-detail">Weather resistant exterior wall emulsion for facades</div>
           <span class="item-brand">Jotun · National</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Interior Emulsion')">
+          <img class="item-img" src="assets/images/products/prod-interior-paint.jpg" alt="Interior Emulsion" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Interior Emulsion</div>
           <div class="item-detail">Smooth finish interior emulsion, washable, low VOC</div>
           <span class="item-brand">Jotun · Asian Paints</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Fenomastic Paint')">
+          <img class="item-img" src="assets/images/products/prod-fenomastic.jpg" alt="Fenomastic Paint" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Fenomastic Paint</div>
           <div class="item-detail">Jotun Fenomastic pure colours interior and exterior range</div>
           <span class="item-brand">Jotun</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Emulsion Paint')">
+          <img class="item-img" src="assets/images/products/prod-emulsion.jpg" alt="Emulsion Paint" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Emulsion Paint</div>
           <div class="item-detail">Standard emulsion in a wide range of colours</div>
           <span class="item-brand">National · Asian Paints</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Texture Paint')">
+          <img class="item-img" src="assets/images/products/prod-texture-paint.jpg" alt="Texture Paint" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Texture Paint</div>
           <div class="item-detail">Sand texture, coarse texture, rough cast finish paints</div>
           <span class="item-brand">Jotun · National</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Enamel Paint')">
+          <img class="item-img" src="assets/images/products/prod-enamel-paint.jpg" alt="Enamel Paint" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Enamel Paint</div>
           <div class="item-detail">Gloss and semi-gloss enamel for wood, metal and trim</div>
           <span class="item-brand">Asian Paints · Jotun</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Primers &amp; Undercoats')">
+          <img class="item-img" src="assets/images/products/prod-primer.jpg" alt="Primers &amp; Undercoats" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Primers &amp; Undercoats</div>
           <div class="item-detail">Alkali resistant primer, wall filler, sealer and undercoat</div>
           <span class="item-brand">Jotun · National</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Wall Putty')">
+          <img class="item-img" src="assets/images/products/prod-wall-putty.jpg" alt="Wall Putty" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Wall Putty</div>
           <div class="item-detail">White cement based wall putty for smooth surface preparation</div>
           <span class="item-brand">Asian Paints</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1308,64 +1413,84 @@
       <div class="cat-brands">Brands: <strong>Makita · HIOKI · Bosch · DeWalt · Stanley · Hilti</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Impact Wrench')">
+          <img class="item-img" src="assets/images/products/prod-impact-wrench.jpg" alt="Impact Wrench" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Impact Wrench</div>
           <div class="item-detail">Cordless and corded impact wrenches, various torque ratings</div>
           <span class="item-brand">Makita · DeWalt</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Angle Grinders')">
+          <img class="item-img" src="assets/images/products/prod-angle-grinder.jpg" alt="Angle Grinders" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Angle Grinders</div>
           <div class="item-detail">4.5", 5" and 9" angle grinders for cutting and grinding</div>
           <span class="item-brand">Bosch · Makita</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Power Tools General')">
+          <img class="item-img" src="assets/images/products/prod-power-tools.jpg" alt="Power Tools General" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Power Tools (General)</div>
           <div class="item-detail">Sanders, routers, planers and general power tools</div>
           <span class="item-brand">DeWalt · Bosch</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Hand Tools')">
+          <img class="item-img" src="assets/images/products/prod-hand-tools.jpg" alt="Hand Tools" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Hand Tools</div>
           <div class="item-detail">Pliers, screwdrivers, spanners, wrenches and hand tool sets</div>
           <span class="item-brand">Stanley · DeWalt</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Tool Accessories')">
+          <img class="item-img" src="assets/images/products/prod-tool-acc.jpg" alt="Tool Accessories" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Tool Accessories</div>
           <div class="item-detail">Drill bits, grinding discs, cutting discs, saw blades</div>
           <span class="item-brand">Bosch · Makita</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Drills &amp; Hammer Drills')">
+          <img class="item-img" src="assets/images/products/prod-drill.jpg" alt="Drills &amp; Hammer Drills" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Drills &amp; Hammer Drills</div>
           <div class="item-detail">Cordless drill drivers, SDS-plus and SDS-max rotary hammers</div>
           <span class="item-brand">Makita · Hilti</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Routers')">
+          <img class="item-img" src="assets/images/products/prod-router.jpg" alt="Routers" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Routers</div>
           <div class="item-detail">Fixed base and plunge routers for woodworking</div>
           <span class="item-brand">Bosch · Makita</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Chop Saws Miter Saws')">
+          <img class="item-img" src="assets/images/products/prod-miter-saw.jpg" alt="Chop Saws Miter Saws" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Chop Saws (Miter Saws)</div>
           <div class="item-detail">Sliding compound miter saws for accurate cross cuts</div>
           <span class="item-brand">DeWalt · Makita</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Jig Saws')">
+          <img class="item-img" src="assets/images/products/prod-jigsaw.jpg" alt="Jig Saws" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Jig Saws</div>
           <div class="item-detail">Orbital and straight cut jig saws for curves and shapes</div>
           <span class="item-brand">Bosch · DeWalt</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Hilti Systems')">
+          <img class="item-img" src="assets/images/products/prod-hilti.jpg" alt="Hilti Systems" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Hilti Systems</div>
           <div class="item-detail">Hilti anchor systems, fastening, cutting and measuring tools</div>
           <span class="item-brand">Hilti</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1380,34 +1505,44 @@
       <div class="cat-brands">Brands: <strong>Furse</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Lightning Protection Systems')">
+          <img class="item-img" src="assets/images/products/prod-lightning.jpg" alt="Lightning Protection Systems" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Lightning Protection Systems</div>
           <div class="item-detail">Early streamer emission air terminals, lightning rods and kits</div>
           <span class="item-brand">Furse</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Earthing Systems')">
+          <img class="item-img" src="assets/images/products/prod-earthing.jpg" alt="Earthing Systems" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Earthing Systems</div>
           <div class="item-detail">Earth rods, earth plates, chemical earth electrodes</div>
           <span class="item-brand">Furse</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Furse Copper Tape')">
+          <img class="item-img" src="assets/images/products/prod-copper-tape.jpg" alt="Furse Copper Tape" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Furse Copper Tape</div>
           <div class="item-detail">25x3mm and 40x4mm bare copper tape for earth bonding</div>
           <span class="item-brand">Furse</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Furse Air Terminals')">
+          <img class="item-img" src="assets/images/products/prod-air-terminal.jpg" alt="Furse Air Terminals" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Furse Air Terminals</div>
           <div class="item-detail">Stainless steel air terminals, masts and mounting hardware</div>
           <span class="item-brand">Furse</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Protection Accessories')">
+          <img class="item-img" src="assets/images/products/prod-prot-acc.jpg" alt="Protection Accessories" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Protection Accessories</div>
           <div class="item-detail">Test links, bonds, clamps, surge protection devices</div>
           <span class="item-brand">Furse</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1422,40 +1557,52 @@
       <div class="cat-brands">Brands: <strong>GROHE · SANWA · RAK Ceramics · Pegler · Milano · Ariston · Everhot</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Sanitary Fittings &amp; Ware')">
+          <img class="item-img" src="assets/images/products/prod-sanitary.jpg" alt="Sanitary Fittings &amp; Ware" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Sanitary Fittings &amp; Ware</div>
           <div class="item-detail">WC pans, cisterns, bidets, washbasins and pedestals</div>
           <span class="item-brand">RAK Ceramics · Pegler</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Water Heaters')">
+          <img class="item-img" src="assets/images/products/prod-water-heater.jpg" alt="Water Heaters" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Water Heaters</div>
           <div class="item-detail">Electric storage, instant, solar water heaters 10L to 100L</div>
           <span class="item-brand">Ariston · Everhot</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Sensor Taps')">
+          <img class="item-img" src="assets/images/products/prod-sensor-tap.jpg" alt="Sensor Taps" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Sensor Taps</div>
           <div class="item-detail">Infra-red touchless basin, kitchen and urinal sensor taps</div>
           <span class="item-brand">GROHE · SANWA</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Mixer Taps &amp; Shower Sets')">
+          <img class="item-img" src="assets/images/products/prod-shower.jpg" alt="Mixer Taps &amp; Shower Sets" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Mixer Taps &amp; Shower Sets</div>
           <div class="item-detail">Basin mixers, bath mixers, shower heads and thermostatic sets</div>
           <span class="item-brand">GROHE · Milano</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Ceramics &amp; Tiles')">
+          <img class="item-img" src="assets/images/products/prod-tiles.jpg" alt="Ceramics &amp; Tiles" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Ceramics &amp; Tiles</div>
           <div class="item-detail">Porcelain, ceramic floor and wall tiles in various sizes</div>
           <span class="item-brand">RAK Ceramics</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Valves &amp; Fittings')">
+          <img class="item-img" src="assets/images/products/prod-valve.jpg" alt="Valves &amp; Fittings" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Valves &amp; Fittings</div>
           <div class="item-detail">Ball valves, gate valves, check valves, copper pipe fittings</div>
           <span class="item-brand">Pegler · GROHE</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1470,40 +1617,52 @@
       <div class="cat-brands">Brands: <strong>Vaultex · TUF-FIX</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Safety Shoes')">
+          <img class="item-img" src="assets/images/products/prod-safety-shoes.jpg" alt="Safety Shoes" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Safety Shoes</div>
           <div class="item-detail">Steel toe cap safety shoes, EN20345 certified, various styles</div>
           <span class="item-brand">Vaultex</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Safety Harness')">
+          <img class="item-img" src="assets/images/products/prod-harness.jpg" alt="Safety Harness" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Safety Harness</div>
           <div class="item-detail">Full body safety harness, lanyards and fall arrest systems</div>
           <span class="item-brand">Vaultex</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Safety Helmets')">
+          <img class="item-img" src="assets/images/products/prod-helmet.jpg" alt="Safety Helmets" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Safety Helmets</div>
           <div class="item-detail">HDPE and ABS safety helmets, EN397 certified, various colours</div>
           <span class="item-brand">Vaultex · TUF-FIX</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Ear Plugs &amp; Protectors')">
+          <img class="item-img" src="assets/images/products/prod-ear-plug.jpg" alt="Ear Plugs &amp; Protectors" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Ear Plugs &amp; Protectors</div>
           <div class="item-detail">Disposable foam ear plugs and reusable ear defenders</div>
           <span class="item-brand">Vaultex</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Safety Gloves')">
+          <img class="item-img" src="assets/images/products/prod-gloves.jpg" alt="Safety Gloves" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Safety Gloves</div>
           <div class="item-detail">Cut resistant, chemical resistant and general purpose gloves</div>
           <span class="item-brand">Vaultex · TUF-FIX</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Coveralls &amp; Hi-Vis Vests')">
+          <img class="item-img" src="assets/images/products/prod-hi-vis.jpg" alt="Coveralls &amp; Hi-Vis Vests" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Coveralls &amp; Hi-Vis Vests</div>
           <div class="item-detail">Disposable and reusable coveralls, high visibility safety vests</div>
           <span class="item-brand">Vaultex</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1518,40 +1677,52 @@
       <div class="cat-brands">Brands: <strong>Maksal · Mueller Industries · Heidelberg · Aerofoam · GoFlex · Gulf-O-Flex · Mafron · Refron · Honeywell</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Copper Coils &amp; Tubes')">
+          <img class="item-img" src="assets/images/products/prod-copper-coil.jpg" alt="Copper Coils &amp; Tubes" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Copper Coils &amp; Tubes</div>
           <div class="item-detail">ACR copper tubes and coils for refrigeration and air conditioning</div>
           <span class="item-brand">Maksal · Mueller</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Pipe Insulation Aerofoam')">
+          <img class="item-img" src="assets/images/products/prod-insulation.jpg" alt="Pipe Insulation Aerofoam" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Pipe Insulation (Aerofoam)</div>
           <div class="item-detail">Elastomeric foam insulation tubes and sheets for AC pipes</div>
           <span class="item-brand">Aerofoam · GoFlex</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Sheet Insulation')">
+          <img class="item-img" src="assets/images/products/prod-sheet-ins.jpg" alt="Sheet Insulation" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Sheet Insulation</div>
           <div class="item-detail">Closed cell rubber insulation sheets for ductwork and tanks</div>
           <span class="item-brand">Gulf-O-Flex</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Refrigerant Gas')">
+          <img class="item-img" src="assets/images/products/prod-refrigerant.jpg" alt="Refrigerant Gas" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Refrigerant Gas</div>
           <div class="item-detail">R22, R32, R410A, R404A refrigerant gases in cylinders</div>
           <span class="item-brand">Refron · Mafron</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('HVAC Controls')">
+          <img class="item-img" src="assets/images/products/prod-hvac-control.jpg" alt="HVAC Controls" loading="lazy">
+          <div class="item-body">
 <div class="item-name">HVAC Controls</div>
           <div class="item-detail">Thermostats, pressure switches, expansion valves and controls</div>
           <span class="item-brand">Honeywell · Heidelberg</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('HVAC Accessories')">
+          <img class="item-img" src="assets/images/products/prod-hvac-acc.jpg" alt="HVAC Accessories" loading="lazy">
+          <div class="item-body">
 <div class="item-name">HVAC Accessories</div>
           <div class="item-detail">Filter driers, sight glasses, service valves, flaring tools</div>
           <span class="item-brand">Maksal · Mueller</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1566,40 +1737,52 @@
       <div class="cat-brands">Brands: <strong>OSRAM · Philips · Frater · Selex · LGL</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Track Lights')">
+          <img class="item-img" src="assets/images/products/prod-track-light.jpg" alt="Track Lights" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Track Lights</div>
           <div class="item-detail">Single phase and three phase LED track lights, 10W to 50W</div>
           <span class="item-brand">Philips · OSRAM</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Panel Lights')">
+          <img class="item-img" src="assets/images/products/prod-panel-light.jpg" alt="Panel Lights" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Panel Lights</div>
           <div class="item-detail">LED panel lights 600x600, 1200x600, back-lit and edge-lit</div>
           <span class="item-brand">Philips · LGL</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Down Lights')">
+          <img class="item-img" src="assets/images/products/prod-downlight.jpg" alt="Down Lights" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Down Lights</div>
           <div class="item-detail">Recessed LED downlights, dimmable, various colour temperatures</div>
           <span class="item-brand">OSRAM · Philips</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Spot Lights')">
+          <img class="item-img" src="assets/images/products/prod-spotlight.jpg" alt="Spot Lights" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Spot Lights</div>
           <div class="item-detail">Surface mounted and recessed LED spotlights, adjustable</div>
           <span class="item-brand">Frater · Selex</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('LED Strips &amp; Profiles')">
+          <img class="item-img" src="assets/images/products/prod-led-strip.jpg" alt="LED Strips &amp; Profiles" loading="lazy">
+          <div class="item-body">
 <div class="item-name">LED Strips &amp; Profiles</div>
           <div class="item-detail">IP20 and IP65 LED strip lights, aluminum profiles and diffusers</div>
           <span class="item-brand">Philips · LGL</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Linear Lights')">
+          <img class="item-img" src="assets/images/products/prod-linear-light.jpg" alt="Linear Lights" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Linear Lights</div>
           <div class="item-detail">Suspended and recessed LED linear luminaires for offices</div>
           <span class="item-brand">OSRAM · Selex</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1614,40 +1797,52 @@
       <div class="cat-brands">Brands: <strong>ESPA · Grundfos · Vespa</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Water Pumps Centrifugal')">
+          <img class="item-img" src="assets/images/products/prod-centrifugal-pump.jpg" alt="Water Pumps Centrifugal" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Water Pumps (Centrifugal)</div>
           <div class="item-detail">Single stage centrifugal pumps for domestic and commercial use</div>
           <span class="item-brand">Grundfos · ESPA</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Pressure Kit Pressure Sets')">
+          <img class="item-img" src="assets/images/products/prod-pressure-pump.jpg" alt="Pressure Kit Pressure Sets" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Pressure Kit / Pressure Sets</div>
           <div class="item-detail">Complete pressure booster sets with pressure tank and controls</div>
           <span class="item-brand">ESPA · Grundfos</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Transfer Pumps')">
+          <img class="item-img" src="assets/images/products/prod-transfer-pump.jpg" alt="Transfer Pumps" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Transfer Pumps</div>
           <div class="item-detail">Portable transfer pumps for water and non-corrosive liquids</div>
           <span class="item-brand">Vespa · ESPA</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Booster Pumps')">
+          <img class="item-img" src="assets/images/products/prod-booster-pump.jpg" alt="Booster Pumps" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Booster Pumps</div>
           <div class="item-detail">In-line booster pumps for increasing water pressure</div>
           <span class="item-brand">Grundfos · ESPA</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Control Panels for Pumps')">
+          <img class="item-img" src="assets/images/products/prod-pump-panel.jpg" alt="Control Panels for Pumps" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Control Panels for Pumps</div>
           <div class="item-detail">Motor starter panels, VFD panels and pump control panels</div>
           <span class="item-brand">Grundfos</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Submersible Pumps')">
+          <img class="item-img" src="assets/images/products/prod-submersible.jpg" alt="Submersible Pumps" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Submersible Pumps</div>
           <div class="item-detail">Borehole and drainage submersible pumps, various head ratings</div>
           <span class="item-brand">Grundfos · ESPA</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
       </div>
     </div>
@@ -1662,99 +1857,125 @@
       <div class="cat-brands">Brands: <strong>Various Leading Manufacturers</strong></div>
       <div class="items-grid">
         <div class="item-card" onclick="openWA('Steel Nails')">
+          <img class="item-img" src="assets/images/products/prod-nails.jpg" alt="Steel Nails" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Steel Nails</div>
           <div class="item-detail">Common wire nails, masonry nails, roofing nails in all sizes</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Screws')">
+          <img class="item-img" src="assets/images/products/prod-screws.jpg" alt="Screws" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Screws</div>
           <div class="item-detail">Wood screws, self-tapping, drywall, machine screws</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Nuts &amp; Bolts')">
+          <img class="item-img" src="assets/images/products/prod-nuts-bolts.jpg" alt="Nuts &amp; Bolts" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Nuts &amp; Bolts</div>
           <div class="item-detail">Hex bolts, carriage bolts, stainless and galvanized nuts and bolts</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Anchor Bolts')">
+          <img class="item-img" src="assets/images/products/prod-anchor-bolt.jpg" alt="Anchor Bolts" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Anchor Bolts</div>
           <div class="item-detail">Chemical anchors, expansion anchors, sleeve anchors</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Wire Rope Clips &amp; D-Shackles')">
+          <img class="item-img" src="assets/images/products/prod-wire-rope.jpg" alt="Wire Rope Clips &amp; D-Shackles" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Wire Rope Clips &amp; D-Shackles</div>
           <div class="item-detail">Galvanized wire rope clips, bow shackles and D-shackles</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Ladders')">
+          <img class="item-img" src="assets/images/products/prod-ladder.jpg" alt="Ladders" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Ladders</div>
           <div class="item-detail">Aluminium step ladders, extension ladders and platform steps</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Wheelbarrow &amp; Platform Trolley')">
+          <img class="item-img" src="assets/images/products/prod-wheelbarrow.jpg" alt="Wheelbarrow &amp; Platform Trolley" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Wheelbarrow &amp; Platform Trolley</div>
           <div class="item-detail">Heavy duty construction wheelbarrows and flat platform trolleys</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('MS Tube &amp; Steel Sections')">
+          <img class="item-img" src="assets/images/products/prod-steel-tube.jpg" alt="MS Tube &amp; Steel Sections" loading="lazy">
+          <div class="item-body">
 <div class="item-name">MS Tube &amp; Steel Sections</div>
           <div class="item-detail">Mild steel hollow sections, RHS, SHS for fabrication</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Polythene Sheets &amp; Tarpauline')">
+          <img class="item-img" src="assets/images/products/prod-tarpaulin.jpg" alt="Polythene Sheets &amp; Tarpauline" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Polythene Sheets &amp; Tarpauline</div>
           <div class="item-detail">DPM polythene, builder's film, heavy duty tarpaulins</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Thermocol Sheets')">
+          <img class="item-img" src="assets/images/products/prod-thermocol.jpg" alt="Thermocol Sheets" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Thermocol Sheets</div>
           <div class="item-detail">EPS expanded polystyrene boards for insulation and packaging</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Masking Tape')">
+          <img class="item-img" src="assets/images/products/prod-masking-tape.jpg" alt="Masking Tape" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Masking Tape</div>
           <div class="item-detail">General purpose and high temperature masking tape rolls</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Duct Tape')">
+          <img class="item-img" src="assets/images/products/prod-duct-tape.jpg" alt="Duct Tape" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Duct Tape</div>
           <div class="item-detail">Heavy duty cloth duct tape, aluminium foil tape</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Insulation Tape')">
+          <img class="item-img" src="assets/images/products/prod-ins-tape.jpg" alt="Insulation Tape" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Insulation Tape</div>
           <div class="item-detail">PVC electrical insulation tape in various colours</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Spanners &amp; Hand Tools')">
+          <img class="item-img" src="assets/images/products/prod-spanner.jpg" alt="Spanners &amp; Hand Tools" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Spanners &amp; Hand Tools</div>
           <div class="item-detail">Open end, ring, combination spanners; pipe wrenches</div>
           <span class="item-brand">Stanley</span>
-          <span class="item-quote">Request Quote →</span>
+          </div><span class="item-quote">Request Quote →</span>
         </div>
         <div class="item-card" onclick="openWA('Spirit Level &amp; Manhole Cover')">
+          <img class="item-img" src="assets/images/products/prod-spirit-level.jpg" alt="Spirit Level &amp; Manhole Cover" loading="lazy">
+          <div class="item-body">
 <div class="item-name">Spirit Level &amp; Manhole Cover</div>
           <div class="item-detail">Professional spirit levels; cast iron and polymer manhole covers</div>
           <span class="item-brand">General</span>
-          <span class="item-quote">Request Quote →</span>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- end products-inner -->
+          </div><span class="item-quote">Request Quote →</span>
+        </div></div><!-- end products-inner -->
 </div><!-- end products-area -->
 
 <!-- CTA BANNER -->
