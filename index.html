@@ -666,6 +666,29 @@
     }
     .cat-card:hover .cat-link { gap: 10px; }
 
+    .cat-card.has-bg {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #fff;
+      border-top: none;
+      box-shadow: var(--shadow-md);
+    }
+    .cat-card.has-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(26,92,80,0.78) 0%, rgba(26,92,80,0.90) 100%);
+      border-radius: var(--radius);
+      z-index: 0;
+    }
+    .cat-card.has-bg > * { position: relative; z-index: 1; }
+    .cat-card.has-bg .cat-icon { font-size: 2.4rem; }
+    .cat-card.has-bg .cat-title { color: #fff; }
+    .cat-card.has-bg .cat-desc { color: rgba(255,255,255,0.86); }
+    .cat-card.has-bg .cat-link { color: #F5A020; }
+    .cat-card.has-bg:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.28); transform: translateY(-3px); }
+
     /* =========================================================
        ABOUT STRIP
     ========================================================= */
@@ -1295,7 +1318,7 @@
   <div class="slider-track" id="slider-track">
 
     <!-- SLIDE 1 -->
-    <div class="slide" role="group" aria-label="Slide 1 of 3">
+    <div class="slide" role="group" aria-label="Slide 1 of 3" style="background-image:linear-gradient(rgba(26,92,80,0.80),rgba(26,92,80,0.84)),url('assets/images/hero-1.jpg');background-size:cover;background-position:center;">
       <!-- Decorative curves -->
       <svg class="slide-curves" width="460" height="460" viewBox="0 0 460 460" fill="none" aria-hidden="true">
         <path d="M460 0 Q 420 180 260 220 Q 160 240 80 460" stroke="#F5A020" stroke-width="52" stroke-linecap="round" fill="none" opacity="0.22"/>
@@ -1317,7 +1340,7 @@
     </div>
 
     <!-- SLIDE 2 -->
-    <div class="slide" role="group" aria-label="Slide 2 of 3">
+    <div class="slide" role="group" aria-label="Slide 2 of 3" style="background-image:linear-gradient(rgba(26,92,80,0.80),rgba(26,92,80,0.84)),url('assets/images/hero-2.jpg');background-size:cover;background-position:center;">
       <svg class="slide-curves" width="460" height="460" viewBox="0 0 460 460" fill="none" aria-hidden="true">
         <path d="M460 0 Q 420 180 260 220 Q 160 240 80 460" stroke="#F5A020" stroke-width="52" stroke-linecap="round" fill="none" opacity="0.22"/>
         <path d="M460 60 Q 400 230 210 270 Q 110 290 30 460" stroke="#F5A020" stroke-width="38" stroke-linecap="round" fill="none" opacity="0.15"/>
@@ -1347,7 +1370,7 @@
     </div>
 
     <!-- SLIDE 3 -->
-    <div class="slide" role="group" aria-label="Slide 3 of 3">
+    <div class="slide" role="group" aria-label="Slide 3 of 3" style="background-image:linear-gradient(rgba(26,92,80,0.80),rgba(26,92,80,0.84)),url('assets/images/hero-3.jpg');background-size:cover;background-position:center;">
       <svg class="slide-curves" width="460" height="460" viewBox="0 0 460 460" fill="none" aria-hidden="true">
         <path d="M460 0 Q 420 180 260 220 Q 160 240 80 460" stroke="#F5A020" stroke-width="52" stroke-linecap="round" fill="none" opacity="0.22"/>
         <path d="M460 60 Q 400 230 210 270 Q 110 290 30 460" stroke="#F5A020" stroke-width="38" stroke-linecap="round" fill="none" opacity="0.15"/>
@@ -1421,42 +1444,42 @@
     </div>
     <div class="cat-grid">
 
-      <a href="products.html#electrical" class="cat-card reveal">
+      <a href="products.html#electrical" class="cat-card has-bg reveal" style="background-image:url('assets/images/cat-electrical.jpg')">
         <div class="cat-icon">⚡</div>
         <div class="cat-title">Electrical &amp; LV Systems</div>
         <p class="cat-desc">Distribution boards, circuit breakers, contactors, MCBs, MCCBs, busbars, surge protection, and control components from globally certified manufacturers.</p>
         <span class="cat-link">Explore <span aria-hidden="true">→</span></span>
       </a>
 
-      <a href="products.html#cables" class="cat-card reveal reveal-delay-1">
+      <a href="products.html#cables" class="cat-card has-bg reveal reveal-delay-1" style="background-image:url('assets/images/cat-cables.jpg')">
         <div class="cat-icon">🔌</div>
         <div class="cat-title">Cables &amp; Wiring</div>
         <p class="cat-desc">XLPE armoured cables, fire-performance cables, solar DC cables, instrumentation cables, data and communication cables from Ducab, Nexans, Prysmian and more.</p>
         <span class="cat-link">Explore <span aria-hidden="true">→</span></span>
       </a>
 
-      <a href="products.html#plumbing" class="cat-card reveal reveal-delay-2">
+      <a href="products.html#plumbing" class="cat-card has-bg reveal reveal-delay-2" style="background-image:url('assets/images/cat-plumbing.jpg')">
         <div class="cat-icon">🚿</div>
         <div class="cat-title">Plumbing &amp; HVAC</div>
         <p class="cat-desc">PPR pipes and fittings, UPVC systems, copper coils, thermal insulation, refrigerants, drain systems and complete HVAC components for commercial and residential builds.</p>
         <span class="cat-link">Explore <span aria-hidden="true">→</span></span>
       </a>
 
-      <a href="products.html#lighting" class="cat-card reveal">
+      <a href="products.html#lighting" class="cat-card has-bg reveal" style="background-image:url('assets/images/cat-lighting.jpg')">
         <div class="cat-icon">💡</div>
         <div class="cat-title">Lighting &amp; Safety</div>
         <p class="cat-desc">LED panel lights, track lights, floodlights, emergency fixtures, safety helmets, harnesses, high-visibility vests, eye protection and full PPE range for every site.</p>
         <span class="cat-link">Explore <span aria-hidden="true">→</span></span>
       </a>
 
-      <a href="products.html#tools" class="cat-card reveal reveal-delay-1">
+      <a href="products.html#tools" class="cat-card has-bg reveal reveal-delay-1" style="background-image:url('assets/images/cat-tools.jpg')">
         <div class="cat-icon">🔨</div>
         <div class="cat-title">Tools &amp; Hardware</div>
         <p class="cat-desc">Power tools, hand tools, accessories and fixings from Makita, Bosch, DeWalt, Hilti, and Stanley. Everything from drills and grinders to fasteners and anchors.</p>
         <span class="cat-link">Explore <span aria-hidden="true">→</span></span>
       </a>
 
-      <a href="products.html#sanitary" class="cat-card reveal reveal-delay-2">
+      <a href="products.html#sanitary" class="cat-card has-bg reveal reveal-delay-2" style="background-image:url('assets/images/cat-sanitary.jpg')">
         <div class="cat-icon">🚽</div>
         <div class="cat-title">Sanitary &amp; Finishes</div>
         <p class="cat-desc">Premium sanitary ware from GROHE, RAK Ceramics, Ariston. Jotun protective and decorative paints, ceramic tiles, pumps, water heaters and surface finishes.</p>
