@@ -515,8 +515,10 @@
     .items-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 1px;
-      background: var(--border);
+      gap: 0;
+      background: #ffffff;
+      border-top: 1px solid #e8e8e8;
+      border-left: 1px solid #e8e8e8;
     }
     .item-card {
       background: var(--white);
@@ -524,6 +526,8 @@
       overflow: hidden;
       position: relative;
       cursor: pointer;
+      border-right: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e8e8e8;
       border-left: 3px solid transparent;
       transition: background 0.18s, border-left-color 0.18s;
     }
