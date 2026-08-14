@@ -2099,16 +2099,52 @@
         return;
       }
 
-      /* Simulate submit */
+      /* Real submit via FormSubmit.co AJAX */
       var submitBtn = form.querySelector('.form-submit');
+      var phone    = form.querySelector('#cf-phone').value.trim();
+      var category = form.querySelector('#cf-category').value;
+      var company  = form.querySelector('#cf-company').value.trim();
+
       submitBtn.textContent = 'Sending…';
       submitBtn.disabled = true;
       submitBtn.style.opacity = '0.7';
 
-      setTimeout(function () {
-        formContent.style.display = 'none';
-        formSuccess.style.display = 'block';
-      }, 1200);
+      fetch('https://formsubmit.co/ajax/dilnaskasim007@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          phone: phone || '—',
+          category: category || '—',
+          company: company || '—',
+          message: message,
+          _subject: 'New Enquiry from Buildora Website — ' + name,
+          _template: 'table'
+        })
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success === 'true' || data.success === true) {
+          formContent.style.display = 'none';
+          formSuccess.style.display = 'block';
+        } else {
+          throw new Error('Send failed');
+        }
+      })
+      .catch(function () {
+        submitBtn.textContent = 'Send Enquiry';
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '';
+        var errMsg = form.querySelector('#form-send-error');
+        if (!errMsg) {
+          errMsg = document.createElement('p');
+          errMsg.id = 'form-send-error';
+          errMsg.style.cssText = 'color:#e53935;font-size:13px;margin-top:10px;';
+          errMsg.textContent = 'Something went wrong. Please email us directly at sales@buildoramaterials.com';
+          form.appendChild(errMsg);
+        }
+      });
     });
 
     /* Clear error on input */
