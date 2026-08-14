@@ -9,7 +9,6 @@
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://www.buildoramaterials.com/"/>
 
-  <!-- Open Graph / Meta -->
   <meta property="og:title" content="BUILDORA Materials — Build Beyond Limits"/>
   <meta property="og:description" content="Dubai's premier building materials supplier. 14 categories. 50+ brands. Build Beyond Limits."/>
   <meta property="og:url" content="https://www.buildoramaterials.com/"/>
@@ -18,277 +17,371 @@
   <meta property="og:site_name" content="BUILDORA Materials"/>
   <meta property="og:locale" content="en_AE"/>
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="BUILDORA Materials — Build Beyond Limits"/>
   <meta name="twitter:description" content="Dubai's premier building materials supplier. 14 categories. 50+ brands."/>
 
-  <!-- JSON-LD -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Buildora Materials Trading","url":"https://www.buildoramaterials.com","logo":"https://www.buildoramaterials.com/assets/logo.png","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"},"telephone":"+9710501018048","email":"sales@buildoramaterials.com","sameAs":["https://www.facebook.com/buildoramaterials","https://www.instagram.com/buildoramaterials"]}
+  {"@context":"https://schema.org","@type":"Organization","name":"Buildora Materials Trading","url":"https://www.buildoramaterials.com","logo":"https://www.buildoramaterials.com/assets/logo.png","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"},"telephone":"+971501018048","email":"sales@buildoramaterials.com","sameAs":["https://www.facebook.com/buildoramaterials","https://www.instagram.com/buildoramaterials"]}
   </script>
 
-  <!-- META PIXEL — Replace YOUR_PIXEL_ID with your actual Facebook Pixel ID -->
-  <!-- Get your Pixel ID from: business.facebook.com → Events Manager → Connect Data Sources → Web → Facebook Pixel -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init','YOUR_PIXEL_ID'); // ← Replace YOUR_PIXEL_ID
+  fbq('init','YOUR_PIXEL_ID');
   fbq('track','PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-  <!-- END META PIXEL -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
 
   <style>
+    :root{
+      --green:#1E4F4B;
+      --green-dark:#163A37;
+      --green-light:#EBF2F1;
+      --orange:#F58C15;
+      --orange-dark:#D97A0F;
+      --bg:#FFFFFF;
+      --bg-alt:#F4F6F6;
+      --text:#1A2B2A;
+      --text-sec:#4A5E5C;
+      --text-muted:#6B7E7C;
+      --border:#D8E4E3;
+      --nav-h:72px;
+    }
+
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{background:#000;color:#fff;font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;font-weight:400;line-height:1.7;overflow-x:hidden}
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%}
-    ::-webkit-scrollbar{width:3px}
-    ::-webkit-scrollbar-track{background:#000}
-    ::-webkit-scrollbar-thumb{background:#fff}
+    ::-webkit-scrollbar{width:4px}
+    ::-webkit-scrollbar-track{background:var(--bg-alt)}
+    ::-webkit-scrollbar-thumb{background:var(--green)}
 
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 4vw;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(0,0,0,.94);backdrop-filter:blur(20px);transition:border-color .3s}
-    .nav-logo{display:flex;align-items:center;gap:10px}
-    .nav-logo svg{width:32px;height:32px}
-    .logo-txt{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.1em}
-    .logo-txt span{opacity:.35}
-    .nav-links{display:flex;gap:2rem;list-style:none}
-    .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);transition:color .2s}
-    .nav-links a:hover{color:#fff}
-    .nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);padding:8px 18px;color:rgba(255,255,255,.6);transition:all .2s}
-    .nav-cta:hover{background:#fff;color:#000;border-color:#fff}
-    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
-    .ham span{width:22px;height:1px;background:#fff;transition:.3s}
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 4vw;gap:1rem}
+    .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+    .nav-logo svg{width:36px;height:36px}
+    .logo-txt{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.1em;color:var(--green)}
+    .logo-txt span{color:var(--text-muted)}
+    .nav-links{display:flex;list-style:none;margin:0 auto}
+    .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-sec);padding:0 .9rem;height:var(--nav-h);display:flex;align-items:center;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
+    .nav-links a:hover,.nav-links a.active{color:var(--green);border-bottom-color:var(--orange)}
+    .nav-actions{display:flex;gap:.6rem;align-items:center;flex-shrink:0}
+    .btn-brochure{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;border:1.5px solid var(--green);color:var(--green);padding:8px 14px;display:inline-flex;align-items:center;gap:6px;transition:all .2s;white-space:nowrap}
+    .btn-brochure:hover{background:var(--green);color:#fff}
+    .btn-brochure svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+    .btn-quote{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;background:var(--orange);color:#fff;padding:9px 18px;display:inline-flex;align-items:center;gap:6px;transition:background .2s;white-space:nowrap}
+    .btn-quote:hover{background:var(--orange-dark)}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;margin-right:-8px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+    .ham span{width:22px;height:2px;background:var(--green);transition:.3s;display:block}
 
-    /* HERO */
-    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:64px 4vw 7vh;position:relative;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
-    .hero-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:26vw;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;line-height:1;user-select:none}
-    .hero-eye{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.8rem;display:flex;align-items:center;gap:10px;animation:fu .7s .2s both}
-    .hero-eye::before{content:'';width:36px;height:1px;background:rgba(255,255,255,.25)}
-    .hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,17vw,19rem);line-height:.88;letter-spacing:-.01em;overflow:hidden}
-    .hl{display:block;animation:su .9s cubic-bezier(.16,1,.3,1) both}
-    .hl:nth-child(1){animation-delay:.25s}
-    .hl:nth-child(2){animation-delay:.4s;color:rgba(255,255,255,.13)}
-    .hl:nth-child(3){animation-delay:.55s}
-    .hero-motto{font-family:'Barlow Condensed',sans-serif;font-size:clamp(.9rem,2.5vw,1.6rem);letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:1.5rem;animation:fu .7s .75s both}
-    .hero-motto strong{color:#fff;font-weight:700}
-    .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:2.5rem;animation:fu .7s .9s both;flex-wrap:wrap;gap:2rem}
-    .hero-desc{max-width:340px;font-size:.88rem;line-height:1.85;color:rgba(255,255,255,.38)}
-    .hero-desc strong{color:#fff;font-weight:500}
-    .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-    .btn-w{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:#fff;color:#000;padding:13px 28px;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-    .btn-w:hover{background:#e0e0e0;transform:translateY(-2px)}
-    .btn-o{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);padding:13px 28px;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-    .btn-o:hover{border-color:#fff;color:#fff}
-    .scroll-ind{position:absolute;right:4vw;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.18);display:flex;align-items:center;gap:14px;animation:fu 1s 1.1s both}
-    .scroll-ind::after{content:'';width:1px;height:72px;background:rgba(255,255,255,.12)}
+    /* ── HERO ── */
+    #hero{min-height:100vh;padding:calc(var(--nav-h) + 80px) 4vw 80px;display:flex;align-items:center;background:var(--bg)}
+    .hero-inner{max-width:820px}
+    .hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:1.6rem;display:flex;align-items:center;gap:12px}
+    .hero-eyebrow::before{content:'';width:40px;height:2px;background:var(--orange)}
+    .hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.5rem,13vw,11rem);line-height:.9;letter-spacing:-.01em;color:var(--green);margin-bottom:1.4rem}
+    .hero-h1 em{color:var(--text);font-style:normal}
+    .hero-tagline{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1rem,2.5vw,1.45rem);letter-spacing:.28em;text-transform:uppercase;color:var(--text-sec);margin-bottom:1.2rem}
+    .hero-desc{font-size:1.05rem;color:var(--text-sec);max-width:520px;line-height:1.8;margin-bottom:2.5rem}
+    .hero-desc strong{color:var(--text);font-weight:500}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:3.5rem}
+    .btn-orange{font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--orange);color:#fff;padding:15px 32px;display:inline-flex;align-items:center;gap:8px;transition:background .2s;min-height:48px}
+    .btn-orange:hover{background:var(--orange-dark)}
+    .btn-green-out{font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border:2px solid var(--green);color:var(--green);padding:13px 32px;display:inline-flex;align-items:center;gap:8px;transition:all .2s;min-height:48px}
+    .btn-green-out:hover{background:var(--green);color:#fff}
+    .hero-stats{display:flex;gap:3rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid var(--border)}
+    .stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--green);line-height:1}
+    .stat-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-top:.2rem}
 
-    /* TICKER */
-    .ticker{background:#fff;overflow:hidden}
-    .t-track{display:inline-flex;animation:tick 22s linear infinite}
-    .t-item{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.14em;color:#000;padding:11px 1.8rem;display:inline-flex;align-items:center;gap:1.8rem}
-    .t-dot{width:4px;height:4px;background:#000;border-radius:50%;opacity:.25}
+    /* ── TICKER ── */
+    .ticker{background:var(--green);overflow:hidden}
+    .t-track{display:inline-flex;animation:tick 26s linear infinite}
+    .t-item{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.16em;color:rgba(255,255,255,.7);padding:13px 2rem;display:inline-flex;align-items:center;gap:2rem}
+    .t-dot{width:4px;height:4px;background:var(--orange);border-radius:50%}
 
-    /* SECTIONS */
-    section{padding:110px 4vw}
-    .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:1.2rem;display:flex;align-items:center;gap:10px}
-    .eyebrow::before{content:'';width:28px;height:1px;background:rgba(255,255,255,.22)}
-    .sec-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,8rem);line-height:.92;letter-spacing:-.01em}
+    /* ── SECTION COMMONS ── */
+    section{padding:100px 4vw}
+    .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+    .eyebrow::before{content:'';width:28px;height:2px;background:var(--orange)}
+    .sec-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,7rem);line-height:.92;letter-spacing:-.01em;color:var(--green)}
 
-    /* ABOUT */
-    #about{background:#000;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
-    .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
-    .ab-left .sec-h{font-size:clamp(3.5rem,8.5vw,10rem)}
-    .ab-left .sec-h em{font-family:'DM Serif Display',serif;font-style:italic;color:rgba(255,255,255,.18)}
-    .ab-right p{font-size:1rem;line-height:1.9;color:rgba(255,255,255,.42);margin-bottom:1.4rem}
-    .ab-right p strong{color:#fff;font-weight:500}
-    .pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:2.5rem;background:rgba(255,255,255,.07)}
-    .pillar{background:#000;padding:1.6rem 1.4rem}
-    .p-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(255,255,255,.08);line-height:1;margin-bottom:.4rem}
-    .pillar h4{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:.35rem}
-    .pillar p{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65}
+    /* ── ABOUT ── */
+    #about{background:var(--bg-alt)}
+    .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start}
+    .ab-left .sec-h{font-size:clamp(3.5rem,8vw,9rem)}
+    .ab-left .sec-h em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--text-muted)}
+    .ab-right p{font-size:1rem;line-height:1.85;color:var(--text-sec);margin-bottom:1.4rem}
+    .ab-right p strong{color:var(--text);font-weight:500}
+    .pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:2.5rem;background:var(--border)}
+    .pillar{background:var(--bg-alt);padding:1.6rem 1.4rem}
+    .p-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--border);line-height:1;margin-bottom:.4rem}
+    .pillar h4{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:.35rem}
+    .pillar p{font-size:.88rem;color:var(--text-sec);line-height:1.65}
 
-    /* PRODUCTS PREVIEW */
-    #products-preview{background:#080808}
+    /* ── PRODUCTS PREVIEW ── */
+    #products-preview{background:var(--bg)}
     .pp-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem}
-    .pp-count{font-family:'Bebas Neue',sans-serif;font-size:5rem;color:rgba(255,255,255,.05);line-height:1}
-    .p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.05)}
-    .pc{background:#080808;padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:background .3s;display:block;text-decoration:none;color:inherit}
-    .pc:hover{background:#111}
-    .pc::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:#fff;transition:height .4s}
-    .pc:hover::before{height:100%}
-    .pc-icon{font-size:1.3rem;margin-bottom:1.2rem;opacity:.5}
-    .pc h3{font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:.5rem;line-height:1.3}
-    .pc p{font-size:.72rem;color:rgba(255,255,255,.25);line-height:1.5}
-    .pc-arrow{position:absolute;bottom:1.5rem;right:1.5rem;font-size:.8rem;color:rgba(255,255,255,.15);transition:all .3s;opacity:0}
-    .pc:hover .pc-arrow{opacity:1;color:#fff;transform:translateX(3px)}
-    .pc-n{position:absolute;bottom:1.2rem;right:1.2rem;font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(255,255,255,.04);line-height:1}
+    .pp-count{font-family:'Bebas Neue',sans-serif;font-size:5.5rem;color:var(--green-light);line-height:1}
+    .p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+    .pc{background:var(--bg);padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:background .2s;display:block;color:inherit;border-left:3px solid transparent}
+    .pc:hover{background:var(--green-light);border-left-color:var(--orange)}
+    .pc-icon{font-size:1.35rem;margin-bottom:1.1rem}
+    .pc h3{font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.45rem;line-height:1.3}
+    .pc p{font-size:.8rem;color:var(--text-sec);line-height:1.55}
+    .pc-arrow{position:absolute;bottom:1.4rem;right:1.4rem;font-size:.85rem;color:var(--orange);opacity:0;transition:opacity .2s,transform .2s}
+    .pc:hover .pc-arrow{opacity:1;transform:translateX(3px)}
     .view-all-wrap{text-align:center;margin-top:3rem}
-    .btn-view{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:14px 36px;display:inline-flex;align-items:center;gap:10px;transition:all .2s}
-    .btn-view:hover{background:#fff;color:#000;border-color:#fff}
+    .btn-view{font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--orange);color:#fff;padding:15px 40px;display:inline-flex;align-items:center;gap:10px;transition:background .2s;min-height:48px}
+    .btn-view:hover{background:var(--orange-dark)}
 
-    /* BRANDS */
-    #brands{background:#000;border-top:1px solid rgba(255,255,255,.05)}
+    /* ── BROCHURE DOWNLOAD ── */
+    #brochure{background:var(--green);padding:80px 4vw}
+    .brochure-inner{display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap}
+    .brochure-text .eyebrow{color:rgba(255,255,255,.5)}
+    .brochure-text .eyebrow::before{background:rgba(255,255,255,.5)}
+    .brochure-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5.5rem);color:#fff;line-height:.92;margin-bottom:1rem}
+    .brochure-desc{font-size:1rem;color:rgba(255,255,255,.65);max-width:460px;line-height:1.7}
+    .btn-dl{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--orange);color:#fff;padding:18px 40px;display:inline-flex;align-items:center;gap:12px;transition:background .2s;flex-shrink:0;min-height:56px}
+    .btn-dl:hover{background:var(--orange-dark)}
+    .btn-dl svg{width:18px;height:18px;fill:#fff}
+
+    /* ── BRANDS ── */
+    #brands{background:var(--bg-alt)}
     .br-intro{display:grid;grid-template-columns:1fr 2fr;gap:5vw;align-items:start;margin-bottom:4rem}
-    .br-note{font-size:.82rem;color:rgba(255,255,255,.28);line-height:1.8;margin-top:.8rem}
-    .br-note strong{color:rgba(255,255,255,.55)}
-    .b-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(255,255,255,.05)}
-    .bc{background:#000;aspect-ratio:2/1;display:flex;align-items:center;justify-content:center;padding:.8rem;transition:background .3s;overflow:hidden}
-    .bc:hover{background:#0d0d0d}
-    .bc img{width:100%;height:100%;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.22;transition:opacity .35s,filter .35s}
-    .bc:hover img{opacity:.85;filter:grayscale(0) brightness(1) invert(0)}
-    .b-name{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);text-align:center;display:none;transition:color .3s}
-    .bc:hover .b-name{color:rgba(255,255,255,.6)}
+    .br-note{font-size:.95rem;color:var(--text-sec);line-height:1.8;margin-top:.8rem}
+    .br-note strong{color:var(--text);font-weight:500}
+    .b-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border)}
+    .bc{background:var(--bg-alt);aspect-ratio:2/1;display:flex;align-items:center;justify-content:center;padding:.8rem;transition:background .2s;overflow:hidden}
+    .bc:hover{background:#fff}
+    .bc img{width:100%;height:100%;object-fit:contain;filter:grayscale(1) opacity(.3);transition:filter .3s}
+    .bc:hover img{filter:grayscale(0) opacity(1)}
+    .b-name{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);text-align:center}
 
-    /* WHY */
-    #why{background:#fff;color:#000;padding:110px 4vw}
-    #why .eyebrow{color:rgba(0,0,0,.25)}
-    #why .eyebrow::before{background:rgba(0,0,0,.25)}
-    #why .sec-h{color:#000}
-    .w-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.07);margin-top:3.5rem}
-    .wc{background:#fff;padding:2.2rem 1.8rem;transition:background .3s}
-    .wc:hover{background:#f5f5f5}
-    .wc-n{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;color:rgba(0,0,0,.05);line-height:1;margin-bottom:.8rem}
-    .wc h3{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#000;margin-bottom:.6rem}
-    .wc p{font-size:.82rem;color:rgba(0,0,0,.45);line-height:1.75}
+    /* ── WHY ── */
+    #why{background:var(--bg)}
+    .w-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+    .wc{background:var(--bg);padding:2.2rem 1.8rem;transition:background .2s;border-top:3px solid transparent}
+    .wc:hover{background:var(--green-light);border-top-color:var(--orange)}
+    .wc-n{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--green-light);line-height:1;margin-bottom:.8rem}
+    .wc:hover .wc-n{color:var(--border)}
+    .wc h3{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.6rem}
+    .wc p{font-size:.9rem;color:var(--text-sec);line-height:1.75}
 
-    /* STATEMENT */
-    .stmt{background:#000;padding:5rem 4vw;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
-    .stmt-txt{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(1.8rem,4.5vw,4.5rem);color:rgba(255,255,255,.1);line-height:1.35;max-width:860px}
-    .stmt-txt em{color:rgba(255,255,255,.65);font-style:normal;font-family:'Bebas Neue',sans-serif;letter-spacing:.04em}
+    /* ── STATEMENT ── */
+    .stmt{background:var(--green-light);padding:5rem 4vw;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .stmt-txt{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(1.6rem,3.8vw,3.4rem);color:var(--text-sec);line-height:1.4;max-width:860px}
+    .stmt-txt em{color:var(--green);font-style:normal;font-family:'Bebas Neue',sans-serif;letter-spacing:.04em}
 
-    /* CONTACT */
-    #contact{background:#000;border-top:1px solid rgba(255,255,255,.05)}
+    /* ── CONTACT ── */
+    #contact{background:var(--bg-alt)}
     .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw;margin-top:3.5rem}
-    .ct-h3{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;margin-bottom:2rem;color:rgba(255,255,255,.12)}
-    .cd{display:flex;gap:.9rem;margin-bottom:1.8rem;align-items:flex-start;padding-bottom:1.8rem;border-bottom:1px solid rgba(255,255,255,.05)}
+    .ct-h3{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;margin-bottom:2rem;color:var(--green)}
+    .cd{display:flex;gap:.9rem;margin-bottom:1.5rem;align-items:flex-start;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
     .cd:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-    .ci{width:34px;height:34px;border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0;margin-top:2px}
-    .cl{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.18);margin-bottom:3px}
-    .cv{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.65}
-    .cv a{color:rgba(255,255,255,.55);transition:color .2s}
-    .cv a:hover{color:#fff}
-    .cf{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.05)}
-    .ff{background:#000}
-    .ff input,.ff textarea,.ff select{width:100%;background:#000;border:none;padding:1.15rem 1.4rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:300;outline:none;transition:background .2s}
-    .ff input:focus,.ff textarea:focus,.ff select:focus{background:#0a0a0a}
-    .ff input::placeholder,.ff textarea::placeholder{color:rgba(255,255,255,.18)}
-    .ff select option{background:#111}
-    .ff textarea{min-height:95px;resize:vertical}
+    .ci{width:38px;height:38px;border:1.5px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;margin-top:2px}
+    .cl{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px}
+    .cv{font-size:.9rem;color:var(--text-sec);line-height:1.65}
+    .cv a{color:var(--green);transition:color .2s}
+    .cv a:hover{color:var(--orange)}
+    .cf{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+    .ff{background:var(--bg-alt)}
+    .ff input,.ff textarea,.ff select{width:100%;background:#fff;border:none;border-bottom:2px solid var(--border);padding:1.1rem 1.2rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:400;outline:none;transition:border-color .2s}
+    .ff input:focus,.ff textarea:focus,.ff select:focus{border-bottom-color:var(--green)}
+    .ff input::placeholder,.ff textarea::placeholder{color:var(--text-muted)}
+    .ff select{color:var(--text-sec)}
+    .ff select option{color:var(--text)}
+    .ff textarea{min-height:100px;resize:vertical}
     .fr2{display:grid;grid-template-columns:1fr 1fr;gap:1px}
-    .fsub{background:#fff;color:#000;border:none;padding:1.15rem 2rem;font-family:'Barlow Condensed',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;width:100%;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px}
-    .fsub:hover{background:#e0e0e0}
+    .fsub{background:var(--orange);color:#fff;border:none;padding:1.1rem 2rem;font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;width:100%;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px}
+    .fsub:hover{background:var(--orange-dark)}
 
-    /* FOOTER */
-    footer{background:#000;border-top:1px solid rgba(255,255,255,.05);padding:3.5rem 4vw 2rem}
-    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5vw;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:1.8rem}
-    .ft-name{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.1em;margin-bottom:.4rem}
-    .ft-sub{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.18);margin-bottom:.5rem}
-    .ft-motto{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.9rem}
-    .ft-tag{font-size:.77rem;color:rgba(255,255,255,.2);line-height:1.7;max-width:210px}
-    .fc h4{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.18);margin-bottom:1.1rem}
+    /* ── FOOTER ── */
+    footer{background:var(--green);padding:3.5rem 4vw 2rem}
+    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5vw;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:1.8rem}
+    .ft-name{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.1em;margin-bottom:.3rem;color:#fff}
+    .ft-sub{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.4rem}
+    .ft-motto{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.9rem}
+    .ft-tag{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:210px}
+    .fc h4{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:1.1rem}
     .fc ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-    .fc ul li a{font-size:.78rem;color:rgba(255,255,255,.28);transition:color .2s}
+    .fc ul li a{font-size:.82rem;color:rgba(255,255,255,.5);transition:color .2s}
     .fc ul li a:hover{color:#fff}
     .ft-social{display:flex;gap:.6rem;margin-top:1.2rem}
-    .ft-social a{width:30px;height:30px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:rgba(255,255,255,.25);transition:all .2s}
-    .ft-social a:hover{background:#fff;color:#000;border-color:#fff}
+    .ft-social a{width:32px;height:32px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:rgba(255,255,255,.4);transition:all .2s}
+    .ft-social a:hover{background:var(--orange);border-color:var(--orange);color:#fff}
     .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-    .ft-bot p{font-size:.68rem;color:rgba(255,255,255,.13);letter-spacing:.04em}
-    .ft-bot a{color:rgba(255,255,255,.22);transition:color .2s}
+    .ft-bot p{font-size:.72rem;color:rgba(255,255,255,.28);letter-spacing:.04em}
+    .ft-bot a{color:rgba(255,255,255,.4);transition:color .2s}
     .ft-bot a:hover{color:#fff}
 
-    /* WHATSAPP FLOATING BUTTON */
+    /* ── WHATSAPP ── */
     .wa-btn{position:fixed;bottom:2rem;right:2rem;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;text-decoration:none}
     .wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.55)}
     .wa-btn svg{width:28px;height:28px;fill:#fff}
-    .wa-tooltip{position:absolute;right:68px;background:#fff;color:#000;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;white-space:nowrap;border-radius:2px;opacity:0;pointer-events:none;transition:opacity .2s}
+    .wa-tooltip{position:absolute;right:68px;background:var(--green);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;white-space:nowrap;border-radius:2px;opacity:0;pointer-events:none;transition:opacity .2s}
     .wa-btn:hover .wa-tooltip{opacity:1}
 
-    /* MOBILE MENU */
-    .mob-menu{display:none;position:fixed;inset:0;background:#000;z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+    /* ── MOBILE MENU ── */
+    .mob-menu{display:none;position:fixed;inset:0;background:#fff;z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem}
     .mob-menu.open{display:flex}
-    .mob-menu a{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.07em;color:rgba(255,255,255,.4);transition:color .2s}
-    .mob-menu a:hover{color:#fff}
-    .mob-x{position:absolute;top:1.5rem;right:4vw;font-size:1.8rem;cursor:pointer;color:rgba(255,255,255,.3)}
+    .mob-menu a{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:.07em;color:var(--green);transition:color .2s;min-height:44px;display:flex;align-items:center}
+    .mob-menu a:hover{color:var(--orange)}
+    .mob-dl-btn{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--orange);color:#fff;padding:14px 32px;margin-top:.8rem;display:inline-flex;align-items:center;gap:8px}
+    .mob-x{position:absolute;top:1.5rem;right:4vw;font-size:2rem;cursor:pointer;color:var(--text-muted);line-height:1;padding:8px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
 
-    /* REVEAL */
-    .rev{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease}
+    /* ── REVEAL ── */
+    .rev{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
     .rev.on{opacity:1;transform:translateY(0)}
-    .revl{opacity:0;transform:translateX(-36px);transition:opacity .75s ease,transform .75s ease}
+    .revl{opacity:0;transform:translateX(-24px);transition:opacity .65s ease,transform .65s ease}
     .revl.on{opacity:1;transform:translateX(0)}
 
-    @keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes su{from{transform:translateY(105%)}to{transform:translateY(0)}}
     @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-    @media(max-width:1100px){.p-grid{grid-template-columns:repeat(3,1fr)}.b-grid{grid-template-columns:repeat(4,1fr)}.ft-grid{grid-template-columns:1fr 1fr;gap:2rem}}
-    @media(max-width:800px){.ab-grid,.ct-grid,.br-intro{grid-template-columns:1fr}.nav-links,.nav-cta{display:none}.ham{display:flex}.w-grid{grid-template-columns:1fr}.ft-grid{grid-template-columns:1fr}.p-grid{grid-template-columns:repeat(2,1fr)}.b-grid{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:480px){.p-grid{grid-template-columns:1fr}.b-grid{grid-template-columns:repeat(2,1fr)}.hero-h1{font-size:4.5rem}}
+    /* ── RESPONSIVE ── */
+    @media(max-width:1100px){
+      .p-grid{grid-template-columns:repeat(3,1fr)}
+      .b-grid{grid-template-columns:repeat(4,1fr)}
+      .ft-grid{grid-template-columns:1fr 1fr;gap:2rem}
+    }
+    @media(max-width:900px){
+      .ab-grid,.ct-grid,.br-intro{grid-template-columns:1fr}
+      .nav-links,.nav-actions{display:none}
+      .ham{display:flex}
+      .w-grid{grid-template-columns:1fr 1fr}
+      .ft-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:768px){
+      section{padding:70px 5vw}
+      #brochure{padding:60px 5vw}
+      .brochure-inner{flex-direction:column;align-items:flex-start}
+      .hero-stats{gap:2rem}
+      .p-grid{grid-template-columns:repeat(2,1fr)}
+      .b-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:480px){
+      section{padding:60px 5vw}
+      .hero-h1{font-size:4rem}
+      .p-grid{grid-template-columns:1fr}
+      .b-grid{grid-template-columns:repeat(2,1fr)}
+      .w-grid{grid-template-columns:1fr}
+      .ft-grid{grid-template-columns:1fr}
+      .pillars{grid-template-columns:1fr}
+      .fr2{grid-template-columns:1fr}
+    }
+    @media(max-width:375px){
+      .hero-h1{font-size:3.4rem}
+    }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="nav">
-  <a href="/" class="nav-logo">
-    <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" fill="#fff"/><path d="M5 7H18C22 7 25.5 10.5 25.5 14.5C25.5 17 24 19.2 21.8 20.3C24.2 21.5 26 24 26 27H5V7Z" fill="#000"/><path d="M9 11H17.5C19.4 11 21 12.6 21 14.5C21 16.4 19.4 18 17.5 18H9V11Z" fill="#fff"/><path d="M9 20H18C20.2 20 22 21.8 22 24C22 26.2 20.2 28 18 28H9V20Z" fill="#fff"/></svg>
+<nav id="main-nav">
+  <a href="/" class="nav-logo" aria-label="Buildora Materials — Home">
+    <svg viewBox="0 0 32 32" fill="none" role="img" aria-hidden="true">
+      <rect width="32" height="32" fill="#1E4F4B"/>
+      <path d="M5 7H18C22 7 25.5 10.5 25.5 14.5C25.5 17 24 19.2 21.8 20.3C24.2 21.5 26 24 26 27H5V7Z" fill="#fff"/>
+      <path d="M9 11H17.5C19.4 11 21 12.6 21 14.5C21 16.4 19.4 18 17.5 18H9V11Z" fill="#1E4F4B"/>
+      <path d="M9 20H18C20.2 20 22 21.8 22 24C22 26.2 20.2 28 18 28H9V20Z" fill="#1E4F4B"/>
+    </svg>
     <span class="logo-txt">BUILDORA <span>MATERIALS</span></span>
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" role="navigation" aria-label="Main navigation">
+    <li><a href="/">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="#brands">Brands</a></li>
-    <li><a href="#why">Why Us</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Get a Quote</a>
-  <div class="ham" id="ham" onclick="openMob()"><span></span><span></span><span></span></div>
+  <div class="nav-actions">
+    <a href="assets/brochure.pdf" download class="btn-brochure" aria-label="Download company brochure PDF">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v1.5H3V14z"/></svg>
+      Download Brochure
+    </a>
+    <a href="#contact" class="btn-quote">Get a Quote</a>
+  </div>
+  <div class="ham" id="ham" onclick="openMob()" aria-label="Open menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mob-menu" id="mob">
-  <span class="mob-x" onclick="closeMob()">✕</span>
+<div class="mob-menu" id="mob" role="dialog" aria-label="Mobile navigation">
+  <span class="mob-x" onclick="closeMob()" role="button" tabindex="0" aria-label="Close menu">✕</span>
+  <a href="/" onclick="closeMob()">Home</a>
   <a href="#about" onclick="closeMob()">About</a>
   <a href="products.html" onclick="closeMob()">Products</a>
   <a href="#brands" onclick="closeMob()">Brands</a>
-  <a href="#why" onclick="closeMob()">Why Us</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="assets/brochure.pdf" download class="mob-dl-btn" onclick="closeMob()">
+    ↓ Download Brochure
+  </a>
 </div>
 
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-watermark" aria-hidden="true">BMT</div>
-  <div class="hero-eye">Dubai, United Arab Emirates — Premium Building Materials</div>
-  <h1 class="hero-h1">
-    <span class="hl">BUILD</span>
-    <span class="hl">ORA</span>
-    <span class="hl">MATERIALS</span>
-  </h1>
-  <p class="hero-motto">— <strong>Build Beyond Limits</strong> —</p>
-  <div class="hero-foot">
+<section id="hero" aria-label="Hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Dubai, United Arab Emirates — Premium Building Materials</div>
+    <h1 class="hero-h1">BUILDORA<br/><em>MATERIALS</em></h1>
+    <p class="hero-tagline">— Build Beyond Limits —</p>
     <p class="hero-desc">A comprehensive supply partner for <strong>premium building materials</strong> across the UAE. 14 product categories. 50+ global brands. One trusted source.</p>
     <div class="hero-actions">
-      <a href="products.html" class="btn-w">Explore Products →</a>
-      <a href="#contact" class="btn-o">Get a Quote</a>
+      <a href="products.html" class="btn-orange">Explore Products →</a>
+      <a href="assets/brochure.pdf" download class="btn-green-out">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v1.5H3V14z"/></svg>
+        Download Brochure
+      </a>
+    </div>
+    <div class="hero-stats" aria-label="Key statistics">
+      <div class="stat-item">
+        <div class="stat-num">14</div>
+        <div class="stat-label">Product Categories</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Global Brands</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">UAE</div>
+        <div class="stat-label">Nationwide Delivery</div>
+      </div>
     </div>
   </div>
-  <div class="scroll-ind" aria-hidden="true">Scroll</div>
 </section>
 
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="t-track">
-    <div class="t-item">Electrical<div class="t-dot"></div></div><div class="t-item">Cables<div class="t-dot"></div></div><div class="t-item">Plumbing<div class="t-dot"></div></div><div class="t-item">HVAC<div class="t-dot"></div></div><div class="t-item">Lighting<div class="t-dot"></div></div><div class="t-item">Safety<div class="t-dot"></div></div><div class="t-item">Power Tools<div class="t-dot"></div></div><div class="t-item">Pumps<div class="t-dot"></div></div><div class="t-item">Hardware<div class="t-dot"></div></div><div class="t-item">Sanitary<div class="t-dot"></div></div><div class="t-item">Painting<div class="t-dot"></div></div><div class="t-item">Earthing<div class="t-dot"></div></div>
-    <div class="t-item">Electrical<div class="t-dot"></div></div><div class="t-item">Cables<div class="t-dot"></div></div><div class="t-item">Plumbing<div class="t-dot"></div></div><div class="t-item">HVAC<div class="t-dot"></div></div><div class="t-item">Lighting<div class="t-dot"></div></div><div class="t-item">Safety<div class="t-dot"></div></div><div class="t-item">Power Tools<div class="t-dot"></div></div><div class="t-item">Pumps<div class="t-dot"></div></div><div class="t-item">Hardware<div class="t-dot"></div></div><div class="t-item">Sanitary<div class="t-dot"></div></div><div class="t-item">Painting<div class="t-dot"></div></div><div class="t-item">Earthing<div class="t-dot"></div></div>
+    <div class="t-item">Electrical<div class="t-dot"></div></div>
+    <div class="t-item">Cables<div class="t-dot"></div></div>
+    <div class="t-item">Plumbing<div class="t-dot"></div></div>
+    <div class="t-item">HVAC<div class="t-dot"></div></div>
+    <div class="t-item">Lighting<div class="t-dot"></div></div>
+    <div class="t-item">Safety<div class="t-dot"></div></div>
+    <div class="t-item">Power Tools<div class="t-dot"></div></div>
+    <div class="t-item">Pumps<div class="t-dot"></div></div>
+    <div class="t-item">Hardware<div class="t-dot"></div></div>
+    <div class="t-item">Sanitary<div class="t-dot"></div></div>
+    <div class="t-item">Painting<div class="t-dot"></div></div>
+    <div class="t-item">Earthing<div class="t-dot"></div></div>
+    <div class="t-item">Electrical<div class="t-dot"></div></div>
+    <div class="t-item">Cables<div class="t-dot"></div></div>
+    <div class="t-item">Plumbing<div class="t-dot"></div></div>
+    <div class="t-item">HVAC<div class="t-dot"></div></div>
+    <div class="t-item">Lighting<div class="t-dot"></div></div>
+    <div class="t-item">Safety<div class="t-dot"></div></div>
+    <div class="t-item">Power Tools<div class="t-dot"></div></div>
+    <div class="t-item">Pumps<div class="t-dot"></div></div>
+    <div class="t-item">Hardware<div class="t-dot"></div></div>
+    <div class="t-item">Sanitary<div class="t-dot"></div></div>
+    <div class="t-item">Painting<div class="t-dot"></div></div>
+    <div class="t-item">Earthing<div class="t-dot"></div></div>
   </div>
 </div>
 
@@ -304,10 +397,26 @@
       <p>From <strong>durable electrical systems</strong> to sustainable insulation solutions and precision-engineered finishes — residential, commercial, or industrial — we supply the materials and expertise to bring your vision to life.</p>
       <p>Our commitment: <strong>personalized service, expert advice, and timely delivery</strong>. We leverage the latest industry practices to maintain the highest standards of quality and reliability.</p>
       <div class="pillars rev">
-        <div class="pillar"><div class="p-num">01</div><h4>Quality First</h4><p>Every product meets the highest global standards of quality and performance.</p></div>
-        <div class="pillar"><div class="p-num">02</div><h4>Fast Delivery</h4><p>Timely supply that keeps your project on schedule and on budget.</p></div>
-        <div class="pillar"><div class="p-num">03</div><h4>Expert Team</h4><p>Experienced professionals who understand your technical requirements.</p></div>
-        <div class="pillar"><div class="p-num">04</div><h4>One Source</h4><p>14 categories and 50+ brands under one roof in Dubai.</p></div>
+        <div class="pillar">
+          <div class="p-num">01</div>
+          <h4>Quality First</h4>
+          <p>Every product meets the highest global standards of quality and performance.</p>
+        </div>
+        <div class="pillar">
+          <div class="p-num">02</div>
+          <h4>Fast Delivery</h4>
+          <p>Timely supply that keeps your project on schedule and on budget.</p>
+        </div>
+        <div class="pillar">
+          <div class="p-num">03</div>
+          <h4>Expert Team</h4>
+          <p>Experienced professionals who understand your technical requirements.</p>
+        </div>
+        <div class="pillar">
+          <div class="p-num">04</div>
+          <h4>One Source</h4>
+          <p>14 categories and 50+ brands under one roof in Dubai.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -316,27 +425,100 @@
 <!-- PRODUCTS PREVIEW -->
 <section id="products-preview">
   <div class="pp-hd rev">
-    <div><div class="eyebrow">What We Supply</div><h2 class="sec-h">PRODUCT<br/>RANGE</h2></div>
-    <div class="pp-count">14</div>
+    <div>
+      <div class="eyebrow">What We Supply</div>
+      <h2 class="sec-h">PRODUCT<br/>RANGE</h2>
+    </div>
+    <div class="pp-count" aria-hidden="true">14</div>
   </div>
   <div class="p-grid rev">
-    <a class="pc" href="products.html#electrical"><div class="pc-icon">⚡</div><h3>Low Voltage Energy Distribution</h3><p>Distribution boards, circuit breakers, isolators, control components</p><span class="pc-arrow">→</span><div class="pc-n">01</div></a>
-    <a class="pc" href="products.html#cable-management"><div class="pc-icon">🔧</div><h3>Cable Management System</h3><p>Cable trays, PVC conduit, trunking, glands, steel conduit</p><span class="pc-arrow">→</span><div class="pc-n">02</div></a>
-    <a class="pc" href="products.html#cables"><div class="pc-icon">🔌</div><h3>Cables</h3><p>Solar, XLPE, fire performance, multicore, fibre-optic</p><span class="pc-arrow">→</span><div class="pc-n">03</div></a>
-    <a class="pc" href="products.html#plumbing"><div class="pc-icon">🚿</div><h3>Plumbing Accessories</h3><p>PPR, UPVC, HDPE, Pex pipes, drainage systems</p><span class="pc-arrow">→</span><div class="pc-n">04</div></a>
-    <a class="pc" href="products.html#switch"><div class="pc-icon">💡</div><h3>Switch Sockets</h3><p>Waterproof, smart, grid, metal clad, pop-up switches</p><span class="pc-arrow">→</span><div class="pc-n">05</div></a>
-    <a class="pc" href="products.html#painting"><div class="pc-icon">🎨</div><h3>Painting</h3><p>Interior, exterior, anti-fungal emulsions, enamel, primers</p><span class="pc-arrow">→</span><div class="pc-n">06</div></a>
-    <a class="pc" href="products.html#tools"><div class="pc-icon">🔨</div><h3>Hand & Power Tools</h3><p>Drills, angle grinders, impact wrench, jig saw, Hilti</p><span class="pc-arrow">→</span><div class="pc-n">07</div></a>
-    <a class="pc" href="products.html#earthing"><div class="pc-icon">⚡</div><h3>Earthing & Lightning</h3><p>Lightning protection, earthing systems, copper tape</p><span class="pc-arrow">→</span><div class="pc-n">08</div></a>
-    <a class="pc" href="products.html#sanitary"><div class="pc-icon">🚽</div><h3>Sanitary Fittings</h3><p>Water heaters, sensor taps, ceramics, valves</p><span class="pc-arrow">→</span><div class="pc-n">09</div></a>
-    <a class="pc" href="products.html#safety"><div class="pc-icon">🦺</div><h3>Safety Equipment</h3><p>Safety shoes, helmets, harness, ear plugs, coveralls</p><span class="pc-arrow">→</span><div class="pc-n">10</div></a>
-    <a class="pc" href="products.html#hvac"><div class="pc-icon">❄️</div><h3>HVAC Accessories</h3><p>Copper coils, insulation, refrigerant gas</p><span class="pc-arrow">→</span><div class="pc-n">11</div></a>
-    <a class="pc" href="products.html#lighting"><div class="pc-icon">🔆</div><h3>Lighting Accessories</h3><p>Track, panel, down, spot lights, LED strips</p><span class="pc-arrow">→</span><div class="pc-n">12</div></a>
-    <a class="pc" href="products.html#pumps"><div class="pc-icon">💧</div><h3>Pumps</h3><p>Water, booster, transfer, submersible pumps</p><span class="pc-arrow">→</span><div class="pc-n">13</div></a>
-    <a class="pc" href="products.html#hardware"><div class="pc-icon">🔩</div><h3>Hardware</h3><p>Steel nails, bolts, ladders, tapes, scaffolding</p><span class="pc-arrow">→</span><div class="pc-n">14</div></a>
+    <a class="pc" href="products.html#electrical" aria-label="Low Voltage Energy Distribution products">
+      <div class="pc-icon" aria-hidden="true">⚡</div>
+      <h3>Low Voltage Energy Distribution</h3>
+      <p>Distribution boards, circuit breakers, isolators, control components</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#cable-management" aria-label="Cable Management System products">
+      <div class="pc-icon" aria-hidden="true">🔧</div>
+      <h3>Cable Management System</h3>
+      <p>Cable trays, PVC conduit, trunking, glands, steel conduit</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#cables" aria-label="Cables products">
+      <div class="pc-icon" aria-hidden="true">🔌</div>
+      <h3>Cables</h3>
+      <p>Solar, XLPE, fire performance, multicore, fibre-optic</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#plumbing" aria-label="Plumbing Accessories products">
+      <div class="pc-icon" aria-hidden="true">🚿</div>
+      <h3>Plumbing Accessories</h3>
+      <p>PPR, UPVC, HDPE, Pex pipes, drainage systems</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#switch" aria-label="Switch Sockets products">
+      <div class="pc-icon" aria-hidden="true">💡</div>
+      <h3>Switch Sockets</h3>
+      <p>Waterproof, smart, grid, metal clad, pop-up switches</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#painting" aria-label="Painting products">
+      <div class="pc-icon" aria-hidden="true">🎨</div>
+      <h3>Painting</h3>
+      <p>Interior, exterior, anti-fungal emulsions, enamel, primers</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#tools" aria-label="Hand and Power Tools products">
+      <div class="pc-icon" aria-hidden="true">🔨</div>
+      <h3>Hand &amp; Power Tools</h3>
+      <p>Drills, angle grinders, impact wrench, jig saw, Hilti</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#earthing" aria-label="Earthing and Lightning Protection products">
+      <div class="pc-icon" aria-hidden="true">⚡</div>
+      <h3>Earthing &amp; Lightning</h3>
+      <p>Lightning protection, earthing systems, copper tape</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#sanitary" aria-label="Sanitary Fittings products">
+      <div class="pc-icon" aria-hidden="true">🚽</div>
+      <h3>Sanitary Fittings</h3>
+      <p>Water heaters, sensor taps, ceramics, valves</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#safety" aria-label="Safety Equipment products">
+      <div class="pc-icon" aria-hidden="true">🦺</div>
+      <h3>Safety Equipment</h3>
+      <p>Safety shoes, helmets, harness, ear plugs, coveralls</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#hvac" aria-label="HVAC Accessories products">
+      <div class="pc-icon" aria-hidden="true">❄️</div>
+      <h3>HVAC Accessories</h3>
+      <p>Copper coils, insulation, refrigerant gas</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#lighting" aria-label="Lighting Accessories products">
+      <div class="pc-icon" aria-hidden="true">🔆</div>
+      <h3>Lighting Accessories</h3>
+      <p>Track, panel, down, spot lights, LED strips</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#pumps" aria-label="Pumps products">
+      <div class="pc-icon" aria-hidden="true">💧</div>
+      <h3>Pumps</h3>
+      <p>Water, booster, transfer, submersible pumps</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="pc" href="products.html#hardware" aria-label="Hardware products">
+      <div class="pc-icon" aria-hidden="true">🔩</div>
+      <h3>Hardware</h3>
+      <p>Steel nails, bolts, ladders, tapes, scaffolding</p>
+      <span class="pc-arrow" aria-hidden="true">→</span>
+    </a>
   </div>
   <div class="view-all-wrap rev">
-    <a href="products.html" class="btn-view">View All Products & Search →</a>
+    <a href="products.html" class="btn-view">View All Products &amp; Search →</a>
   </div>
 </section>
 
@@ -345,40 +527,57 @@
   <p class="stmt-txt">Not just a supplier — a <em>COMPLETE</em> building materials ecosystem trusted by contractors, engineers, and developers across the <em>UAE</em>.</p>
 </div>
 
+<!-- BROCHURE DOWNLOAD -->
+<section id="brochure" aria-label="Download company brochure">
+  <div class="brochure-inner">
+    <div class="brochure-text">
+      <div class="eyebrow">Company Profile</div>
+      <h2 class="brochure-title">DOWNLOAD<br/>OUR E-BROCHURE</h2>
+      <p class="brochure-desc">Get our complete product catalogue and company profile in one PDF — categories, brands, specifications, and contact details. No sign-up required.</p>
+    </div>
+    <a href="assets/brochure.pdf" download target="_blank" class="btn-dl" aria-label="Download Buildora company brochure PDF">
+      <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 15l-5-5h3V3h4v7h3l-5 5zm-6 2h12v2H4v-2z"/></svg>
+      Download PDF Brochure
+    </a>
+  </div>
+</section>
+
 <!-- BRANDS -->
 <section id="brands">
   <div class="br-intro rev">
-    <div><div class="eyebrow">Trusted Partners</div><h2 class="sec-h">50+<br/>GLOBAL<br/>BRANDS</h2></div>
+    <div>
+      <div class="eyebrow">Trusted Partners</div>
+      <h2 class="sec-h">50+<br/>GLOBAL<br/>BRANDS</h2>
+    </div>
     <div>
       <p class="br-note">We stock products from over <strong>50 globally certified manufacturers</strong>. Every brand meets strict quality and compliance standards for UAE and GCC construction projects.</p>
-      <p class="br-note" style="margin-top:.8rem;font-size:.75rem;color:rgba(255,255,255,.18)">Logos appear in grayscale — hover to reveal colour. Upload PNG files to <strong style="color:rgba(255,255,255,.3)">assets/brands/</strong> in GitHub.</p>
     </div>
   </div>
   <div class="b-grid rev">
-    <div class="bc"><img src="assets/brands/abb.png" alt="ABB" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">ABB</span></div>
-    <div class="bc"><img src="assets/brands/schneider.png" alt="Schneider" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Schneider</span></div>
-    <div class="bc"><img src="assets/brands/hager.png" alt="Hager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Hager</span></div>
-    <div class="bc"><img src="assets/brands/havells.png" alt="Havells" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Havells</span></div>
-    <div class="bc"><img src="assets/brands/alfanar.png" alt="Alfanar" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Alfanar</span></div>
-    <div class="bc"><img src="assets/brands/legrand.png" alt="Legrand" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Legrand</span></div>
-    <div class="bc"><img src="assets/brands/ducab.png" alt="Ducab" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Ducab</span></div>
-    <div class="bc"><img src="assets/brands/nexans.png" alt="Nexans" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Nexans</span></div>
-    <div class="bc"><img src="assets/brands/belden.png" alt="Belden" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Belden</span></div>
-    <div class="bc"><img src="assets/brands/prysmian.png" alt="Prysmian" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Prysmian</span></div>
-    <div class="bc"><img src="assets/brands/makita.png" alt="Makita" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Makita</span></div>
-    <div class="bc"><img src="assets/brands/bosch.png" alt="Bosch" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Bosch</span></div>
-    <div class="bc"><img src="assets/brands/dewalt.png" alt="DeWalt" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">DeWalt</span></div>
-    <div class="bc"><img src="assets/brands/philips.png" alt="Philips" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Philips</span></div>
-    <div class="bc"><img src="assets/brands/osram.png" alt="OSRAM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">OSRAM</span></div>
-    <div class="bc"><img src="assets/brands/grundfos.png" alt="Grundfos" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Grundfos</span></div>
-    <div class="bc"><img src="assets/brands/grohe.png" alt="GROHE" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">GROHE</span></div>
-    <div class="bc"><img src="assets/brands/jotun.png" alt="Jotun" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Jotun</span></div>
-    <div class="bc"><img src="assets/brands/rakceramics.png" alt="RAK Ceramics" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">RAK Ceramics</span></div>
-    <div class="bc"><img src="assets/brands/honeywell.png" alt="Honeywell" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Honeywell</span></div>
-    <div class="bc"><img src="assets/brands/ariston.png" alt="Ariston" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Ariston</span></div>
-    <div class="bc"><img src="assets/brands/furse.png" alt="Furse" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Furse</span></div>
-    <div class="bc"><img src="assets/brands/hepworth.png" alt="Hepworth" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Hepworth</span></div>
-    <div class="bc"><img src="assets/brands/vaultex.png" alt="Vaultex" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Vaultex</span></div>
+    <div class="bc"><img src="assets/brands/abb.png" alt="ABB — electrical and automation products" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">ABB</span></div>
+    <div class="bc"><img src="assets/brands/schneider.png" alt="Schneider Electric — energy management" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Schneider</span></div>
+    <div class="bc"><img src="assets/brands/hager.png" alt="Hager — electrical installation solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Hager</span></div>
+    <div class="bc"><img src="assets/brands/havells.png" alt="Havells — electrical consumer durables" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Havells</span></div>
+    <div class="bc"><img src="assets/brands/alfanar.png" alt="Alfanar — industrial electrical products" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Alfanar</span></div>
+    <div class="bc"><img src="assets/brands/legrand.png" alt="Legrand — electrical and digital infrastructure" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Legrand</span></div>
+    <div class="bc"><img src="assets/brands/ducab.png" alt="Ducab — UAE-made cables and wires" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Ducab</span></div>
+    <div class="bc"><img src="assets/brands/nexans.png" alt="Nexans — global cable manufacturer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Nexans</span></div>
+    <div class="bc"><img src="assets/brands/belden.png" alt="Belden — signal transmission solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Belden</span></div>
+    <div class="bc"><img src="assets/brands/prysmian.png" alt="Prysmian — energy and telecom cables" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Prysmian</span></div>
+    <div class="bc"><img src="assets/brands/makita.png" alt="Makita — power tools" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Makita</span></div>
+    <div class="bc"><img src="assets/brands/bosch.png" alt="Bosch — power tools and accessories" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Bosch</span></div>
+    <div class="bc"><img src="assets/brands/dewalt.png" alt="DeWalt — professional power tools" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">DeWalt</span></div>
+    <div class="bc"><img src="assets/brands/philips.png" alt="Philips — lighting solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Philips</span></div>
+    <div class="bc"><img src="assets/brands/osram.png" alt="OSRAM — professional lighting" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">OSRAM</span></div>
+    <div class="bc"><img src="assets/brands/grundfos.png" alt="Grundfos — pump solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Grundfos</span></div>
+    <div class="bc"><img src="assets/brands/grohe.png" alt="GROHE — sanitary fittings" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">GROHE</span></div>
+    <div class="bc"><img src="assets/brands/jotun.png" alt="Jotun — paints and coatings" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Jotun</span></div>
+    <div class="bc"><img src="assets/brands/rakceramics.png" alt="RAK Ceramics — ceramic tiles and sanitary ware" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">RAK Ceramics</span></div>
+    <div class="bc"><img src="assets/brands/honeywell.png" alt="Honeywell — building technologies" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Honeywell</span></div>
+    <div class="bc"><img src="assets/brands/ariston.png" alt="Ariston — water heating solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Ariston</span></div>
+    <div class="bc"><img src="assets/brands/furse.png" alt="Furse — earthing and lightning protection" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Furse</span></div>
+    <div class="bc"><img src="assets/brands/hepworth.png" alt="Hepworth — piping systems" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Hepworth</span></div>
+    <div class="bc"><img src="assets/brands/vaultex.png" alt="Vaultex — safety equipment" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="b-name">Vaultex</span></div>
   </div>
 </section>
 
@@ -387,12 +586,36 @@
   <div class="eyebrow rev">Our Promise</div>
   <h2 class="sec-h rev">WHY<br/>BUILDORA</h2>
   <div class="w-grid rev">
-    <div class="wc"><div class="wc-n">01</div><h3>Premium Quality</h3><p>Every product sourced from globally certified manufacturers. Tested to meet UAE and GCC construction standards.</p></div>
-    <div class="wc"><div class="wc-n">02</div><h3>Timely Delivery</h3><p>We understand delays cost money. Our logistics network ensures your materials arrive when your project needs them.</p></div>
-    <div class="wc"><div class="wc-n">03</div><h3>Expert Advice</h3><p>Our experienced team provides personalized technical guidance to help you choose the right product for every application.</p></div>
-    <div class="wc"><div class="wc-n">04</div><h3>One-Stop Supply</h3><p>14 product categories and 50+ brands. From foundation to finish — everything your project demands in one place.</p></div>
-    <div class="wc"><div class="wc-n">05</div><h3>Dubai Based</h3><p>Locally established in Dubai with deep knowledge of regional standards, regulations, and project requirements across the UAE.</p></div>
-    <div class="wc"><div class="wc-n">06</div><h3>All Project Types</h3><p>Residential, commercial, and industrial. From a single villa to a mega-development — we scale with your requirements.</p></div>
+    <div class="wc">
+      <div class="wc-n" aria-hidden="true">01</div>
+      <h3>Premium Quality</h3>
+      <p>Every product sourced from globally certified manufacturers. Tested to meet UAE and GCC construction standards.</p>
+    </div>
+    <div class="wc">
+      <div class="wc-n" aria-hidden="true">02</div>
+      <h3>Timely Delivery</h3>
+      <p>We understand delays cost money. Our logistics network ensures your materials arrive when your project needs them.</p>
+    </div>
+    <div class="wc">
+      <div class="wc-n" aria-hidden="true">03</div>
+      <h3>Expert Advice</h3>
+      <p>Our experienced team provides personalized technical guidance to help you choose the right product for every application.</p>
+    </div>
+    <div class="wc">
+      <div class="wc-n" aria-hidden="true">04</div>
+      <h3>One-Stop Supply</h3>
+      <p>14 product categories and 50+ brands. From foundation to finish — everything your project demands in one place.</p>
+    </div>
+    <div class="wc">
+      <div class="wc-n" aria-hidden="true">05</div>
+      <h3>Dubai Based</h3>
+      <p>Locally established in Dubai with deep knowledge of regional standards, regulations, and project requirements across the UAE.</p>
+    </div>
+    <div class="wc">
+      <div class="wc-n" aria-hidden="true">06</div>
+      <h3>All Project Types</h3>
+      <p>Residential, commercial, and industrial. From a single villa to a mega-development — we scale with your requirements.</p>
+    </div>
   </div>
 </section>
 
@@ -403,29 +626,61 @@
   <div class="ct-grid">
     <div class="rev">
       <div class="ct-h3">BUILDORA<br/>MATERIALS</div>
-      <div class="cd"><div class="ci">📍</div><div><div class="cl">Address</div><div class="cv">Dubai, United Arab Emirates</div></div></div>
-      <div class="cd"><div class="ci">📞</div><div><div class="cl">Phone / WhatsApp</div><div class="cv"><a href="tel:+9710501018048">+971 050 101 8048</a></div></div></div>
-      <div class="cd"><div class="ci">✉️</div><div><div class="cl">Sales</div><div class="cv"><a href="mailto:sales@buildoramaterials.com">sales@buildoramaterials.com</a></div></div></div>
-      <div class="cd"><div class="ci">📦</div><div><div class="cl">Procurement</div><div class="cv"><a href="mailto:procurement@buildoramaterials.com">procurement@buildoramaterials.com</a></div></div></div>
-      <div class="cd"><div class="ci">🛠</div><div><div class="cl">Support</div><div class="cv"><a href="mailto:support@buildoramaterials.com">support@buildoramaterials.com</a></div></div></div>
-      <div class="cd"><div class="ci">ℹ️</div><div><div class="cl">General</div><div class="cv"><a href="mailto:info@buildoramaterials.com">info@buildoramaterials.com</a></div></div></div>
+      <div class="cd">
+        <div class="ci" aria-hidden="true">📍</div>
+        <div><div class="cl">Address</div><div class="cv">Dubai, United Arab Emirates</div></div>
+      </div>
+      <div class="cd">
+        <div class="ci" aria-hidden="true">📞</div>
+        <div><div class="cl">Phone / WhatsApp</div><div class="cv"><a href="tel:+971501018048">+971 50 101 8048</a></div></div>
+      </div>
+      <div class="cd">
+        <div class="ci" aria-hidden="true">✉️</div>
+        <div><div class="cl">Sales</div><div class="cv"><a href="mailto:sales@buildoramaterials.com">sales@buildoramaterials.com</a></div></div>
+      </div>
+      <div class="cd">
+        <div class="ci" aria-hidden="true">📦</div>
+        <div><div class="cl">Procurement</div><div class="cv"><a href="mailto:procurement@buildoramaterials.com">procurement@buildoramaterials.com</a></div></div>
+      </div>
+      <div class="cd">
+        <div class="ci" aria-hidden="true">🛠</div>
+        <div><div class="cl">Support</div><div class="cv"><a href="mailto:support@buildoramaterials.com">support@buildoramaterials.com</a></div></div>
+      </div>
+      <div class="cd">
+        <div class="ci" aria-hidden="true">ℹ️</div>
+        <div><div class="cl">General</div><div class="cv"><a href="mailto:info@buildoramaterials.com">info@buildoramaterials.com</a></div></div>
+      </div>
     </div>
     <div class="rev">
-      <div class="cf">
+      <div class="cf" role="form" aria-label="Contact form">
         <div class="fr2">
-          <div class="ff"><input type="text" placeholder="First Name"/></div>
-          <div class="ff"><input type="text" placeholder="Last Name"/></div>
+          <div class="ff"><input type="text" placeholder="First Name" aria-label="First name"/></div>
+          <div class="ff"><input type="text" placeholder="Last Name" aria-label="Last name"/></div>
         </div>
-        <div class="ff"><input type="email" placeholder="Email Address"/></div>
-        <div class="ff"><input type="tel" placeholder="Phone Number"/></div>
+        <div class="ff"><input type="email" placeholder="Email Address" aria-label="Email address"/></div>
+        <div class="ff"><input type="tel" placeholder="Phone Number" aria-label="Phone number"/></div>
         <div class="ff">
-          <select>
+          <select aria-label="Select product category">
             <option value="">Select Product Category...</option>
-            <option>Low Voltage / Electrical</option><option>Cable Management</option><option>Cables & Wiring</option><option>Plumbing Accessories</option><option>Switch Sockets</option><option>Painting & Coatings</option><option>Hand & Power Tools</option><option>Earthing & Lightning</option><option>Sanitary Fittings</option><option>Safety Equipment</option><option>HVAC Accessories</option><option>Lighting Accessories</option><option>Pumps</option><option>Hardware</option><option>General Inquiry</option>
+            <option>Low Voltage / Electrical</option>
+            <option>Cable Management</option>
+            <option>Cables &amp; Wiring</option>
+            <option>Plumbing Accessories</option>
+            <option>Switch Sockets</option>
+            <option>Painting &amp; Coatings</option>
+            <option>Hand &amp; Power Tools</option>
+            <option>Earthing &amp; Lightning</option>
+            <option>Sanitary Fittings</option>
+            <option>Safety Equipment</option>
+            <option>HVAC Accessories</option>
+            <option>Lighting Accessories</option>
+            <option>Pumps</option>
+            <option>Hardware</option>
+            <option>General Inquiry</option>
           </select>
         </div>
-        <div class="ff"><textarea placeholder="Tell us about your project and material requirements..."></textarea></div>
-        <button class="fsub" onclick="doSubmit(this)">Send Inquiry →</button>
+        <div class="ff"><textarea placeholder="Tell us about your project and material requirements..." aria-label="Project details"></textarea></div>
+        <button class="fsub" onclick="doSubmit(this)" type="button">Send Inquiry →</button>
       </div>
     </div>
   </div>
@@ -439,16 +694,45 @@
       <div class="ft-sub">Materials Trading</div>
       <div class="ft-motto">Build Beyond Limits</div>
       <p class="ft-tag">Comprehensive range of premium building materials. Your complete supply partner across the UAE.</p>
-      <div class="ft-social">
-        <a href="https://www.facebook.com/buildoramaterials" target="_blank" rel="noopener" title="Facebook">f</a>
-        <a href="https://www.instagram.com/buildoramaterials" target="_blank" rel="noopener" title="Instagram">ig</a>
-        <a href="https://wa.me/9710501018048" target="_blank" rel="noopener" title="WhatsApp">wa</a>
-        <a href="https://www.linkedin.com/company/buildoramaterials" target="_blank" rel="noopener" title="LinkedIn">in</a>
+      <div class="ft-social" aria-label="Social media links">
+        <a href="https://www.facebook.com/buildoramaterials" target="_blank" rel="noopener" title="Facebook" aria-label="Buildora on Facebook">f</a>
+        <a href="https://www.instagram.com/buildoramaterials" target="_blank" rel="noopener" title="Instagram" aria-label="Buildora on Instagram">ig</a>
+        <a href="https://wa.me/971501018048" target="_blank" rel="noopener" title="WhatsApp" aria-label="Contact Buildora on WhatsApp">wa</a>
+        <a href="https://www.linkedin.com/company/buildoramaterials" target="_blank" rel="noopener" title="LinkedIn" aria-label="Buildora on LinkedIn">in</a>
       </div>
     </div>
-    <div class="fc"><h4>Products</h4><ul><li><a href="products.html#electrical">Electrical</a></li><li><a href="products.html#cables">Cables</a></li><li><a href="products.html#plumbing">Plumbing</a></li><li><a href="products.html#hvac">HVAC</a></li><li><a href="products.html#lighting">Lighting</a></li><li><a href="products.html#safety">Safety</a></li><li><a href="products.html">View All →</a></li></ul></div>
-    <div class="fc"><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#brands">Our Brands</a></li><li><a href="#why">Why Buildora</a></li><li><a href="#contact">Contact</a></li></ul></div>
-    <div class="fc"><h4>Contact</h4><ul><li><a href="mailto:sales@buildoramaterials.com">Sales</a></li><li><a href="mailto:procurement@buildoramaterials.com">Procurement</a></li><li><a href="mailto:support@buildoramaterials.com">Support</a></li><li><a href="mailto:info@buildoramaterials.com">Info</a></li><li><a href="tel:+9710501018048">+971 050 101 8048</a></li></ul></div>
+    <div class="fc">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html#electrical">Electrical</a></li>
+        <li><a href="products.html#cables">Cables</a></li>
+        <li><a href="products.html#plumbing">Plumbing</a></li>
+        <li><a href="products.html#hvac">HVAC</a></li>
+        <li><a href="products.html#lighting">Lighting</a></li>
+        <li><a href="products.html#safety">Safety</a></li>
+        <li><a href="products.html">View All →</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#brands">Our Brands</a></li>
+        <li><a href="#why">Why Buildora</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="assets/brochure.pdf" download>Download Brochure</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:sales@buildoramaterials.com">Sales</a></li>
+        <li><a href="mailto:procurement@buildoramaterials.com">Procurement</a></li>
+        <li><a href="mailto:support@buildoramaterials.com">Support</a></li>
+        <li><a href="mailto:info@buildoramaterials.com">Info</a></li>
+        <li><a href="tel:+971501018048">+971 50 101 8048</a></li>
+      </ul>
+    </div>
   </div>
   <div class="ft-bot">
     <p>© 2026 Buildora Materials Trading. All rights reserved.</p>
@@ -457,28 +741,49 @@
 </footer>
 
 <!-- WHATSAPP FLOATING BUTTON -->
-<a class="wa-btn" href="https://wa.me/9710501018048?text=Hello%20Buildora%2C%20I%20need%20a%20quote%20for%20building%20materials." target="_blank" rel="noopener" title="Chat on WhatsApp">
-  <span class="wa-tooltip">Chat with us</span>
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a class="wa-btn" href="https://wa.me/971501018048?text=Hello%20Buildora%2C%20I%20need%20a%20quote%20for%20building%20materials." target="_blank" rel="noopener" aria-label="Chat with Buildora on WhatsApp">
+  <span class="wa-tooltip" aria-hidden="true">Chat with us</span>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script src="js/ui.js"></script>
 <script>
-const obs=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*70);obs.unobserve(e.target)}})},{threshold:.08});
-document.querySelectorAll('.rev,.revl').forEach(el=>obs.observe(el));
+  const obs = new IntersectionObserver(es => {
+    es.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('on'), i * 70);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: .08 });
+  document.querySelectorAll('.rev,.revl').forEach(el => obs.observe(el));
 
-const gobs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const cs=e.target.querySelectorAll('.pc,.wc,.pillar,.bc');cs.forEach((c,i)=>{c.style.opacity='0';c.style.transform='translateY(18px)';setTimeout(()=>{c.style.transition='opacity .45s ease,transform .45s ease';c.style.opacity='1';c.style.transform='translateY(0)'},i*40)});gobs.unobserve(e.target)}})},{threshold:.04});
-document.querySelectorAll('.p-grid,.w-grid,.pillars,.b-grid').forEach(el=>gobs.observe(el));
+  const gobs = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        const cs = e.target.querySelectorAll('.pc,.wc,.pillar,.bc');
+        cs.forEach((c, i) => {
+          c.style.opacity = '0';
+          c.style.transform = 'translateY(16px)';
+          setTimeout(() => {
+            c.style.transition = 'opacity .4s ease,transform .4s ease';
+            c.style.opacity = '1';
+            c.style.transform = 'translateY(0)';
+          }, i * 40);
+        });
+        gobs.unobserve(e.target);
+      }
+    });
+  }, { threshold: .04 });
+  document.querySelectorAll('.p-grid,.w-grid,.pillars,.b-grid').forEach(el => gobs.observe(el));
 
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').style.borderBottomColor=window.scrollY>50?'rgba(255,255,255,.12)':'rgba(255,255,255,.07)'
-});
-
-document.querySelectorAll('.pc').forEach(el=>{
-  el.addEventListener('click',()=>{
-    if(typeof fbq!=='undefined'){fbq('track','ViewContent',{content_name:el.querySelector('h3').textContent})}
-  })
-});
+  document.querySelectorAll('.pc').forEach(el => {
+    el.addEventListener('click', () => {
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'ViewContent', { content_name: el.querySelector('h3').textContent });
+      }
+    });
+  });
 </script>
 </body>
 </html>
