@@ -17,589 +17,2026 @@
   {"@context":"https://schema.org","@type":"CollectionPage","name":"Building Materials Products — Buildora","description":"Complete range of premium building materials in Dubai UAE. 14 categories, 50+ brands.","url":"https://www.buildoramaterials.com/products.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.buildoramaterials.com"},{"@type":"ListItem","position":2,"name":"Products","item":"https://www.buildoramaterials.com/products.html"}]}}
   </script>
 
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init','YOUR_PIXEL_ID');
-  fbq('track','PageView');
-  fbq('track','ViewContent',{content_name:'Products Page',content_category:'Building Materials'});
-  </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>
-    :root{
-      --green:#1E4F4B;
-      --green-dark:#163A37;
-      --green-light:#EBF2F1;
-      --orange:#F58C15;
-      --orange-dark:#D97A0F;
-      --bg:#FFFFFF;
-      --bg-alt:#F4F6F6;
-      --text:#1A2B2A;
-      --text-sec:#4A5E5C;
-      --text-muted:#6B7E7C;
-      --border:#D8E4E3;
-      --nav-h:72px;
+    /* =========================================================
+       RESET & BASE
+    ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* =========================================================
+       CSS VARIABLES
+    ========================================================= */
+    :root {
+      --green: #1A5C50;
+      --green-dark: #134840;
+      --green-light: #1e6b5d;
+      --orange: #F5A020;
+      --orange-dark: #D4880F;
+      --white: #ffffff;
+      --grey-bg: #F5F6F7;
+      --grey-light: #e8e8e8;
+      --grey-text: #666;
+      --border: #e0e0e0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+      --nav-h: 68px;
+      --topbar-h: 40px;
     }
 
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;font-weight:400;line-height:1.7;overflow-x:hidden}
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    ::-webkit-scrollbar{width:4px}
-    ::-webkit-scrollbar-track{background:var(--bg-alt)}
-    ::-webkit-scrollbar-thumb{background:var(--green)}
-
-    /* ── NAV ── */
-    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 4vw;gap:1rem}
-    .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-    .nav-logo svg{width:36px;height:36px}
-    .logo-txt{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.1em;color:var(--green)}
-    .logo-txt span{color:var(--text-muted)}
-    .nav-links{display:flex;list-style:none;margin:0 auto}
-    .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-sec);padding:0 .9rem;height:var(--nav-h);display:flex;align-items:center;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
-    .nav-links a:hover,.nav-links a.active{color:var(--green);border-bottom-color:var(--orange)}
-    .nav-actions{display:flex;gap:.6rem;align-items:center;flex-shrink:0}
-    .btn-brochure{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;border:1.5px solid var(--green);color:var(--green);padding:8px 14px;display:inline-flex;align-items:center;gap:6px;transition:all .2s;white-space:nowrap}
-    .btn-brochure:hover{background:var(--green);color:#fff}
-    .btn-brochure svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
-    .btn-quote{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;background:var(--orange);color:#fff;padding:9px 18px;display:inline-flex;align-items:center;gap:6px;transition:background .2s;white-space:nowrap}
-    .btn-quote:hover{background:var(--orange-dark)}
-    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;margin-right:-8px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
-    .ham span{width:22px;height:2px;background:var(--green);transition:.3s;display:block}
-
-    /* ── PAGE HERO ── */
-    .page-hero{padding:calc(var(--nav-h) + 60px) 4vw 50px;border-bottom:1px solid var(--border);background:var(--bg-alt)}
-    .breadcrumb{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.5rem;display:flex;align-items:center;gap:8px}
-    .breadcrumb a{color:var(--text-muted);transition:color .2s}
-    .breadcrumb a:hover{color:var(--green)}
-    .breadcrumb span{color:var(--border)}
-    .page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,9rem);line-height:.9;letter-spacing:-.01em;color:var(--green)}
-    .page-sub{margin-top:1.2rem;font-size:1rem;color:var(--text-sec);max-width:520px;line-height:1.75}
-
-    /* ── SEARCH BAR ── */
-    .search-bar{background:#fff;padding:1.5rem 4vw;border-bottom:1px solid var(--border);position:sticky;top:var(--nav-h);z-index:100}
-    .search-inner{display:flex;gap:1px;background:var(--border);max-width:100%}
-    .search-input-wrap{flex:1;display:flex;align-items:center;background:#fff;position:relative}
-    .search-icon{position:absolute;left:1.2rem;font-size:.9rem;opacity:.4;pointer-events:none}
-    .search-input{width:100%;background:transparent;border:none;padding:1rem 1rem 1rem 3rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:400;outline:none}
-    .search-input::placeholder{color:var(--text-muted)}
-    .search-clear{position:absolute;right:1rem;font-size:.8rem;color:var(--text-muted);cursor:pointer;display:none;transition:color .2s;background:none;border:none;padding:4px 8px;min-height:32px}
-    .search-clear:hover{color:var(--green)}
-    .search-count{background:#fff;display:flex;align-items:center;padding:0 1.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;border-left:1px solid var(--border)}
-
-    /* ── FILTER TABS ── */
-    .filter-bar{padding:1rem 4vw;border-bottom:1px solid var(--border);overflow-x:auto;display:flex;gap:4px;background:#fff}
-    .filter-bar::-webkit-scrollbar{height:0}
-    .filter-btn{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;background:var(--bg-alt);color:var(--text-sec);border:1px solid var(--border);cursor:pointer;transition:all .2s;white-space:nowrap;min-height:44px}
-    .filter-btn:hover{color:var(--green);border-color:var(--green);background:var(--green-light)}
-    .filter-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
-
-    /* ── PRODUCTS LAYOUT ── */
-    .products-wrap{padding:3rem 4vw 6rem}
-
-    /* ── NO RESULTS ── */
-    .no-results{display:none;text-align:center;padding:6rem 2rem;color:var(--text-muted)}
-    .no-results h3{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--border);margin-bottom:.5rem}
-    .no-results p{font-size:1rem}
-
-    /* ── CATEGORY SECTION ── */
-    .cat-section{margin-bottom:4rem;scroll-margin-top:160px}
-    .cat-section.hidden{display:none}
-    .cat-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:2px solid var(--border)}
-    .cat-icon{font-size:1.5rem}
-    .cat-title{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.02em;line-height:1;color:var(--green)}
-    .cat-count{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-left:auto;white-space:nowrap}
-    .cat-brands{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.2rem}
-    .cat-brands strong{color:var(--text-sec)}
-
-    /* ── PRODUCT ITEMS GRID ── */
-    .items-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border)}
-    .item-card{background:var(--bg);padding:1.4rem 1.2rem;position:relative;transition:background .2s;cursor:pointer;border-left:3px solid transparent}
-    .item-card:hover{background:var(--green-light);border-left-color:var(--orange)}
-    .item-card.hidden{display:none}
-    .item-name{font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:.4rem;line-height:1.3}
-    .item-detail{font-size:.82rem;color:var(--text-sec);line-height:1.55}
-    .item-brand{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:.5rem;display:inline-block;border:1px solid var(--border);padding:3px 7px;background:#fff}
-    .item-quote{position:absolute;bottom:.8rem;right:.8rem;font-size:.65rem;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;font-family:'Barlow Condensed',sans-serif;font-weight:700;opacity:0;transition:opacity .2s}
-    .item-card:hover .item-quote{opacity:1}
-
-    /* ── CTA BANNER ── */
-    .cta-banner{background:var(--green);color:#fff;padding:3rem 4vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;margin:0 0 2rem}
-    .cta-banner h3{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;color:#fff}
-    .cta-banner p{font-size:.95rem;color:rgba(255,255,255,.7);margin-top:.4rem}
-    .btn-wa{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:#25D366;color:#fff;padding:13px 24px;transition:background .2s;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;min-height:48px}
-    .btn-wa:hover{background:#1da051}
-    .btn-email{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:rgba(255,255,255,.15);color:#fff;padding:13px 24px;border:1px solid rgba(255,255,255,.3);transition:background .2s;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;min-height:48px}
-    .btn-email:hover{background:rgba(255,255,255,.25)}
-
-    /* ── BROCHURE DOWNLOAD (bottom of products) ── */
-    .products-brochure{background:var(--bg-alt);border:1px solid var(--border);padding:2.5rem 3rem;margin:0 0 4rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
-    .products-brochure-text h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--green);margin-bottom:.4rem}
-    .products-brochure-text p{font-size:.9rem;color:var(--text-sec)}
-    .btn-dl-green{font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--orange);color:#fff;padding:14px 32px;display:inline-flex;align-items:center;gap:10px;transition:background .2s;flex-shrink:0;min-height:48px}
-    .btn-dl-green:hover{background:var(--orange-dark)}
-    .btn-dl-green svg{width:16px;height:16px;fill:#fff}
-
-    /* ── WHATSAPP FLOAT ── */
-    .wa-btn{position:fixed;bottom:2rem;right:2rem;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s;text-decoration:none}
-    .wa-btn:hover{transform:scale(1.1)}
-    .wa-btn svg{width:28px;height:28px;fill:#fff}
-
-    /* ── FOOTER ── */
-    footer{background:var(--green);border-top:1px solid rgba(255,255,255,.1);padding:3rem 4vw 2rem}
-    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-    .ft-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.1em;margin-bottom:.3rem;color:#fff}
-    .ft-bot p{font-size:.72rem;color:rgba(255,255,255,.35)}
-    .ft-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap}
-    .ft-links a{font-size:.75rem;color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
-    .ft-links a:hover{color:#fff}
-
-    /* ── MOBILE MENU ── */
-    .mob-menu{display:none;position:fixed;inset:0;background:#fff;z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem}
-    .mob-menu.open{display:flex}
-    .mob-menu a{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--green);transition:color .2s;min-height:44px;display:flex;align-items:center}
-    .mob-menu a:hover{color:var(--orange)}
-    .mob-dl-btn{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--orange);color:#fff;padding:14px 32px;margin-top:.8rem;display:inline-flex;align-items:center;gap:8px}
-    .mob-x{position:absolute;top:1.5rem;right:4vw;font-size:2rem;cursor:pointer;color:var(--text-muted);line-height:1;padding:8px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
-
-    /* ── RESPONSIVE ── */
-    @media(max-width:1100px){.items-grid{grid-template-columns:repeat(4,1fr)}}
-    @media(max-width:900px){
-      .items-grid{grid-template-columns:repeat(3,1fr)}
-      .nav-links,.nav-actions{display:none}
-      .ham{display:flex}
-      .cta-banner{flex-direction:column;align-items:flex-start}
-      .products-brochure{flex-direction:column;align-items:flex-start}
+    /* =========================================================
+       LOGO COMPONENT
+    ========================================================= */
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1px;
+      line-height: 1;
     }
-    @media(max-width:700px){
-      .items-grid{grid-template-columns:repeat(2,1fr)}
-      .page-title{font-size:3rem}
-      .products-brochure{padding:2rem}
+    .logo-top {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1;
     }
-    @media(max-width:375px){
-      .items-grid{grid-template-columns:1fr}
-      .page-title{font-size:2.6rem}
+    .logo-top .logo-text { color: var(--white); }
+    .logo-top .logo-text.green { color: var(--green); }
+    .logo-bottom {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-top: 1px;
+      padding-left: 2px;
     }
+    .logo-bottom.green { color: var(--green); }
+    .logo-house-svg { flex-shrink: 0; }
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      padding: 12px 28px;
+      min-height: 48px;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+    .btn-orange { background: var(--orange); color: var(--white); }
+    .btn-orange:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(245,160,32,0.35); }
+    .btn-green-outline { background: transparent; color: var(--green); border: 2px solid var(--green); }
+    .btn-green-outline:hover { background: var(--green); color: var(--white); transform: translateY(-1px); }
+    .btn-white-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+    .btn-white-outline:hover { background: var(--white); color: var(--green); }
+
+    /* =========================================================
+       TOP BAR
+    ========================================================= */
+    #top-bar {
+      background: var(--green);
+      color: var(--white);
+      height: var(--topbar-h);
+      display: flex;
+      align-items: center;
+      font-size: 12.5px;
+      font-weight: 500;
+      position: relative;
+      z-index: 100;
+    }
+    #top-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 16px;
+    }
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .topbar-left a {
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.92;
+      transition: opacity 0.18s;
+    }
+    .topbar-left a:hover { opacity: 1; }
+    .topbar-left .sep { width: 1px; height: 14px; background: rgba(255,255,255,0.3); }
+    .topbar-left svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .topbar-right a {
+      color: var(--white);
+      opacity: 0.85;
+      transition: opacity 0.18s;
+      display: flex;
+      align-items: center;
+    }
+    .topbar-right a:hover { opacity: 1; }
+    .topbar-right svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* =========================================================
+       STICKY NAV
+    ========================================================= */
+    #main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      transition: box-shadow 0.25s ease;
+    }
+    #main-nav.scrolled { box-shadow: 0 2px 16px rgba(0,0,0,0.1); }
+    #main-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 24px;
+    }
+    .nav-logo { flex-shrink: 0; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #222;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: color 0.18s, background 0.18s;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--green);
+      background: rgba(26,92,80,0.06);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .nav-actions .btn { font-size: 13px; padding: 9px 18px; min-height: 40px; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      background: transparent;
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #333;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: calc(var(--topbar-h) + var(--nav-h));
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--white);
+      z-index: 998;
+      flex-direction: column;
+      padding: 24px 20px;
+      overflow-y: auto;
+      border-top: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #222;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+    }
+    .mobile-menu a:hover { color: var(--green); }
+    .mobile-menu .mobile-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .mobile-menu .mobile-btns .btn { width: 100%; justify-content: center; font-size: 16px; }
+
+    /* =========================================================
+       CONTAINER
+    ========================================================= */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =========================================================
+       PAGE HEADER
+    ========================================================= */
+    .page-header {
+      background: var(--grey-bg);
+      padding: 80px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      margin-bottom: 20px;
+    }
+    .breadcrumb a { color: var(--green); transition: opacity 0.18s; }
+    .breadcrumb a:hover { opacity: 0.75; }
+    .breadcrumb .sep { color: var(--border); }
+    .page-h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 800;
+      line-height: 1.0;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+    .page-sub {
+      font-size: 16px;
+      color: var(--grey-text);
+      max-width: 560px;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       STICKY SEARCH + FILTER BAR
+    ========================================================= */
+    .search-wrap {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 100;
+    }
+    .search-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 14px 24px 0;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .search-input-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      background: var(--white);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .search-input-wrap:focus-within { border-color: var(--green); }
+    .search-icon {
+      padding: 0 14px;
+      color: var(--grey-text);
+      font-size: 16px;
+      flex-shrink: 0;
+      pointer-events: none;
+    }
+    #searchInput {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: #333;
+      padding: 11px 0;
+      background: transparent;
+    }
+    #searchInput::placeholder { color: #aaa; }
+    #searchClear {
+      display: none;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: color 0.18s;
+      white-space: nowrap;
+    }
+    #searchClear:hover { color: var(--green); }
+    #searchCount {
+      margin-left: 14px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .filter-row {
+      display: flex;
+      gap: 6px;
+      padding: 10px 24px;
+      max-width: 1240px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+    .filter-row::-webkit-scrollbar { height: 0; }
+    .filter-btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 4px;
+      border: 1.5px solid var(--border);
+      background: var(--grey-bg);
+      color: var(--grey-text);
+      cursor: pointer;
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover { border-color: var(--green); color: var(--green); background: rgba(26,92,80,0.05); }
+    .filter-btn.active { background: var(--green); color: var(--white); border-color: var(--green); }
+
+    /* =========================================================
+       PRODUCTS AREA
+    ========================================================= */
+    .products-area {
+      background: var(--white);
+      padding: 40px 0 80px;
+    }
+    .products-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* No results */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .no-results h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--border);
+      margin-bottom: 12px;
+    }
+    .no-results p { color: var(--grey-text); font-size: 16px; }
+
+    /* Category section */
+    .cat-section {
+      margin-bottom: 56px;
+      scroll-margin-top: 180px;
+    }
+    .cat-section.hidden { display: none; }
+
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 0 14px;
+      border-left: 4px solid var(--orange);
+      padding-left: 16px;
+      margin-bottom: 10px;
+    }
+    .cat-icon { font-size: 24px; line-height: 1; flex-shrink: 0; }
+    .cat-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.1;
+      flex: 1;
+    }
+    .cat-count {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--green);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .cat-brands {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      color: var(--grey-text);
+      margin-bottom: 14px;
+      padding-left: 20px;
+    }
+    .cat-brands strong { color: #444; }
+
+    /* Items grid */
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .item-card {
+      background: var(--white);
+      padding: 1.2rem;
+      position: relative;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      transition: background 0.18s, border-left-color 0.18s;
+    }
+    .item-card:hover { background: rgba(26,92,80,0.05); border-left-color: var(--orange); }
+    .item-card.hidden { display: none; }
+    .item-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .item-detail {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: var(--grey-text);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .item-brand {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      border: 1px solid var(--border);
+      padding: 3px 7px;
+      border-radius: 3px;
+      display: inline-block;
+      background: var(--white);
+    }
+    .item-quote {
+      display: block;
+      margin-top: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      opacity: 0;
+      transition: opacity 0.18s;
+    }
+    .item-card:hover .item-quote { opacity: 1; }
+
+    /* =========================================================
+       CTA BANNER
+    ========================================================= */
+    .cta-banner {
+      background: var(--green);
+      color: var(--white);
+      padding: 48px 0;
+      margin-top: 0;
+    }
+    .cta-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cta-text h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+    .cta-text p { color: rgba(255,255,255,0.78); font-size: 15px; }
+    .cta-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: #25D366;
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 4px;
+      transition: background 0.2s;
+      min-height: 48px;
+    }
+    .btn-wa:hover { background: #1daa52; }
+    .btn-email-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.55);
+      padding: 12px 24px;
+      border-radius: 4px;
+      transition: background 0.2s, border-color 0.2s;
+      min-height: 48px;
+    }
+    .btn-email-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+
+    /* =========================================================
+       BROCHURE DOWNLOAD
+    ========================================================= */
+    .brochure-bar {
+      background: var(--grey-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .brochure-bar h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    .brochure-bar p { color: var(--grey-text); font-size: 15px; margin-bottom: 24px; }
+    .btn-dl {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--orange);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 4px;
+      transition: background 0.2s;
+      min-height: 48px;
+    }
+    .btn-dl:hover { background: var(--orange-dark); }
+    .btn-dl svg { width: 18px; height: 18px; fill: var(--white); }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+    #footer {
+      background: var(--green);
+      color: var(--white);
+      padding: 64px 0 0;
+    }
+    .footer-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr;
+      gap: 56px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 16px;
+      margin-bottom: 24px;
+      max-width: 320px;
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .footer-social a:hover { background: var(--orange); border-color: var(--orange); transform: translateY(-2px); }
+    .footer-social svg { width: 16px; height: 16px; fill: var(--white); }
+    .footer-col-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--orange);
+      display: inline-block;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.72); font-size: 14px; transition: color 0.18s, padding-left 0.18s; }
+    .footer-links a:hover { color: var(--white); padding-left: 4px; }
+    .footer-contact-list { display: flex; flex-direction: column; gap: 12px; list-style: none; }
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255,255,255,0.72);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .footer-contact-list a { color: rgba(255,255,255,0.72); transition: color 0.18s; }
+    .footer-contact-list a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.14);
+      padding: 20px 0;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .footer-bottom-inner {
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p { color: rgba(255,255,255,0.55); font-size: 13px; }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.55); font-size: 13px; transition: color 0.18s; }
+    .footer-bottom-links a:hover { color: var(--white); }
+
+    /* =========================================================
+       WHATSAPP FLOAT
+    ========================================================= */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.45);
+      transition: transform 0.22s, box-shadow 0.22s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 8px 24px rgba(37,211,102,0.55); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: var(--white); }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+    @media (max-width: 1200px) { .items-grid { grid-template-columns: repeat(5, 1fr); } }
+    @media (max-width: 992px) {
+      .nav-links, .nav-actions { display: none; }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; padding-bottom: 0; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 900px) { .items-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 700px) {
+      .items-grid { grid-template-columns: repeat(3, 1fr); }
+      .page-h1 { font-size: 40px; }
+    }
+    @media (max-width: 640px) {
+      :root { --topbar-h: 0px; }
+      #top-bar { display: none; }
+      .mobile-menu { top: var(--nav-h); }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom-inner { flex-direction: column; text-align: center; }
+      .footer-bottom-links { justify-content: center; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) { .items-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 375px) { .items-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo" aria-label="Buildora Materials — Home">
-    <svg viewBox="0 0 32 32" fill="none" role="img" aria-hidden="true">
-      <rect width="32" height="32" fill="#1E4F4B"/>
-      <path d="M5 7H18C22 7 25.5 10.5 25.5 14.5C25.5 17 24 19.2 21.8 20.3C24.2 21.5 26 24 26 27H5V7Z" fill="#fff"/>
-      <path d="M9 11H17.5C19.4 11 21 12.6 21 14.5C21 16.4 19.4 18 17.5 18H9V11Z" fill="#1E4F4B"/>
-      <path d="M9 20H18C20.2 20 22 21.8 22 24C22 26.2 20.2 28 18 28H9V20Z" fill="#1E4F4B"/>
-    </svg>
-    <span class="logo-txt">BUILDORA <span>MATERIALS</span></span>
-  </a>
-  <ul class="nav-links" role="navigation" aria-label="Main navigation">
-    <li><a href="/">Home</a></li>
-    <li><a href="/#about">About</a></li>
-    <li><a href="products.html" class="active">Products</a></li>
-    <li><a href="/#brands">Brands</a></li>
-    <li><a href="/#contact">Contact</a></li>
-  </ul>
-  <div class="nav-actions">
-    <a href="assets/brochure.pdf" download class="btn-brochure" aria-label="Download company brochure PDF">
-      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v1.5H3V14z"/></svg>
-      Download Brochure
-    </a>
-    <a href="/#contact" class="btn-quote">Get a Quote</a>
+<!-- TOP BAR -->
+<div id="top-bar">
+  <div class="container">
+    <div class="topbar-left">
+      <a href="https://maps.google.com/?q=Al+Qouz+Dubai+UAE" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5zm0 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+        Al Qouz, Dubai, UAE
+      </a>
+      <div class="sep"></div>
+      <a href="tel:+971501018048">
+        <svg viewBox="0 0 16 16"><path d="M3.6 1.6a1.2 1.2 0 0 0-1.7 0L1 2.5C.3 3.2 0 4.1 0 5.1c0 2.1 1.2 4.6 3.2 6.6S8.8 15 11 15c1 0 2-.3 2.7-1l.8-.9a1.2 1.2 0 0 0 0-1.7l-2-2a1.2 1.2 0 0 0-1.7 0l-.6.6a5.6 5.6 0 0 1-3.2-3.2l.6-.6a1.2 1.2 0 0 0 0-1.7z"/></svg>
+        +971 50 101 8048
+      </a>
+      <div class="sep"></div>
+      <a href="mailto:sales@buildoramaterials.com">
+        <svg viewBox="0 0 16 16"><path d="M2 3h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm0 1.5V4l6 4 6-4v.5L8 8.5z"/></svg>
+        sales@buildoramaterials.com
+      </a>
+    </div>
+    <div class="topbar-right">
+      <a href="https://facebook.com/buildoramaterials" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://instagram.com/buildoramaterials" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="white" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="2"/></svg>
+      </a>
+      <a href="https://linkedin.com/company/buildoramaterials" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://wa.me/971501018048" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      </a>
+    </div>
   </div>
-  <div class="ham" id="ham" onclick="openMob()" aria-label="Open menu" role="button" tabindex="0">
-    <span></span><span></span><span></span>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="/" class="nav-logo" aria-label="Buildora Materials home">
+      <div class="logo">
+        <div class="logo-top">
+          <span class="logo-text green">BUILD</span>
+          <svg class="logo-house-svg" viewBox="0 0 44 48" width="28" height="31" aria-hidden="true">
+            <path d="M22 3L40 18L35 18L35 45L9 45L9 18L4 18Z" fill="#F5A020"/>
+            <rect x="16" y="30" width="12" height="15" fill="white" opacity="0.9"/>
+          </svg>
+          <span class="logo-text green">RA</span>
+        </div>
+        <div class="logo-bottom green">M A T E R I A L S</div>
+      </div>
+    </a>
+    <div class="nav-links" role="menubar">
+      <a href="/" role="menuitem">Home</a>
+      <a href="/#about" role="menuitem">About</a>
+      <a href="products.html" class="active" role="menuitem">Products</a>
+      <a href="/#brands" role="menuitem">Brands</a>
+      <a href="/#why" role="menuitem">Why Us</a>
+      <a href="/#contact" role="menuitem">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="assets/brochure.pdf" download class="btn btn-green-outline">Download Brochure</a>
+      <a href="/#contact" class="btn btn-orange">Get a Quote</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mob-menu" id="mob" role="dialog" aria-label="Mobile navigation">
-  <span class="mob-x" onclick="closeMob()" role="button" tabindex="0" aria-label="Close menu">✕</span>
-  <a href="/" onclick="closeMob()">Home</a>
-  <a href="products.html" onclick="closeMob()">Products</a>
-  <a href="/#brands" onclick="closeMob()">Brands</a>
-  <a href="/#contact" onclick="closeMob()">Contact</a>
-  <a href="assets/brochure.pdf" download class="mob-dl-btn" onclick="closeMob()">↓ Download Brochure</a>
-</div>
-
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="breadcrumb" aria-label="Breadcrumb">
-    <a href="/">Home</a><span aria-hidden="true">/</span>Products
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/#about">About</a>
+  <a href="products.html">Products</a>
+  <a href="/#brands">Brands</a>
+  <a href="/#why">Why Us</a>
+  <a href="/#contact">Contact</a>
+  <div class="mobile-btns">
+    <a href="assets/brochure.pdf" download class="btn btn-green-outline">Download Brochure</a>
+    <a href="/#contact" class="btn btn-orange">Get a Quote</a>
   </div>
-  <h1 class="page-title">PRODUCT<br/>CATALOGUE</h1>
-  <p class="page-sub">Browse our complete range of building materials. Search by product name, brand, or filter by category below.</p>
 </div>
 
-<!-- SEARCH BAR -->
-<div class="search-bar" role="search" aria-label="Product search">
-  <div class="search-inner">
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <span>Products</span>
+    </nav>
+    <h1 class="page-h1">Product Catalogue</h1>
+    <p class="page-sub">Browse our complete range of building materials. Search by product name or filter by category.</p>
+  </div>
+</div>
+
+<!-- STICKY SEARCH + FILTER BAR -->
+<div class="search-wrap" role="search" aria-label="Product search and filter">
+  <div class="search-row">
     <div class="search-input-wrap">
       <span class="search-icon" aria-hidden="true">🔍</span>
-      <input class="search-input" id="searchInput" type="text" placeholder="Search products, brands, or categories… (e.g. ABB, XLPE cable, PPR pipe)" autocomplete="off" oninput="doSearch(this.value)" aria-label="Search products"/>
-      <button class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Clear search">✕ Clear</button>
+      <input id="searchInput" type="text" placeholder="Search products, brands, or categories… e.g. ABB, XLPE cable, PPR pipe" autocomplete="off" aria-label="Search products" oninput="doSearch(this.value)"/>
+      <button id="searchClear" onclick="clearSearch()" aria-label="Clear search">✕ Clear</button>
     </div>
-    <div class="search-count" id="searchCount" aria-live="polite">All Products</div>
+    <div id="searchCount" aria-live="polite">All Products</div>
+  </div>
+  <div class="filter-row" id="filterBar" role="tablist" aria-label="Filter by category">
+    <button class="filter-btn active" onclick="filterCat('all',this)" role="tab" aria-selected="true">All Categories</button>
+    <button class="filter-btn" onclick="filterCat('electrical',this)" role="tab" aria-selected="false">Electrical</button>
+    <button class="filter-btn" onclick="filterCat('cable-management',this)" role="tab" aria-selected="false">Cable Mgmt</button>
+    <button class="filter-btn" onclick="filterCat('cables',this)" role="tab" aria-selected="false">Cables</button>
+    <button class="filter-btn" onclick="filterCat('plumbing',this)" role="tab" aria-selected="false">Plumbing</button>
+    <button class="filter-btn" onclick="filterCat('switch',this)" role="tab" aria-selected="false">Switch Sockets</button>
+    <button class="filter-btn" onclick="filterCat('painting',this)" role="tab" aria-selected="false">Painting</button>
+    <button class="filter-btn" onclick="filterCat('tools',this)" role="tab" aria-selected="false">Tools</button>
+    <button class="filter-btn" onclick="filterCat('earthing',this)" role="tab" aria-selected="false">Earthing</button>
+    <button class="filter-btn" onclick="filterCat('sanitary',this)" role="tab" aria-selected="false">Sanitary</button>
+    <button class="filter-btn" onclick="filterCat('safety',this)" role="tab" aria-selected="false">Safety</button>
+    <button class="filter-btn" onclick="filterCat('hvac',this)" role="tab" aria-selected="false">HVAC</button>
+    <button class="filter-btn" onclick="filterCat('lighting',this)" role="tab" aria-selected="false">Lighting</button>
+    <button class="filter-btn" onclick="filterCat('pumps',this)" role="tab" aria-selected="false">Pumps</button>
+    <button class="filter-btn" onclick="filterCat('hardware',this)" role="tab" aria-selected="false">Hardware</button>
   </div>
 </div>
 
-<!-- FILTER TABS -->
-<div class="filter-bar" id="filterBar" role="tablist" aria-label="Filter by category">
-  <button class="filter-btn active" onclick="filterCat('all',this)" role="tab" aria-selected="true">All Categories</button>
-  <button class="filter-btn" onclick="filterCat('electrical',this)" role="tab">Electrical</button>
-  <button class="filter-btn" onclick="filterCat('cable-management',this)" role="tab">Cable Mgmt</button>
-  <button class="filter-btn" onclick="filterCat('cables',this)" role="tab">Cables</button>
-  <button class="filter-btn" onclick="filterCat('plumbing',this)" role="tab">Plumbing</button>
-  <button class="filter-btn" onclick="filterCat('switch',this)" role="tab">Switch Sockets</button>
-  <button class="filter-btn" onclick="filterCat('painting',this)" role="tab">Painting</button>
-  <button class="filter-btn" onclick="filterCat('tools',this)" role="tab">Tools</button>
-  <button class="filter-btn" onclick="filterCat('earthing',this)" role="tab">Earthing</button>
-  <button class="filter-btn" onclick="filterCat('sanitary',this)" role="tab">Sanitary</button>
-  <button class="filter-btn" onclick="filterCat('safety',this)" role="tab">Safety</button>
-  <button class="filter-btn" onclick="filterCat('hvac',this)" role="tab">HVAC</button>
-  <button class="filter-btn" onclick="filterCat('lighting',this)" role="tab">Lighting</button>
-  <button class="filter-btn" onclick="filterCat('pumps',this)" role="tab">Pumps</button>
-  <button class="filter-btn" onclick="filterCat('hardware',this)" role="tab">Hardware</button>
-</div>
+<!-- PRODUCTS AREA -->
+<div class="products-area">
+  <div class="products-inner">
 
-<!-- PRODUCTS -->
-<div class="products-wrap">
-  <div class="no-results" id="noResults" role="status">
-    <h3>NO RESULTS</h3>
-    <p>Try a different search term or browse all categories.</p>
-  </div>
+    <div class="no-results" id="noResults" role="status">
+      <h3>NO RESULTS</h3>
+      <p>Try a different search term or browse all categories.</p>
+    </div>
 
-  <!-- 01 ELECTRICAL -->
-  <div class="cat-section" id="electrical" data-cat="electrical">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">⚡</span>
-      <div class="cat-title">LOW VOLTAGE ENERGY DISTRIBUTION</div>
-      <span class="cat-count">7 Products</span>
+    <!-- 01 ELECTRICAL -->
+    <div class="cat-section" id="electrical" data-cat="electrical">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">⚡</span>
+        <div class="cat-title">Electrical</div>
+        <span class="cat-count">7 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>ABB · Hager · Schneider Electric · Havells · Alfanar</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Modular Distribution Board Components')">
+          <div class="item-name">Modular Distribution Board Components</div>
+          <div class="item-detail">MCB, RCCB, RCBO, isolators for residential and commercial panels</div>
+          <span class="item-brand">ABB · Hager</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Main Distribution Panel Board Circuit Breakers')">
+          <div class="item-name">Main Distribution Panel Board Circuit Breakers</div>
+          <div class="item-detail">ACB, MCCB for main distribution boards up to 6300A</div>
+          <span class="item-brand">Schneider · ABB</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Load Break Isolators')">
+          <div class="item-name">Load Break Isolators</div>
+          <div class="item-detail">Enclosed isolators and changeover switches</div>
+          <span class="item-brand">Havells · Alfanar</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Control Components')">
+          <div class="item-name">Control Components</div>
+          <div class="item-detail">Contactors, relays, timers, push buttons, indicator lights</div>
+          <span class="item-brand">Schneider · ABB</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Power Factor Capacitor Bank Components')">
+          <div class="item-name">Power Factor Capacitor Bank Components</div>
+          <div class="item-detail">Capacitors, controllers, contactors for PFC panels</div>
+          <span class="item-brand">Alfanar</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Distribution Boards &amp; Enclosures')">
+          <div class="item-name">Distribution Boards &amp; Enclosures</div>
+          <div class="item-detail">Flush and surface mounted consumer units and DB enclosures</div>
+          <span class="item-brand">Hager · Schneider</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Panel Board Accessories')">
+          <div class="item-name">Panel Board Accessories</div>
+          <div class="item-detail">Busbars, din rails, cable ducts, ferrules, terminal blocks</div>
+          <span class="item-brand">Havells · ABB</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>ABB · Hager · Schneider Electric · Havells · Alfanar</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Modular Distribution Board Components</div><div class="item-detail">MCB, RCCB, RCBO, isolators for residential and commercial panels</div><span class="item-brand">ABB · Hager</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Main Distribution Panel Board Circuit Breakers</div><div class="item-detail">ACB, MCCB for main distribution boards up to 6300A</div><span class="item-brand">Schneider · ABB</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Load Break Isolators</div><div class="item-detail">Enclosed isolators and changeover switches</div><span class="item-brand">Havells · Alfanar</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Control Components</div><div class="item-detail">Contactors, relays, timers, push buttons, indicator lights</div><span class="item-brand">Schneider · ABB</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Power Factor Capacitor Bank Components</div><div class="item-detail">Capacitors, controllers, contactors for PFC panels</div><span class="item-brand">Alfanar</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Distribution Boards &amp; Enclosures</div><div class="item-detail">Flush and surface mounted consumer units and DB enclosures</div><span class="item-brand">Hager · Schneider</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Panel Board Accessories</div><div class="item-detail">Busbars, din rails, cable ducts, ferrules, terminal blocks</div><span class="item-brand">Havells · ABB</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 02 CABLE MANAGEMENT -->
-  <div class="cat-section" id="cable-management" data-cat="cable-management">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">🔧</span>
-      <div class="cat-title">CABLE MANAGEMENT SYSTEM</div>
-      <span class="cat-count">8 Products</span>
+    <!-- 02 CABLE MANAGEMENT -->
+    <div class="cat-section" id="cable-management" data-cat="cable-management">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">🔧</span>
+        <div class="cat-title">Cable Management</div>
+        <span class="cat-count">8 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>Decoduct · BICC · Cellpack · Caparo · Delta · Unitech · Yuvix · Marshall Tufflex · Bicon · Hex India</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Cable Glands Lugs &amp; Connectors')">
+          <div class="item-name">Cable Glands, Lugs &amp; Connectors</div>
+          <div class="item-detail">Brass, nickel-plated, stainless steel cable glands; compression lugs</div>
+          <span class="item-brand">Cellpack · Bicon</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Cable Trays &amp; Ladders')">
+          <div class="item-name">Cable Trays &amp; Ladders</div>
+          <div class="item-detail">Hot-dip galvanized, perforated, solid bottom cable trays and ladders</div>
+          <span class="item-brand">Caparo · Delta</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Steel Support Systems')">
+          <div class="item-name">Steel Support Systems</div>
+          <div class="item-detail">Channel support, unistrut, cable clamps and fixings</div>
+          <span class="item-brand">Hex India · BICC</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('PVC Conduit &amp; Trunking Systems')">
+          <div class="item-name">PVC Conduit &amp; Trunking Systems</div>
+          <div class="item-detail">Heavy gauge PVC conduit, trunking, accessories in all sizes</div>
+          <span class="item-brand">Decoduct · Unitech</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Cable Ties &amp; Pulling Springs')">
+          <div class="item-name">Cable Ties &amp; Pulling Springs</div>
+          <div class="item-detail">Nylon cable ties in all sizes; steel cable pulling springs</div>
+          <span class="item-brand">Yuvix</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Floor Distribution Systems')">
+          <div class="item-name">Floor Distribution Systems</div>
+          <div class="item-detail">Underfloor cable distribution boxes and accessories</div>
+          <span class="item-brand">Marshall Tufflex</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Cable Jointing Systems')">
+          <div class="item-name">Cable Jointing Systems</div>
+          <div class="item-detail">Heat shrink, cold shrink joints and termination kits</div>
+          <span class="item-brand">Cellpack · BICC</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Steel Conduit &amp; Wiring Boxes')">
+          <div class="item-name">Steel Conduit &amp; Wiring Boxes</div>
+          <div class="item-detail">GI steel conduit, junction boxes, pull boxes</div>
+          <span class="item-brand">Unitech · Delta</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>Decoduct · BICC · Cellpack · Caparo · Delta · Unitech · Yuvix · Marshall Tufflex · Bicon · Hex India</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Cable Glands, Lugs &amp; Connectors</div><div class="item-detail">Brass, nickel-plated, stainless steel cable glands; compression lugs</div><span class="item-brand">Cellpack · Bicon</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Cable Trays &amp; Ladders</div><div class="item-detail">Hot-dip galvanized, perforated, solid bottom cable trays and ladders</div><span class="item-brand">Caparo · Delta</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Steel Support Systems</div><div class="item-detail">Channel support, unistrut, cable clamps and fixings</div><span class="item-brand">Hex India · BICC</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">PVC Conduit &amp; Trunking Systems</div><div class="item-detail">Heavy gauge PVC conduit, trunking, accessories in all sizes</div><span class="item-brand">Decoduct · Unitech</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Cable Ties &amp; Pulling Springs</div><div class="item-detail">Nylon cable ties in all sizes; steel cable pulling springs</div><span class="item-brand">Yuvix</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Floor Distribution Systems</div><div class="item-detail">Underfloor cable distribution boxes and accessories</div><span class="item-brand">Marshall Tufflex</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Cable Jointing Systems</div><div class="item-detail">Heat shrink, cold shrink joints and termination kits</div><span class="item-brand">Cellpack · BICC</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Steel Conduit &amp; Wiring Boxes</div><div class="item-detail">GI steel conduit, junction boxes, pull boxes</div><span class="item-brand">Unitech · Delta</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 03 CABLES -->
-  <div class="cat-section" id="cables" data-cat="cables">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">🔌</span>
-      <div class="cat-title">CABLES</div>
-      <span class="cat-count">9 Products</span>
+    <!-- 03 CABLES -->
+    <div class="cat-section" id="cables" data-cat="cables">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">🔌</span>
+        <div class="cat-title">Cables</div>
+        <span class="cat-count">9 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>Ducab · Nexans · Belden · CopperPlus · Prysmian · Oman Cables · Paige · Top Cable · D-Link</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Solar Cables')">
+          <div class="item-name">Solar Cables</div>
+          <div class="item-detail">PV1-F solar DC cables, UV resistant, double insulated</div>
+          <span class="item-brand">Nexans · Prysmian</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Co-axial Cables')">
+          <div class="item-name">Co-axial Cables</div>
+          <div class="item-detail">RG6, RG11, RG59 coaxial cables for TV and CCTV</div>
+          <span class="item-brand">Belden · D-Link</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Single Core Wires')">
+          <div class="item-name">Single Core Wires</div>
+          <div class="item-detail">1.5mm² to 300mm² single core PVC and XLPE insulated</div>
+          <span class="item-brand">Ducab · CopperPlus</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('XLPE Insulated Cables')">
+          <div class="item-name">XLPE Insulated Cables</div>
+          <div class="item-detail">0.6/1kV to 33kV XLPE power cables, armoured and unarmoured</div>
+          <span class="item-brand">Ducab · Nexans</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Fire Performance Cables')">
+          <div class="item-name">Fire Performance Cables</div>
+          <div class="item-detail">Fire resistant, LSZH, Enhanced Fire cables to BS standards</div>
+          <span class="item-brand">Prysmian · Top Cable</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Multicore Industrial Cables')">
+          <div class="item-name">Multicore Industrial Cables</div>
+          <div class="item-detail">2 to 61 core control cables, screened and unscreened</div>
+          <span class="item-brand">Belden · Oman Cables</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Rubber &amp; Welding Cables')">
+          <div class="item-name">Rubber &amp; Welding Cables</div>
+          <div class="item-detail">Flexible rubber cables, welding cables, EPR insulated</div>
+          <span class="item-brand">Nexans · CopperPlus</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Panel Switchboard &amp; Battery Cables')">
+          <div class="item-name">Panel, Switchboard &amp; Battery Cables</div>
+          <div class="item-detail">Flexible panel wiring cables, battery interconnect cables</div>
+          <span class="item-brand">Ducab · Paige</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Data Fibre-optic &amp; Instrumentation Cables')">
+          <div class="item-name">Data, Fibre-optic &amp; Instrumentation Cables</div>
+          <div class="item-detail">Cat6, Cat6A, OS2 fibre, PLTC instrumentation cables</div>
+          <span class="item-brand">Belden · D-Link</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>Ducab · Nexans · Belden · CopperPlus · Schneider · Prysmian · Oman Cables · Paige · Top Cable · D-Link</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Solar Cables</div><div class="item-detail">PV1-F solar DC cables, UV resistant, double insulated</div><span class="item-brand">Nexans · Prysmian</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Co-axial Cables</div><div class="item-detail">RG6, RG11, RG59 coaxial cables for TV and CCTV</div><span class="item-brand">Belden · D-Link</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Single Core Wires</div><div class="item-detail">1.5mm² to 300mm² single core PVC and XLPE insulated</div><span class="item-brand">Ducab · CopperPlus</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">XLPE Insulated Cables</div><div class="item-detail">0.6/1kV to 33kV XLPE power cables, armoured and unarmoured</div><span class="item-brand">Ducab · Nexans</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Fire Performance Cables</div><div class="item-detail">Fire resistant, LSZH, Enhanced Fire cables to BS standards</div><span class="item-brand">Prysmian · Top Cable</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Multicore Industrial Cables</div><div class="item-detail">2 to 61 core control cables, screened and unscreened</div><span class="item-brand">Belden · Oman Cables</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Rubber &amp; Welding Cables</div><div class="item-detail">Flexible rubber cables, welding cables, EPR insulated</div><span class="item-brand">Nexans · CopperPlus</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Panel, Switchboard &amp; Battery Cables</div><div class="item-detail">Flexible panel wiring cables, battery interconnect cables</div><span class="item-brand">Ducab · Paige</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Data, Fibre-optic &amp; Instrumentation Cables</div><div class="item-detail">Cat6, Cat6A, OS2 fibre, PLTC instrumentation cables</div><span class="item-brand">Belden · D-Link</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 04 PLUMBING -->
-  <div class="cat-section" id="plumbing" data-cat="plumbing">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">🚿</span>
-      <div class="cat-title">PLUMBING ACCESSORIES</div>
-      <span class="cat-count">7 Products</span>
+    <!-- 04 PLUMBING -->
+    <div class="cat-section" id="plumbing" data-cat="plumbing">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">🚿</span>
+        <div class="cat-title">Plumbing</div>
+        <span class="cat-count">7 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>Novatherm · Hepworth · RAKtherm · Cosmoplast · Terrain · Prime</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('PPR Pipes &amp; Fittings')">
+          <div class="item-name">PPR Pipes &amp; Fittings</div>
+          <div class="item-detail">PN20 PPR pipes and fittings for hot and cold water systems</div>
+          <span class="item-brand">Novatherm · RAKtherm</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('UPVC Pipes &amp; Fittings')">
+          <div class="item-name">UPVC Pipes &amp; Fittings</div>
+          <div class="item-detail">UPVC pressure pipes, Class B, C and D for water supply</div>
+          <span class="item-brand">Hepworth · Cosmoplast</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('HDPE Pipes &amp; Fittings')">
+          <div class="item-name">HDPE Pipes &amp; Fittings</div>
+          <div class="item-detail">PE100 HDPE pipes for water mains and sewerage</div>
+          <span class="item-brand">Prime · Cosmoplast</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Pex Pipes')">
+          <div class="item-name">Pex Pipes</div>
+          <div class="item-detail">Cross-linked polyethylene pipes for underfloor heating and plumbing</div>
+          <span class="item-brand">RAKtherm</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('PVC White Pipes')">
+          <div class="item-name">PVC White Pipes</div>
+          <div class="item-detail">PVC conduit and pipe systems for general plumbing</div>
+          <span class="item-brand">Cosmoplast · Prime</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('High Pressure Pipes')">
+          <div class="item-name">High Pressure Pipes</div>
+          <div class="item-detail">High pressure water supply systems for industrial applications</div>
+          <span class="item-brand">Hepworth</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Drainage Pipes &amp; Systems')">
+          <div class="item-name">Drainage Pipes &amp; Systems</div>
+          <div class="item-detail">UPVC soil and waste drainage, underground drainage pipes</div>
+          <span class="item-brand">Terrain · Hepworth</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>Novatherm · Hepworth · RAKtherm · Cosmoplast · Terrain · Prime</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">PPR Pipes &amp; Fittings</div><div class="item-detail">PN20 PPR pipes and fittings for hot and cold water systems</div><span class="item-brand">Novatherm · RAKtherm</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">UPVC Pipes &amp; Fittings</div><div class="item-detail">UPVC pressure pipes, Class B, C and D for water supply</div><span class="item-brand">Hepworth · Cosmoplast</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">HDPE Pipes &amp; Fittings</div><div class="item-detail">PE100 HDPE pipes for water mains and sewerage</div><span class="item-brand">Prime · Cosmoplast</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Pex Pipes</div><div class="item-detail">Cross-linked polyethylene pipes for underfloor heating and plumbing</div><span class="item-brand">RAKtherm</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">PVC White Pipes</div><div class="item-detail">PVC conduit and pipe systems for general plumbing</div><span class="item-brand">Cosmoplast · Prime</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">High Pressure Pipes</div><div class="item-detail">High pressure water supply systems for industrial applications</div><span class="item-brand">Hepworth</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Drainage Pipes &amp; Systems</div><div class="item-detail">UPVC soil and waste drainage, underground drainage pipes</div><span class="item-brand">Terrain · Hepworth</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 05 SWITCH SOCKETS -->
-  <div class="cat-section" id="switch" data-cat="switch">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">💡</span>
-      <div class="cat-title">SWITCH SOCKETS</div>
-      <span class="cat-count">7 Products</span>
+    <!-- 05 SWITCH SOCKETS -->
+    <div class="cat-section" id="switch" data-cat="switch">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">💡</span>
+        <div class="cat-title">Switch Sockets</div>
+        <span class="cat-count">7 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>ABB · Legrand · Crabtree · Schneider Electric · Panasonic · MK by Honeywell</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Waterproof Switch Sockets')">
+          <div class="item-name">Waterproof Switch Sockets</div>
+          <div class="item-detail">IP44 and IP66 rated weatherproof switches and sockets</div>
+          <span class="item-brand">ABB · Schneider</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Pop-up Switches')">
+          <div class="item-name">Pop-up Switches</div>
+          <div class="item-detail">Flush pop-up socket outlets for desks and worktops</div>
+          <span class="item-brand">Legrand</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Switch Sockets Standard')">
+          <div class="item-name">Switch Sockets (Standard)</div>
+          <div class="item-detail">1G, 2G, 3G switches and 13A socket outlets, various finishes</div>
+          <span class="item-brand">MK · Crabtree</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Smart Switches')">
+          <div class="item-name">Smart Switches</div>
+          <div class="item-detail">Wi-Fi enabled smart switches compatible with Alexa and Google</div>
+          <span class="item-brand">Schneider · Panasonic</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Grid Switches &amp; Modules')">
+          <div class="item-name">Grid Switches &amp; Modules</div>
+          <div class="item-detail">Grid switch systems for modular wiring installations</div>
+          <span class="item-brand">MK · Legrand</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Metal Clad Switches')">
+          <div class="item-name">Metal Clad Switches</div>
+          <div class="item-detail">Industrial grade metal clad switches for commercial use</div>
+          <span class="item-brand">ABB · Crabtree</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Isolators')">
+          <div class="item-name">Isolators</div>
+          <div class="item-detail">DP and TP switch isolators for A/C and equipment isolation</div>
+          <span class="item-brand">MK · Schneider</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>ABB · Legrand · Crabtree · Schneider Electric · Panasonic · MK by Honeywell</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Waterproof Switch Sockets</div><div class="item-detail">IP44 and IP66 rated weatherproof switches and sockets</div><span class="item-brand">ABB · Schneider</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Pop-up Switches</div><div class="item-detail">Flush pop-up socket outlets for desks and worktops</div><span class="item-brand">Legrand</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Switch Sockets (Standard)</div><div class="item-detail">1G, 2G, 3G switches and 13A socket outlets, various finishes</div><span class="item-brand">MK · Crabtree</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Smart Switches</div><div class="item-detail">Wi-Fi enabled smart switches compatible with Alexa and Google</div><span class="item-brand">Schneider · Panasonic</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Grid Switches &amp; Modules</div><div class="item-detail">Grid switch systems for modular wiring installations</div><span class="item-brand">MK · Legrand</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Metal Clad Switches</div><div class="item-detail">Industrial grade metal clad switches for commercial use</div><span class="item-brand">ABB · Crabtree</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Isolators</div><div class="item-detail">DP and TP switch isolators for A/C and equipment isolation</div><span class="item-brand">MK · Schneider</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 06 PAINTING -->
-  <div class="cat-section" id="painting" data-cat="painting">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">🎨</span>
-      <div class="cat-title">PAINTING</div>
-      <span class="cat-count">9 Products</span>
+    <!-- 06 PAINTING -->
+    <div class="cat-section" id="painting" data-cat="painting">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">🎨</span>
+        <div class="cat-title">Painting</div>
+        <span class="cat-count">9 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>Jotun · Asian Paints · National Paints</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Anti-Fungal Anti-Bacterial Paint')">
+          <div class="item-name">Anti-Fungal / Anti-Bacterial Paint</div>
+          <div class="item-detail">Moisture resistant paint for bathrooms, kitchens and hospitals</div>
+          <span class="item-brand">Jotun · Asian Paints</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Exterior Emulsion')">
+          <div class="item-name">Exterior Emulsion</div>
+          <div class="item-detail">Weather resistant exterior wall emulsion for facades</div>
+          <span class="item-brand">Jotun · National</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Interior Emulsion')">
+          <div class="item-name">Interior Emulsion</div>
+          <div class="item-detail">Smooth finish interior emulsion, washable, low VOC</div>
+          <span class="item-brand">Jotun · Asian Paints</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Fenomastic Paint')">
+          <div class="item-name">Fenomastic Paint</div>
+          <div class="item-detail">Jotun Fenomastic pure colours interior and exterior range</div>
+          <span class="item-brand">Jotun</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Emulsion Paint')">
+          <div class="item-name">Emulsion Paint</div>
+          <div class="item-detail">Standard emulsion in a wide range of colours</div>
+          <span class="item-brand">National · Asian Paints</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Texture Paint')">
+          <div class="item-name">Texture Paint</div>
+          <div class="item-detail">Sand texture, coarse texture, rough cast finish paints</div>
+          <span class="item-brand">Jotun · National</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Enamel Paint')">
+          <div class="item-name">Enamel Paint</div>
+          <div class="item-detail">Gloss and semi-gloss enamel for wood, metal and trim</div>
+          <span class="item-brand">Asian Paints · Jotun</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Primers &amp; Undercoats')">
+          <div class="item-name">Primers &amp; Undercoats</div>
+          <div class="item-detail">Alkali resistant primer, wall filler, sealer and undercoat</div>
+          <span class="item-brand">Jotun · National</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Wall Putty')">
+          <div class="item-name">Wall Putty</div>
+          <div class="item-detail">White cement based wall putty for smooth surface preparation</div>
+          <span class="item-brand">Asian Paints</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>Jotun · Asian Paints · National Paints</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Anti-Fungal / Anti-Bacterial Paint</div><div class="item-detail">Moisture resistant paint for bathrooms, kitchens and hospitals</div><span class="item-brand">Jotun · Asian Paints</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Exterior Emulsion</div><div class="item-detail">Weather resistant exterior wall emulsion for facades</div><span class="item-brand">Jotun · National</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Interior Emulsion</div><div class="item-detail">Smooth finish interior emulsion, washable, low VOC</div><span class="item-brand">Jotun · Asian Paints</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Fenomastic Paint</div><div class="item-detail">Jotun Fenomastic pure colours interior and exterior range</div><span class="item-brand">Jotun</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Emulsion Paint</div><div class="item-detail">Standard emulsion in a wide range of colours</div><span class="item-brand">National · Asian Paints</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Texture Paint</div><div class="item-detail">Sand texture, coarse texture, rough cast finish paints</div><span class="item-brand">Jotun · National</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Enamel Paint</div><div class="item-detail">Gloss and semi-gloss enamel for wood, metal and trim</div><span class="item-brand">Asian Paints · Jotun</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Primers &amp; Undercoats</div><div class="item-detail">Alkali resistant primer, wall filler, sealer and undercoat</div><span class="item-brand">Jotun · National</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Wall Putty</div><div class="item-detail">White cement based wall putty for smooth surface preparation</div><span class="item-brand">Asian Paints</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 07 TOOLS -->
-  <div class="cat-section" id="tools" data-cat="tools">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">🔨</span>
-      <div class="cat-title">HAND &amp; POWER TOOLS</div>
-      <span class="cat-count">10 Products</span>
+    <!-- 07 TOOLS -->
+    <div class="cat-section" id="tools" data-cat="tools">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">🔨</span>
+        <div class="cat-title">Tools</div>
+        <span class="cat-count">10 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>Makita · HIOKI · Bosch · DeWalt · Stanley · Hilti</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Impact Wrench')">
+          <div class="item-name">Impact Wrench</div>
+          <div class="item-detail">Cordless and corded impact wrenches, various torque ratings</div>
+          <span class="item-brand">Makita · DeWalt</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Angle Grinders')">
+          <div class="item-name">Angle Grinders</div>
+          <div class="item-detail">4.5", 5" and 9" angle grinders for cutting and grinding</div>
+          <span class="item-brand">Bosch · Makita</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Power Tools General')">
+          <div class="item-name">Power Tools (General)</div>
+          <div class="item-detail">Sanders, routers, planers and general power tools</div>
+          <span class="item-brand">DeWalt · Bosch</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Hand Tools')">
+          <div class="item-name">Hand Tools</div>
+          <div class="item-detail">Pliers, screwdrivers, spanners, wrenches and hand tool sets</div>
+          <span class="item-brand">Stanley · DeWalt</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Tool Accessories')">
+          <div class="item-name">Tool Accessories</div>
+          <div class="item-detail">Drill bits, grinding discs, cutting discs, saw blades</div>
+          <span class="item-brand">Bosch · Makita</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Drills &amp; Hammer Drills')">
+          <div class="item-name">Drills &amp; Hammer Drills</div>
+          <div class="item-detail">Cordless drill drivers, SDS-plus and SDS-max rotary hammers</div>
+          <span class="item-brand">Makita · Hilti</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Routers')">
+          <div class="item-name">Routers</div>
+          <div class="item-detail">Fixed base and plunge routers for woodworking</div>
+          <span class="item-brand">Bosch · Makita</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Chop Saws Miter Saws')">
+          <div class="item-name">Chop Saws (Miter Saws)</div>
+          <div class="item-detail">Sliding compound miter saws for accurate cross cuts</div>
+          <span class="item-brand">DeWalt · Makita</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Jig Saws')">
+          <div class="item-name">Jig Saws</div>
+          <div class="item-detail">Orbital and straight cut jig saws for curves and shapes</div>
+          <span class="item-brand">Bosch · DeWalt</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Hilti Systems')">
+          <div class="item-name">Hilti Systems</div>
+          <div class="item-detail">Hilti anchor systems, fastening, cutting and measuring tools</div>
+          <span class="item-brand">Hilti</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>Makita · HIOKI · Bosch · DeWalt · Stanley · Hilti</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Impact Wrench</div><div class="item-detail">Cordless and corded impact wrenches, various torque ratings</div><span class="item-brand">Makita · DeWalt</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Angle Grinders</div><div class="item-detail">4.5", 5" and 9" angle grinders for cutting and grinding</div><span class="item-brand">Bosch · Makita</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Power Tools (General)</div><div class="item-detail">Sanders, routers, planers and general power tools</div><span class="item-brand">DeWalt · Bosch</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Hand Tools</div><div class="item-detail">Pliers, screwdrivers, spanners, wrenches and hand tool sets</div><span class="item-brand">Stanley · DeWalt</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Tool Accessories</div><div class="item-detail">Drill bits, grinding discs, cutting discs, saw blades</div><span class="item-brand">Bosch · Makita</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Drills &amp; Hammer Drills</div><div class="item-detail">Cordless drill drivers, SDS-plus and SDS-max rotary hammers</div><span class="item-brand">Makita · Hilti</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Routers</div><div class="item-detail">Fixed base and plunge routers for woodworking</div><span class="item-brand">Bosch · Makita</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Chop Saws (Miter Saws)</div><div class="item-detail">Sliding compound miter saws for accurate cross cuts</div><span class="item-brand">DeWalt · Makita</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Jig Saws</div><div class="item-detail">Orbital and straight cut jig saws for curves and shapes</div><span class="item-brand">Bosch · DeWalt</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Hilti Systems</div><div class="item-detail">Hilti anchor systems, fastening, cutting and measuring tools</div><span class="item-brand">Hilti</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 08 EARTHING -->
-  <div class="cat-section" id="earthing" data-cat="earthing">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">⚡</span>
-      <div class="cat-title">EARTHING &amp; LIGHTNING PROTECTION</div>
-      <span class="cat-count">5 Products</span>
+    <!-- 08 EARTHING -->
+    <div class="cat-section" id="earthing" data-cat="earthing">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">⚡</span>
+        <div class="cat-title">Earthing</div>
+        <span class="cat-count">5 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>Furse</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Lightning Protection Systems')">
+          <div class="item-name">Lightning Protection Systems</div>
+          <div class="item-detail">Early streamer emission air terminals, lightning rods and kits</div>
+          <span class="item-brand">Furse</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Earthing Systems')">
+          <div class="item-name">Earthing Systems</div>
+          <div class="item-detail">Earth rods, earth plates, chemical earth electrodes</div>
+          <span class="item-brand">Furse</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Furse Copper Tape')">
+          <div class="item-name">Furse Copper Tape</div>
+          <div class="item-detail">25x3mm and 40x4mm bare copper tape for earth bonding</div>
+          <span class="item-brand">Furse</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Furse Air Terminals')">
+          <div class="item-name">Furse Air Terminals</div>
+          <div class="item-detail">Stainless steel air terminals, masts and mounting hardware</div>
+          <span class="item-brand">Furse</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Protection Accessories')">
+          <div class="item-name">Protection Accessories</div>
+          <div class="item-detail">Test links, bonds, clamps, surge protection devices</div>
+          <span class="item-brand">Furse</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>Furse</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Lightning Protection Systems</div><div class="item-detail">Early streamer emission air terminals, lightning rods and kits</div><span class="item-brand">Furse</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Earthing Systems</div><div class="item-detail">Earth rods, earth plates, chemical earth electrodes</div><span class="item-brand">Furse</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Furse Copper Tape</div><div class="item-detail">25x3mm and 40x4mm bare copper tape for earth bonding</div><span class="item-brand">Furse</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Furse Air Terminals</div><div class="item-detail">Stainless steel air terminals, masts and mounting hardware</div><span class="item-brand">Furse</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Protection Accessories</div><div class="item-detail">Test links, bonds, clamps, surge protection devices</div><span class="item-brand">Furse</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 09 SANITARY -->
-  <div class="cat-section" id="sanitary" data-cat="sanitary">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">🚽</span>
-      <div class="cat-title">SANITARY FITTINGS</div>
-      <span class="cat-count">6 Products</span>
+    <!-- 09 SANITARY -->
+    <div class="cat-section" id="sanitary" data-cat="sanitary">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">🚽</span>
+        <div class="cat-title">Sanitary</div>
+        <span class="cat-count">6 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>GROHE · SANWA · RAK Ceramics · Pegler · Milano · Ariston · Everhot</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Sanitary Fittings &amp; Ware')">
+          <div class="item-name">Sanitary Fittings &amp; Ware</div>
+          <div class="item-detail">WC pans, cisterns, bidets, washbasins and pedestals</div>
+          <span class="item-brand">RAK Ceramics · Pegler</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Water Heaters')">
+          <div class="item-name">Water Heaters</div>
+          <div class="item-detail">Electric storage, instant, solar water heaters 10L to 100L</div>
+          <span class="item-brand">Ariston · Everhot</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Sensor Taps')">
+          <div class="item-name">Sensor Taps</div>
+          <div class="item-detail">Infra-red touchless basin, kitchen and urinal sensor taps</div>
+          <span class="item-brand">GROHE · SANWA</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Mixer Taps &amp; Shower Sets')">
+          <div class="item-name">Mixer Taps &amp; Shower Sets</div>
+          <div class="item-detail">Basin mixers, bath mixers, shower heads and thermostatic sets</div>
+          <span class="item-brand">GROHE · Milano</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Ceramics &amp; Tiles')">
+          <div class="item-name">Ceramics &amp; Tiles</div>
+          <div class="item-detail">Porcelain, ceramic floor and wall tiles in various sizes</div>
+          <span class="item-brand">RAK Ceramics</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Valves &amp; Fittings')">
+          <div class="item-name">Valves &amp; Fittings</div>
+          <div class="item-detail">Ball valves, gate valves, check valves, copper pipe fittings</div>
+          <span class="item-brand">Pegler · GROHE</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>GROHE · SANWA · RAK Ceramics · Pegler · Milano · Ariston · Everhot</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Sanitary Fittings &amp; Ware</div><div class="item-detail">WC pans, cisterns, bidets, washbasins and pedestals</div><span class="item-brand">RAK Ceramics · Pegler</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Water Heaters</div><div class="item-detail">Electric storage, instant, solar water heaters 10L to 100L</div><span class="item-brand">Ariston · Everhot</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Sensor Taps</div><div class="item-detail">Infra-red touchless basin, kitchen and urinal sensor taps</div><span class="item-brand">GROHE · SANWA</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Mixer Taps &amp; Shower Sets</div><div class="item-detail">Basin mixers, bath mixers, shower heads and thermostatic sets</div><span class="item-brand">GROHE · Milano</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Ceramics &amp; Tiles</div><div class="item-detail">Porcelain, ceramic floor and wall tiles in various sizes</div><span class="item-brand">RAK Ceramics</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Valves &amp; Fittings</div><div class="item-detail">Ball valves, gate valves, check valves, copper pipe fittings</div><span class="item-brand">Pegler · GROHE</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 10 SAFETY -->
-  <div class="cat-section" id="safety" data-cat="safety">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">🦺</span>
-      <div class="cat-title">SAFETY EQUIPMENT</div>
-      <span class="cat-count">6 Products</span>
+    <!-- 10 SAFETY -->
+    <div class="cat-section" id="safety" data-cat="safety">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">🦺</span>
+        <div class="cat-title">Safety</div>
+        <span class="cat-count">6 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>Vaultex · TUF-FIX</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Safety Shoes')">
+          <div class="item-name">Safety Shoes</div>
+          <div class="item-detail">Steel toe cap safety shoes, EN20345 certified, various styles</div>
+          <span class="item-brand">Vaultex</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Safety Harness')">
+          <div class="item-name">Safety Harness</div>
+          <div class="item-detail">Full body safety harness, lanyards and fall arrest systems</div>
+          <span class="item-brand">Vaultex</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Safety Helmets')">
+          <div class="item-name">Safety Helmets</div>
+          <div class="item-detail">HDPE and ABS safety helmets, EN397 certified, various colours</div>
+          <span class="item-brand">Vaultex · TUF-FIX</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Ear Plugs &amp; Protectors')">
+          <div class="item-name">Ear Plugs &amp; Protectors</div>
+          <div class="item-detail">Disposable foam ear plugs and reusable ear defenders</div>
+          <span class="item-brand">Vaultex</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Safety Gloves')">
+          <div class="item-name">Safety Gloves</div>
+          <div class="item-detail">Cut resistant, chemical resistant and general purpose gloves</div>
+          <span class="item-brand">Vaultex · TUF-FIX</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Coveralls &amp; Hi-Vis Vests')">
+          <div class="item-name">Coveralls &amp; Hi-Vis Vests</div>
+          <div class="item-detail">Disposable and reusable coveralls, high visibility safety vests</div>
+          <span class="item-brand">Vaultex</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>Vaultex · TUF-FIX</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Safety Shoes</div><div class="item-detail">Steel toe cap safety shoes, EN20345 certified, various styles</div><span class="item-brand">Vaultex</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Safety Harness</div><div class="item-detail">Full body safety harness, lanyards and fall arrest systems</div><span class="item-brand">Vaultex</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Safety Helmets</div><div class="item-detail">HDPE and ABS safety helmets, EN397 certified, various colours</div><span class="item-brand">Vaultex · TUF-FIX</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Ear Plugs &amp; Protectors</div><div class="item-detail">Disposable foam ear plugs and reusable ear defenders</div><span class="item-brand">Vaultex</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Safety Gloves</div><div class="item-detail">Cut resistant, chemical resistant and general purpose gloves</div><span class="item-brand">Vaultex · TUF-FIX</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Coveralls &amp; Hi-Vis Vests</div><div class="item-detail">Disposable and reusable coveralls, high visibility safety vests</div><span class="item-brand">Vaultex</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 11 HVAC -->
-  <div class="cat-section" id="hvac" data-cat="hvac">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">❄️</span>
-      <div class="cat-title">HVAC ACCESSORIES</div>
-      <span class="cat-count">6 Products</span>
+    <!-- 11 HVAC -->
+    <div class="cat-section" id="hvac" data-cat="hvac">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">❄️</span>
+        <div class="cat-title">HVAC</div>
+        <span class="cat-count">6 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>Maksal · Mueller Industries · Heidelberg · Aerofoam · GoFlex · Gulf-O-Flex · Mafron · Refron · Honeywell</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Copper Coils &amp; Tubes')">
+          <div class="item-name">Copper Coils &amp; Tubes</div>
+          <div class="item-detail">ACR copper tubes and coils for refrigeration and air conditioning</div>
+          <span class="item-brand">Maksal · Mueller</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Pipe Insulation Aerofoam')">
+          <div class="item-name">Pipe Insulation (Aerofoam)</div>
+          <div class="item-detail">Elastomeric foam insulation tubes and sheets for AC pipes</div>
+          <span class="item-brand">Aerofoam · GoFlex</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Sheet Insulation')">
+          <div class="item-name">Sheet Insulation</div>
+          <div class="item-detail">Closed cell rubber insulation sheets for ductwork and tanks</div>
+          <span class="item-brand">Gulf-O-Flex</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Refrigerant Gas')">
+          <div class="item-name">Refrigerant Gas</div>
+          <div class="item-detail">R22, R32, R410A, R404A refrigerant gases in cylinders</div>
+          <span class="item-brand">Refron · Mafron</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('HVAC Controls')">
+          <div class="item-name">HVAC Controls</div>
+          <div class="item-detail">Thermostats, pressure switches, expansion valves and controls</div>
+          <span class="item-brand">Honeywell · Heidelberg</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('HVAC Accessories')">
+          <div class="item-name">HVAC Accessories</div>
+          <div class="item-detail">Filter driers, sight glasses, service valves, flaring tools</div>
+          <span class="item-brand">Maksal · Mueller</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>Maksal · Mueller Industries · Heidelberg · Aerofoam · GoFlex · Gulf-O-Flex · Mafron · Refron · Honeywell</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Copper Coils &amp; Tubes</div><div class="item-detail">ACR copper tubes and coils for refrigeration and air conditioning</div><span class="item-brand">Maksal · Mueller</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Pipe Insulation (Aerofoam)</div><div class="item-detail">Elastomeric foam insulation tubes and sheets for AC pipes</div><span class="item-brand">Aerofoam · GoFlex</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Sheet Insulation</div><div class="item-detail">Closed cell rubber insulation sheets for ductwork and tanks</div><span class="item-brand">Gulf-O-Flex</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Refrigerant Gas</div><div class="item-detail">R22, R32, R410A, R404A refrigerant gases in cylinders</div><span class="item-brand">Refron · Mafron</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">HVAC Controls</div><div class="item-detail">Thermostats, pressure switches, expansion valves and controls</div><span class="item-brand">Honeywell · Heidelberg</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">HVAC Accessories</div><div class="item-detail">Filter driers, sight glasses, service valves, flaring tools</div><span class="item-brand">Maksal · Mueller</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 12 LIGHTING -->
-  <div class="cat-section" id="lighting" data-cat="lighting">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">🔆</span>
-      <div class="cat-title">LIGHTING ACCESSORIES</div>
-      <span class="cat-count">6 Products</span>
+    <!-- 12 LIGHTING -->
+    <div class="cat-section" id="lighting" data-cat="lighting">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">🔆</span>
+        <div class="cat-title">Lighting</div>
+        <span class="cat-count">6 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>OSRAM · Philips · Frater · Selex · LGL</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Track Lights')">
+          <div class="item-name">Track Lights</div>
+          <div class="item-detail">Single phase and three phase LED track lights, 10W to 50W</div>
+          <span class="item-brand">Philips · OSRAM</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Panel Lights')">
+          <div class="item-name">Panel Lights</div>
+          <div class="item-detail">LED panel lights 600x600, 1200x600, back-lit and edge-lit</div>
+          <span class="item-brand">Philips · LGL</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Down Lights')">
+          <div class="item-name">Down Lights</div>
+          <div class="item-detail">Recessed LED downlights, dimmable, various colour temperatures</div>
+          <span class="item-brand">OSRAM · Philips</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Spot Lights')">
+          <div class="item-name">Spot Lights</div>
+          <div class="item-detail">Surface mounted and recessed LED spotlights, adjustable</div>
+          <span class="item-brand">Frater · Selex</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('LED Strips &amp; Profiles')">
+          <div class="item-name">LED Strips &amp; Profiles</div>
+          <div class="item-detail">IP20 and IP65 LED strip lights, aluminum profiles and diffusers</div>
+          <span class="item-brand">Philips · LGL</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Linear Lights')">
+          <div class="item-name">Linear Lights</div>
+          <div class="item-detail">Suspended and recessed LED linear luminaires for offices</div>
+          <span class="item-brand">OSRAM · Selex</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>OSRAM · Philips · Frater · Selex · LGL</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Track Lights</div><div class="item-detail">Single phase and three phase LED track lights, 10W to 50W</div><span class="item-brand">Philips · OSRAM</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Panel Lights</div><div class="item-detail">LED panel lights 600x600, 1200x600, back-lit and edge-lit</div><span class="item-brand">Philips · LGL</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Down Lights</div><div class="item-detail">Recessed LED downlights, dimmable, various colour temperatures</div><span class="item-brand">OSRAM · Philips</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Spot Lights</div><div class="item-detail">Surface mounted and recessed LED spotlights, adjustable</div><span class="item-brand">Frater · Selex</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">LED Strips &amp; Profiles</div><div class="item-detail">IP20 and IP65 LED strip lights, aluminum profiles and diffusers</div><span class="item-brand">Philips · LGL</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Linear Lights</div><div class="item-detail">Suspended and recessed LED linear luminaires for offices</div><span class="item-brand">OSRAM · Selex</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 13 PUMPS -->
-  <div class="cat-section" id="pumps" data-cat="pumps">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">💧</span>
-      <div class="cat-title">PUMPS</div>
-      <span class="cat-count">6 Products</span>
+    <!-- 13 PUMPS -->
+    <div class="cat-section" id="pumps" data-cat="pumps">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">💧</span>
+        <div class="cat-title">Pumps</div>
+        <span class="cat-count">6 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>ESPA · Grundfos · Vespa</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Water Pumps Centrifugal')">
+          <div class="item-name">Water Pumps (Centrifugal)</div>
+          <div class="item-detail">Single stage centrifugal pumps for domestic and commercial use</div>
+          <span class="item-brand">Grundfos · ESPA</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Pressure Kit Pressure Sets')">
+          <div class="item-name">Pressure Kit / Pressure Sets</div>
+          <div class="item-detail">Complete pressure booster sets with pressure tank and controls</div>
+          <span class="item-brand">ESPA · Grundfos</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Transfer Pumps')">
+          <div class="item-name">Transfer Pumps</div>
+          <div class="item-detail">Portable transfer pumps for water and non-corrosive liquids</div>
+          <span class="item-brand">Vespa · ESPA</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Booster Pumps')">
+          <div class="item-name">Booster Pumps</div>
+          <div class="item-detail">In-line booster pumps for increasing water pressure</div>
+          <span class="item-brand">Grundfos · ESPA</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Control Panels for Pumps')">
+          <div class="item-name">Control Panels for Pumps</div>
+          <div class="item-detail">Motor starter panels, VFD panels and pump control panels</div>
+          <span class="item-brand">Grundfos</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Submersible Pumps')">
+          <div class="item-name">Submersible Pumps</div>
+          <div class="item-detail">Borehole and drainage submersible pumps, various head ratings</div>
+          <span class="item-brand">Grundfos · ESPA</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>ESPA · Grundfos · Vespa</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Water Pumps (Centrifugal)</div><div class="item-detail">Single stage centrifugal pumps for domestic and commercial use</div><span class="item-brand">Grundfos · ESPA</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Pressure Kit / Pressure Sets</div><div class="item-detail">Complete pressure booster sets with pressure tank and controls</div><span class="item-brand">ESPA · Grundfos</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Transfer Pumps</div><div class="item-detail">Portable transfer pumps for water and non-corrosive liquids</div><span class="item-brand">Vespa · ESPA</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Booster Pumps</div><div class="item-detail">In-line booster pumps for increasing water pressure</div><span class="item-brand">Grundfos · ESPA</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Control Panels for Pumps</div><div class="item-detail">Motor starter panels, VFD panels and pump control panels</div><span class="item-brand">Grundfos</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Submersible Pumps</div><div class="item-detail">Borehole and drainage submersible pumps, various head ratings</div><span class="item-brand">Grundfos · ESPA</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- 14 HARDWARE -->
-  <div class="cat-section" id="hardware" data-cat="hardware">
-    <div class="cat-header">
-      <span class="cat-icon" aria-hidden="true">🔩</span>
-      <div class="cat-title">HARDWARE &amp; GENERAL ITEMS</div>
-      <span class="cat-count">15 Products</span>
+    <!-- 14 HARDWARE -->
+    <div class="cat-section" id="hardware" data-cat="hardware">
+      <div class="cat-header">
+        <span class="cat-icon" aria-hidden="true">🔩</span>
+        <div class="cat-title">Hardware</div>
+        <span class="cat-count">15 Products</span>
+      </div>
+      <div class="cat-brands">Brands: <strong>Various Leading Manufacturers</strong></div>
+      <div class="items-grid">
+        <div class="item-card" onclick="openWA('Steel Nails')">
+          <div class="item-name">Steel Nails</div>
+          <div class="item-detail">Common wire nails, masonry nails, roofing nails in all sizes</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Screws')">
+          <div class="item-name">Screws</div>
+          <div class="item-detail">Wood screws, self-tapping, drywall, machine screws</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Nuts &amp; Bolts')">
+          <div class="item-name">Nuts &amp; Bolts</div>
+          <div class="item-detail">Hex bolts, carriage bolts, stainless and galvanized nuts and bolts</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Anchor Bolts')">
+          <div class="item-name">Anchor Bolts</div>
+          <div class="item-detail">Chemical anchors, expansion anchors, sleeve anchors</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Wire Rope Clips &amp; D-Shackles')">
+          <div class="item-name">Wire Rope Clips &amp; D-Shackles</div>
+          <div class="item-detail">Galvanized wire rope clips, bow shackles and D-shackles</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Ladders')">
+          <div class="item-name">Ladders</div>
+          <div class="item-detail">Aluminium step ladders, extension ladders and platform steps</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Wheelbarrow &amp; Platform Trolley')">
+          <div class="item-name">Wheelbarrow &amp; Platform Trolley</div>
+          <div class="item-detail">Heavy duty construction wheelbarrows and flat platform trolleys</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('MS Tube &amp; Steel Sections')">
+          <div class="item-name">MS Tube &amp; Steel Sections</div>
+          <div class="item-detail">Mild steel hollow sections, RHS, SHS for fabrication</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Polythene Sheets &amp; Tarpauline')">
+          <div class="item-name">Polythene Sheets &amp; Tarpauline</div>
+          <div class="item-detail">DPM polythene, builder's film, heavy duty tarpaulins</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Thermocol Sheets')">
+          <div class="item-name">Thermocol Sheets</div>
+          <div class="item-detail">EPS expanded polystyrene boards for insulation and packaging</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Masking Tape')">
+          <div class="item-name">Masking Tape</div>
+          <div class="item-detail">General purpose and high temperature masking tape rolls</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Duct Tape')">
+          <div class="item-name">Duct Tape</div>
+          <div class="item-detail">Heavy duty cloth duct tape, aluminium foil tape</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Insulation Tape')">
+          <div class="item-name">Insulation Tape</div>
+          <div class="item-detail">PVC electrical insulation tape in various colours</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Spanners &amp; Hand Tools')">
+          <div class="item-name">Spanners &amp; Hand Tools</div>
+          <div class="item-detail">Open end, ring, combination spanners; pipe wrenches</div>
+          <span class="item-brand">Stanley</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+        <div class="item-card" onclick="openWA('Spirit Level &amp; Manhole Cover')">
+          <div class="item-name">Spirit Level &amp; Manhole Cover</div>
+          <div class="item-detail">Professional spirit levels; cast iron and polymer manhole covers</div>
+          <span class="item-brand">General</span>
+          <span class="item-quote">Request Quote →</span>
+        </div>
+      </div>
     </div>
-    <div class="cat-brands">Brands: <strong>Various Leading Manufacturers</strong></div>
-    <div class="items-grid">
-      <div class="item-card"><div class="item-name">Steel Nails</div><div class="item-detail">Common wire nails, masonry nails, roofing nails in all sizes</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Screws</div><div class="item-detail">Wood screws, self-tapping, drywall, machine screws</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Nuts &amp; Bolts</div><div class="item-detail">Hex bolts, carriage bolts, stainless and galvanized nuts and bolts</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Anchor Bolts</div><div class="item-detail">Chemical anchors, expansion anchors, sleeve anchors</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Wire Rope Clips &amp; D-Shackles</div><div class="item-detail">Galvanized wire rope clips, bow shackles and D-shackles</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Ladders</div><div class="item-detail">Aluminium step ladders, extension ladders and platform steps</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Wheelbarrow &amp; Platform Trolley</div><div class="item-detail">Heavy duty construction wheelbarrows and flat platform trolleys</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">MS Tube &amp; Steel Sections</div><div class="item-detail">Mild steel hollow sections, RHS, SHS for fabrication</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Polythene Sheets &amp; Tarpauline</div><div class="item-detail">DPM polythene, builder's film, heavy duty tarpaulins</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Thermocol Sheets</div><div class="item-detail">EPS expanded polystyrene boards for insulation and packaging</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Masking Tape</div><div class="item-detail">General purpose and high temperature masking tape rolls</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Duct Tape</div><div class="item-detail">Heavy duty cloth duct tape, aluminium foil tape</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Insulation Tape</div><div class="item-detail">PVC electrical insulation tape in various colours</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Spanners &amp; Hand Tools</div><div class="item-detail">Open end, ring, combination spanners; pipe wrenches</div><span class="item-brand">Stanley</span><span class="item-quote">Request Quote →</span></div>
-      <div class="item-card"><div class="item-name">Spirit Level &amp; Manhole Cover</div><div class="item-detail">Professional spirit levels; cast iron and polymer manhole covers</div><span class="item-brand">General</span><span class="item-quote">Request Quote →</span></div>
-    </div>
-  </div>
 
-  <!-- CTA BANNER -->
-  <div class="cta-banner" role="complementary" aria-label="Contact procurement">
-    <div>
-      <h3>CAN'T FIND WHAT YOU NEED?</h3>
-      <p>We source any building material. Contact our procurement team today.</p>
+  </div><!-- end products-inner -->
+</div><!-- end products-area -->
+
+<!-- CTA BANNER -->
+<div class="cta-banner" role="complementary" aria-label="Contact procurement">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h3>Can't Find What You Need?</h3>
+      <p>We source any building material. Contact our procurement team.</p>
     </div>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap">
-      <a href="mailto:procurement@buildoramaterials.com" class="btn-email">Email Procurement →</a>
+    <div class="cta-btns">
+      <a href="mailto:procurement@buildoramaterials.com" class="btn-email-outline">Email Procurement</a>
       <a href="https://wa.me/971501018048?text=Hello%20Buildora%2C%20I%20am%20looking%20for%20a%20specific%20product." class="btn-wa" target="_blank" rel="noopener" aria-label="Contact procurement on WhatsApp">WhatsApp Us</a>
     </div>
   </div>
+</div>
 
-  <!-- BROCHURE DOWNLOAD (bottom of products) -->
-  <div class="products-brochure" aria-label="Download product brochure">
-    <div class="products-brochure-text">
-      <h3>DOWNLOAD THE FULL PRODUCT CATALOGUE</h3>
-      <p>Get our complete product range, brand list, and specifications in one PDF — no login required.</p>
-    </div>
-    <a href="assets/brochure.pdf" download target="_blank" class="btn-dl-green" aria-label="Download Buildora product catalogue PDF">
-      <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 15l-5-5h3V3h4v7h3l-5 5zm-6 2h12v2H4v-2z"/></svg>
-      Download PDF Catalogue
-    </a>
-  </div>
+<!-- BROCHURE DOWNLOAD -->
+<div class="brochure-bar" aria-label="Download product brochure">
+  <h3>Download the Full Product Catalogue</h3>
+  <p>Get our complete product range, brand list, and specifications in one PDF — no login required.</p>
+  <a href="assets/brochure.pdf" download class="btn-dl" aria-label="Download Buildora product catalogue PDF">
+    <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 15l-5-5h3V3h4v7h3l-5 5zm-6 2h12v2H4v-2z"/></svg>
+    Download PDF Catalogue
+  </a>
+</div>
 
-</div><!-- end products-wrap -->
-
-<!-- WHATSAPP -->
-<a class="wa-btn" href="https://wa.me/971501018048?text=Hello%20Buildora%2C%20I%20need%20a%20quote%20for%20building%20materials." target="_blank" rel="noopener" aria-label="Chat with Buildora on WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/971501018048?text=Hello%20Buildora%2C%20I%20need%20a%20quote%20for%20building%20materials." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with Buildora on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
 </a>
 
 <!-- FOOTER -->
-<footer>
-  <div class="ft-bot">
-    <div>
-      <div class="ft-name">BUILDORA MATERIALS</div>
-      <p>© 2026 Buildora Materials Trading. Dubai, UAE. All rights reserved.</p>
+<footer id="footer" aria-label="Site footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" aria-label="Buildora Materials home">
+        <div class="logo">
+          <div class="logo-top">
+            <span class="logo-text">BUILD</span>
+            <svg class="logo-house-svg" viewBox="0 0 44 48" width="28" height="31" aria-hidden="true">
+              <path d="M22 3L40 18L35 18L35 45L9 45L9 18L4 18Z" fill="#F5A020"/>
+              <rect x="16" y="30" width="12" height="15" fill="white" opacity="0.9"/>
+            </svg>
+            <span class="logo-text">RA</span>
+          </div>
+          <div class="logo-bottom">M A T E R I A L S</div>
+        </div>
+      </a>
+      <p>Your trusted B2B building materials supplier in Dubai, UAE. 14 product categories. 50+ globally certified brands. One partner for every phase of your project.</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/buildoramaterials" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/buildoramaterials" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/buildoramaterials" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://wa.me/971501018048" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </a>
+      </div>
     </div>
-    <ul class="ft-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="/#contact">Contact</a></li>
-      <li><a href="assets/brochure.pdf" download>Download Brochure</a></li>
-      <li><a href="mailto:sales@buildoramaterials.com">sales@buildoramaterials.com</a></li>
-    </ul>
+    <div class="footer-col">
+      <div class="footer-col-title">Quick Links</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/#about">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="/#brands">Our Brands</a>
+        <a href="/#why">Why Buildora</a>
+        <a href="/#contact">Contact Us</a>
+        <a href="assets/brochure.pdf" download>Download Brochure</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-contact-list">
+        <li><span>📍</span><span>Al Qouz, Dubai, UAE</span></li>
+        <li><span>📞</span><a href="tel:+971501018048">+971 50 101 8048</a></li>
+        <li><span>✉</span><a href="mailto:sales@buildoramaterials.com">sales@buildoramaterials.com</a></li>
+        <li><span>✉</span><a href="mailto:info@buildoramaterials.com">info@buildoramaterials.com</a></li>
+        <li><span>✉</span><a href="mailto:procurement@buildoramaterials.com">procurement@buildoramaterials.com</a></li>
+        <li><span>✉</span><a href="mailto:support@buildoramaterials.com">support@buildoramaterials.com</a></li>
+        <li><span>🌐</span><a href="https://www.buildoramaterials.com" target="_blank" rel="noopener">www.buildoramaterials.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>&copy; 2026 Buildora Materials Trading. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </div>
   </div>
 </footer>
 
-<script src="js/ui.js"></script>
-<script src="js/products.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ----------------------------------------------------------
+     MOBILE MENU
+  ---------------------------------------------------------- */
+  var hamburger = document.getElementById('hamburger-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var menuOpen = false;
+
+  function openMob() {
+    menuOpen = true;
+    hamburger.classList.add('open');
+    mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMob() {
+    menuOpen = false;
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', function () {
+    if (menuOpen) { closeMob(); } else { openMob(); }
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () { if (menuOpen) closeMob(); });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (menuOpen && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      closeMob();
+    }
+  });
+
+  /* ----------------------------------------------------------
+     NAV SCROLL SHADOW
+  ---------------------------------------------------------- */
+  var nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  /* ----------------------------------------------------------
+     WHATSAPP PRODUCT CLICK
+  ---------------------------------------------------------- */
+  window.openWA = function (productName) {
+    var clean = productName.replace(/&amp;/g, '&');
+    var msg = encodeURIComponent('Hello Buildora, I would like to request a quote for: ' + clean);
+    window.open('https://wa.me/971501018048?text=' + msg, '_blank', 'noopener');
+  };
+
+  /* ----------------------------------------------------------
+     SEARCH
+  ---------------------------------------------------------- */
+  var searchInput = document.getElementById('searchInput');
+  var searchClear = document.getElementById('searchClear');
+  var searchCount = document.getElementById('searchCount');
+  var noResults = document.getElementById('noResults');
+  var allCards = document.querySelectorAll('.item-card');
+  var allSections = document.querySelectorAll('.cat-section');
+  var activeCat = 'all';
+
+  function countText(visible, total) {
+    if (visible === total) return 'All Products';
+    return visible + ' of ' + total + ' products';
+  }
+
+  function doSearch(val) {
+    val = (val || '').trim().toLowerCase();
+    searchClear.style.display = val ? 'block' : 'none';
+
+    var visibleCount = 0;
+    var total = 0;
+
+    allSections.forEach(function (sec) {
+      var cat = sec.getAttribute('data-cat');
+      var catMatch = activeCat === 'all' || activeCat === cat;
+      if (!catMatch) { sec.classList.add('hidden'); return; }
+      sec.classList.remove('hidden');
+
+      var secTitle = sec.querySelector('.cat-title').textContent.toLowerCase();
+      var secBrands = sec.querySelector('.cat-brands') ? sec.querySelector('.cat-brands').textContent.toLowerCase() : '';
+      var cards = sec.querySelectorAll('.item-card');
+      var secVisible = 0;
+
+      cards.forEach(function (card) {
+        total++;
+        var nameEl = card.querySelector('.item-name');
+        var detailEl = card.querySelector('.item-detail');
+        var brandEl = card.querySelector('.item-brand');
+        var text = [
+          nameEl ? nameEl.textContent : '',
+          detailEl ? detailEl.textContent : '',
+          brandEl ? brandEl.textContent : '',
+          secTitle,
+          secBrands
+        ].join(' ').toLowerCase();
+
+        var show = !val || text.indexOf(val) !== -1;
+        card.classList.toggle('hidden', !show);
+        if (show) { secVisible++; visibleCount++; }
+      });
+
+      sec.classList.toggle('hidden', secVisible === 0);
+    });
+
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    searchCount.textContent = countText(visibleCount, total);
+  }
+
+  function clearSearch() {
+    searchInput.value = '';
+    searchClear.style.display = 'none';
+    doSearch('');
+    searchInput.focus();
+  }
+
+  window.doSearch = doSearch;
+  window.clearSearch = clearSearch;
+
+  /* ----------------------------------------------------------
+     FILTER BY CATEGORY
+  ---------------------------------------------------------- */
+  function filterCat(cat, btn) {
+    activeCat = cat;
+
+    document.querySelectorAll('.filter-btn').forEach(function (b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    if (btn) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+    }
+
+    var val = searchInput.value.trim().toLowerCase();
+    doSearch(val);
+
+    if (cat !== 'all') {
+      var target = document.getElementById(cat);
+      if (target) {
+        setTimeout(function () {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+      }
+    }
+  }
+
+  window.filterCat = filterCat;
+
+  /* ----------------------------------------------------------
+     HASH NAVIGATION — auto-filter on load if URL has #hash
+  ---------------------------------------------------------- */
+  function handleHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    var validCats = ['electrical','cable-management','cables','plumbing','switch','painting','tools','earthing','sanitary','safety','hvac','lighting','pumps','hardware'];
+    if (validCats.indexOf(hash) !== -1) {
+      var matchBtn = null;
+      document.querySelectorAll('.filter-btn').forEach(function (b) {
+        if (b.getAttribute('onclick') && b.getAttribute('onclick').indexOf("'" + hash + "'") !== -1) {
+          matchBtn = b;
+        }
+      });
+      filterCat(hash, matchBtn);
+    }
+  }
+
+  handleHash();
+  window.addEventListener('hashchange', handleHash);
+
+  /* Initial count */
+  doSearch('');
+})();
+</script>
 </body>
 </html>
