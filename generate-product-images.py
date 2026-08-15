@@ -167,7 +167,7 @@ for i, (filename, prompt) in enumerate(PRODUCTS, 1):
     print(f"[{i}/{total}] Generating: {filename}")
     try:
         response = client.models.generate_content(
-            model="gemini-2.0-flash-preview-image-generation",
+            model="gemini-2.5-flash-image",
             contents=prompt,
             config=types.GenerateContentConfig(
                 response_modalities=["IMAGE", "TEXT"]
