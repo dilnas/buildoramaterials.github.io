@@ -184,7 +184,7 @@ STYLE = """
     .footer-bottom-links a:hover { color: var(--white); }
     #footer { background: var(--green-dark); }
 
-    @media (max-width: 900px) {
+    @media (max-width: 992px) {
       .nav-links, .nav-actions { display: none; }
       .hamburger { display: flex; }
       .pd-grid { grid-template-columns: 1fr; }
