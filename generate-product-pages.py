@@ -6,8 +6,8 @@ products from one shared template (header/nav/footer copied from
 products.html, adjusted for the products/ subdirectory).
 
 Also pre-seeds gallery placeholder images (Phase A): copies each
-product's main image to assets/images/products/extra/<slug>-2.jpg and
--3.jpg so every gallery has 3 working images before real Pexels photos
+product's main image to assets/images/products/extra/<slug>-2.webp and
+-3.webp so every gallery has 3 working images before real Pexels photos
 are downloaded by download-extra-product-images.py (Phase B).
 
 Usage:
@@ -213,8 +213,8 @@ def render(product):
     wa_name = product["wa_name"]
     brands = product["brands"]
     main_img = f"assets/images/products/{product['image']}"
-    extra1 = f"assets/images/products/extra/{slug}-2.jpg"
-    extra2 = f"assets/images/products/extra/{slug}-3.jpg"
+    extra1 = f"assets/images/products/extra/{slug}-2.webp"
+    extra2 = f"assets/images/products/extra/{slug}-3.webp"
     page_url = f"{SITE_URL}/products/{slug}.html"
 
     title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora Materials Dubai"
@@ -552,7 +552,7 @@ def main():
     for product in PRODUCTS:
         src = IMG_DIR / product["image"]
         for suffix in ("2", "3"):
-            dst = EXTRA_DIR / f"{product['slug']}-{suffix}.jpg"
+            dst = EXTRA_DIR / f"{product['slug']}-{suffix}.webp"
             if not dst.exists():
                 shutil.copy(src, dst)
 

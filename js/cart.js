@@ -369,3 +369,11 @@
     init();
   }
 })();
+
+/* Register the caching service worker (see /sw.js) after the page has
+   finished loading, so it never competes with the initial page load. */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}

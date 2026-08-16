@@ -14,7 +14,7 @@ Field notes:
 - sizes: hand-authored list of realistic size/spec strings using correct
   units for the product category.
 - Gallery extra images are derived from slug at render time
-  (assets/images/products/extra/<slug>-2.jpg / -3.jpg) — not stored here.
+  (assets/images/products/extra/<slug>-2.webp / -3.webp) — not stored here.
 """
 
 CATEGORIES = {
@@ -39,7 +39,7 @@ PRODUCTS = [
     {
         "slug": "modular-distribution-board-components",
         "wa_name": "Modular Distribution Board Components",
-        "category": "electrical", "image": "prod-dist-board.jpg",
+        "category": "electrical", "image": "prod-dist-board.webp",
         "name": "Modular Distribution Board Components",
         "detail": "MCB, RCCB, RCBO, isolators for residential and commercial panels",
         "brands": ["ABB", "Hager"],
@@ -49,7 +49,7 @@ PRODUCTS = [
     {
         "slug": "main-distribution-panel-board-circuit-breakers",
         "wa_name": "Main Distribution Panel Board Circuit Breakers",
-        "category": "electrical", "image": "prod-circuit-breaker.jpg",
+        "category": "electrical", "image": "prod-circuit-breaker.webp",
         "name": "Main Distribution Panel Board Circuit Breakers",
         "detail": "ACB, MCCB for main distribution boards up to 6300A",
         "brands": ["Schneider", "ABB"],
@@ -59,7 +59,7 @@ PRODUCTS = [
     {
         "slug": "load-break-isolators",
         "wa_name": "Load Break Isolators",
-        "category": "electrical", "image": "prod-isolator.jpg",
+        "category": "electrical", "image": "prod-isolator.webp",
         "name": "Load Break Isolators",
         "detail": "Enclosed isolators and changeover switches",
         "brands": ["Havells", "Alfanar"],
@@ -69,7 +69,7 @@ PRODUCTS = [
     {
         "slug": "control-components",
         "wa_name": "Control Components",
-        "category": "electrical", "image": "prod-control-panel.jpg",
+        "category": "electrical", "image": "prod-control-panel.webp",
         "name": "Control Components",
         "detail": "Contactors, relays, timers, push buttons, indicator lights",
         "brands": ["Schneider", "ABB"],
@@ -79,7 +79,7 @@ PRODUCTS = [
     {
         "slug": "power-factor-capacitor-bank-components",
         "wa_name": "Power Factor Capacitor Bank Components",
-        "category": "electrical", "image": "prod-capacitor.jpg",
+        "category": "electrical", "image": "prod-capacitor.webp",
         "name": "Power Factor Capacitor Bank Components",
         "detail": "Capacitors, controllers, contactors for PFC panels",
         "brands": ["Alfanar"],
@@ -89,7 +89,7 @@ PRODUCTS = [
     {
         "slug": "distribution-boards-enclosures",
         "wa_name": "Distribution Boards &amp; Enclosures",
-        "category": "electrical", "image": "prod-enclosure.jpg",
+        "category": "electrical", "image": "prod-enclosure.webp",
         "name": "Distribution Boards & Enclosures",
         "detail": "Flush and surface mounted consumer units and DB enclosures",
         "brands": ["Hager", "Schneider"],
@@ -99,7 +99,7 @@ PRODUCTS = [
     {
         "slug": "panel-board-accessories",
         "wa_name": "Panel Board Accessories",
-        "category": "electrical", "image": "prod-panel-acc.jpg",
+        "category": "electrical", "image": "prod-panel-acc.webp",
         "name": "Panel Board Accessories",
         "detail": "Busbars, din rails, cable ducts, ferrules, terminal blocks",
         "brands": ["Havells", "ABB"],
@@ -111,7 +111,7 @@ PRODUCTS = [
     {
         "slug": "cable-glands-lugs-connectors",
         "wa_name": "Cable Glands Lugs &amp; Connectors",
-        "category": "cable-management", "image": "prod-cable-gland.jpg",
+        "category": "cable-management", "image": "prod-cable-gland.webp",
         "name": "Cable Glands, Lugs & Connectors",
         "detail": "Brass, nickel-plated, stainless steel cable glands; compression lugs",
         "brands": ["Cellpack", "Bicon"],
@@ -121,7 +121,7 @@ PRODUCTS = [
     {
         "slug": "cable-trays-ladders",
         "wa_name": "Cable Trays &amp; Ladders",
-        "category": "cable-management", "image": "prod-cable-tray.jpg",
+        "category": "cable-management", "image": "prod-cable-tray.webp",
         "name": "Cable Trays & Ladders",
         "detail": "Hot-dip galvanized, perforated, solid bottom cable trays and ladders",
         "brands": ["Caparo", "Delta"],
@@ -131,7 +131,7 @@ PRODUCTS = [
     {
         "slug": "steel-support-systems",
         "wa_name": "Steel Support Systems",
-        "category": "cable-management", "image": "prod-steel-support.jpg",
+        "category": "cable-management", "image": "prod-steel-support.webp",
         "name": "Steel Support Systems",
         "detail": "Channel support, unistrut, cable clamps and fixings",
         "brands": ["Hex India", "BICC"],
@@ -141,7 +141,7 @@ PRODUCTS = [
     {
         "slug": "pvc-conduit-trunking-systems",
         "wa_name": "PVC Conduit &amp; Trunking Systems",
-        "category": "cable-management", "image": "prod-conduit-pvc.jpg",
+        "category": "cable-management", "image": "prod-conduit-pvc.webp",
         "name": "PVC Conduit & Trunking Systems",
         "detail": "Heavy gauge PVC conduit, trunking, accessories in all sizes",
         "brands": ["Decoduct", "Unitech"],
@@ -151,7 +151,7 @@ PRODUCTS = [
     {
         "slug": "cable-ties-pulling-springs",
         "wa_name": "Cable Ties &amp; Pulling Springs",
-        "category": "cable-management", "image": "prod-cable-ties.jpg",
+        "category": "cable-management", "image": "prod-cable-ties.webp",
         "name": "Cable Ties & Pulling Springs",
         "detail": "Nylon cable ties in all sizes; steel cable pulling springs",
         "brands": ["Yuvix"],
@@ -161,7 +161,7 @@ PRODUCTS = [
     {
         "slug": "floor-distribution-systems",
         "wa_name": "Floor Distribution Systems",
-        "category": "cable-management", "image": "prod-floor-dist.jpg",
+        "category": "cable-management", "image": "prod-floor-dist.webp",
         "name": "Floor Distribution Systems",
         "detail": "Underfloor cable distribution boxes and accessories",
         "brands": ["Marshall Tufflex"],
@@ -171,7 +171,7 @@ PRODUCTS = [
     {
         "slug": "cable-jointing-systems",
         "wa_name": "Cable Jointing Systems",
-        "category": "cable-management", "image": "prod-cable-joint.jpg",
+        "category": "cable-management", "image": "prod-cable-joint.webp",
         "name": "Cable Jointing Systems",
         "detail": "Heat shrink, cold shrink joints and termination kits",
         "brands": ["Cellpack", "BICC"],
@@ -181,7 +181,7 @@ PRODUCTS = [
     {
         "slug": "steel-conduit-wiring-boxes",
         "wa_name": "Steel Conduit &amp; Wiring Boxes",
-        "category": "cable-management", "image": "prod-steel-conduit.jpg",
+        "category": "cable-management", "image": "prod-steel-conduit.webp",
         "name": "Steel Conduit & Wiring Boxes",
         "detail": "GI steel conduit, junction boxes, pull boxes",
         "brands": ["Unitech", "Delta"],
@@ -193,7 +193,7 @@ PRODUCTS = [
     {
         "slug": "solar-cables",
         "wa_name": "Solar Cables",
-        "category": "cables", "image": "prod-solar-cable.jpg",
+        "category": "cables", "image": "prod-solar-cable.webp",
         "name": "Solar Cables",
         "detail": "PV1-F solar DC cables, UV resistant, double insulated",
         "brands": ["Nexans", "Prysmian"],
@@ -203,7 +203,7 @@ PRODUCTS = [
     {
         "slug": "co-axial-cables",
         "wa_name": "Co-axial Cables",
-        "category": "cables", "image": "prod-coaxial.jpg",
+        "category": "cables", "image": "prod-coaxial.webp",
         "name": "Co-axial Cables",
         "detail": "RG6, RG11, RG59 coaxial cables for TV and CCTV",
         "brands": ["Belden", "D-Link"],
@@ -213,7 +213,7 @@ PRODUCTS = [
     {
         "slug": "single-core-wires",
         "wa_name": "Single Core Wires",
-        "category": "cables", "image": "prod-single-wire.jpg",
+        "category": "cables", "image": "prod-single-wire.webp",
         "name": "Single Core Wires",
         "detail": "1.5mm² to 300mm² single core PVC and XLPE insulated",
         "brands": ["Ducab", "CopperPlus"],
@@ -223,7 +223,7 @@ PRODUCTS = [
     {
         "slug": "xlpe-insulated-cables",
         "wa_name": "XLPE Insulated Cables",
-        "category": "cables", "image": "prod-xlpe-cable.jpg",
+        "category": "cables", "image": "prod-xlpe-cable.webp",
         "name": "XLPE Insulated Cables",
         "detail": "0.6/1kV to 33kV XLPE power cables, armoured and unarmoured",
         "brands": ["Ducab", "Nexans"],
@@ -233,7 +233,7 @@ PRODUCTS = [
     {
         "slug": "fire-performance-cables",
         "wa_name": "Fire Performance Cables",
-        "category": "cables", "image": "prod-fire-cable.jpg",
+        "category": "cables", "image": "prod-fire-cable.webp",
         "name": "Fire Performance Cables",
         "detail": "Fire resistant, LSZH, Enhanced Fire cables to BS standards",
         "brands": ["Prysmian", "Top Cable"],
@@ -243,7 +243,7 @@ PRODUCTS = [
     {
         "slug": "multicore-industrial-cables",
         "wa_name": "Multicore Industrial Cables",
-        "category": "cables", "image": "prod-multicore.jpg",
+        "category": "cables", "image": "prod-multicore.webp",
         "name": "Multicore Industrial Cables",
         "detail": "2 to 61 core control cables, screened and unscreened",
         "brands": ["Belden", "Oman Cables"],
@@ -253,7 +253,7 @@ PRODUCTS = [
     {
         "slug": "rubber-welding-cables",
         "wa_name": "Rubber &amp; Welding Cables",
-        "category": "cables", "image": "prod-welding-cable.jpg",
+        "category": "cables", "image": "prod-welding-cable.webp",
         "name": "Rubber & Welding Cables",
         "detail": "Flexible rubber cables, welding cables, EPR insulated",
         "brands": ["Nexans", "CopperPlus"],
@@ -263,7 +263,7 @@ PRODUCTS = [
     {
         "slug": "panel-switchboard-battery-cables",
         "wa_name": "Panel Switchboard &amp; Battery Cables",
-        "category": "cables", "image": "prod-battery-cable.jpg",
+        "category": "cables", "image": "prod-battery-cable.webp",
         "name": "Panel, Switchboard & Battery Cables",
         "detail": "Flexible panel wiring cables, battery interconnect cables",
         "brands": ["Ducab", "Paige"],
@@ -273,7 +273,7 @@ PRODUCTS = [
     {
         "slug": "data-fibre-optic-instrumentation-cables",
         "wa_name": "Data Fibre-optic &amp; Instrumentation Cables",
-        "category": "cables", "image": "prod-fiber-optic.jpg",
+        "category": "cables", "image": "prod-fiber-optic.webp",
         "name": "Data, Fibre-optic & Instrumentation Cables",
         "detail": "Cat6, Cat6A, OS2 fibre, PLTC instrumentation cables",
         "brands": ["Belden", "D-Link"],
@@ -285,7 +285,7 @@ PRODUCTS = [
     {
         "slug": "ppr-pipes-fittings",
         "wa_name": "PPR Pipes &amp; Fittings",
-        "category": "plumbing", "image": "prod-ppr-pipe.jpg",
+        "category": "plumbing", "image": "prod-ppr-pipe.webp",
         "name": "PPR Pipes & Fittings",
         "detail": "PN20 PPR pipes and fittings for hot and cold water systems",
         "brands": ["Novatherm", "RAKtherm"],
@@ -295,7 +295,7 @@ PRODUCTS = [
     {
         "slug": "upvc-pipes-fittings",
         "wa_name": "UPVC Pipes &amp; Fittings",
-        "category": "plumbing", "image": "prod-upvc-pipe.jpg",
+        "category": "plumbing", "image": "prod-upvc-pipe.webp",
         "name": "UPVC Pipes & Fittings",
         "detail": "UPVC pressure pipes, Class B, C and D for water supply",
         "brands": ["Hepworth", "Cosmoplast"],
@@ -305,7 +305,7 @@ PRODUCTS = [
     {
         "slug": "hdpe-pipes-fittings",
         "wa_name": "HDPE Pipes &amp; Fittings",
-        "category": "plumbing", "image": "prod-hdpe-pipe.jpg",
+        "category": "plumbing", "image": "prod-hdpe-pipe.webp",
         "name": "HDPE Pipes & Fittings",
         "detail": "PE100 HDPE pipes for water mains and sewerage",
         "brands": ["Prime", "Cosmoplast"],
@@ -315,7 +315,7 @@ PRODUCTS = [
     {
         "slug": "pex-pipes",
         "wa_name": "Pex Pipes",
-        "category": "plumbing", "image": "prod-pex-pipe.jpg",
+        "category": "plumbing", "image": "prod-pex-pipe.webp",
         "name": "Pex Pipes",
         "detail": "Cross-linked polyethylene pipes for underfloor heating and plumbing",
         "brands": ["RAKtherm"],
@@ -325,7 +325,7 @@ PRODUCTS = [
     {
         "slug": "pvc-white-pipes",
         "wa_name": "PVC White Pipes",
-        "category": "plumbing", "image": "prod-pvc-pipe.jpg",
+        "category": "plumbing", "image": "prod-pvc-pipe.webp",
         "name": "PVC White Pipes",
         "detail": "PVC conduit and pipe systems for general plumbing",
         "brands": ["Cosmoplast", "Prime"],
@@ -335,7 +335,7 @@ PRODUCTS = [
     {
         "slug": "high-pressure-pipes",
         "wa_name": "High Pressure Pipes",
-        "category": "plumbing", "image": "prod-hp-pipe.jpg",
+        "category": "plumbing", "image": "prod-hp-pipe.webp",
         "name": "High Pressure Pipes",
         "detail": "High pressure water supply systems for industrial applications",
         "brands": ["Hepworth"],
@@ -345,7 +345,7 @@ PRODUCTS = [
     {
         "slug": "drainage-pipes-systems",
         "wa_name": "Drainage Pipes &amp; Systems",
-        "category": "plumbing", "image": "prod-drainage.jpg",
+        "category": "plumbing", "image": "prod-drainage.webp",
         "name": "Drainage Pipes & Systems",
         "detail": "UPVC soil and waste drainage, underground drainage pipes",
         "brands": ["Terrain", "Hepworth"],
@@ -357,7 +357,7 @@ PRODUCTS = [
     {
         "slug": "waterproof-switch-sockets",
         "wa_name": "Waterproof Switch Sockets",
-        "category": "switch", "image": "prod-switch-wp.jpg",
+        "category": "switch", "image": "prod-switch-wp.webp",
         "name": "Waterproof Switch Sockets",
         "detail": "IP44 and IP66 rated weatherproof switches and sockets",
         "brands": ["ABB", "Schneider"],
@@ -367,7 +367,7 @@ PRODUCTS = [
     {
         "slug": "pop-up-switches",
         "wa_name": "Pop-up Switches",
-        "category": "switch", "image": "prod-popup-switch.jpg",
+        "category": "switch", "image": "prod-popup-switch.webp",
         "name": "Pop-up Switches",
         "detail": "Flush pop-up socket outlets for desks and worktops",
         "brands": ["Legrand"],
@@ -377,7 +377,7 @@ PRODUCTS = [
     {
         "slug": "switch-sockets-standard",
         "wa_name": "Switch Sockets Standard",
-        "category": "switch", "image": "prod-socket.jpg",
+        "category": "switch", "image": "prod-socket.webp",
         "name": "Switch Sockets (Standard)",
         "detail": "1G, 2G, 3G switches and 13A socket outlets, various finishes",
         "brands": ["MK", "Crabtree"],
@@ -387,7 +387,7 @@ PRODUCTS = [
     {
         "slug": "smart-switches",
         "wa_name": "Smart Switches",
-        "category": "switch", "image": "prod-smart-switch.jpg",
+        "category": "switch", "image": "prod-smart-switch.webp",
         "name": "Smart Switches",
         "detail": "Wi-Fi enabled smart switches compatible with Alexa and Google",
         "brands": ["Schneider", "Panasonic"],
@@ -397,7 +397,7 @@ PRODUCTS = [
     {
         "slug": "grid-switches-modules",
         "wa_name": "Grid Switches &amp; Modules",
-        "category": "switch", "image": "prod-grid-switch.jpg",
+        "category": "switch", "image": "prod-grid-switch.webp",
         "name": "Grid Switches & Modules",
         "detail": "Grid switch systems for modular wiring installations",
         "brands": ["MK", "Legrand"],
@@ -407,7 +407,7 @@ PRODUCTS = [
     {
         "slug": "metal-clad-switches",
         "wa_name": "Metal Clad Switches",
-        "category": "switch", "image": "prod-metal-switch.jpg",
+        "category": "switch", "image": "prod-metal-switch.webp",
         "name": "Metal Clad Switches",
         "detail": "Industrial grade metal clad switches for commercial use",
         "brands": ["ABB", "Crabtree"],
@@ -417,7 +417,7 @@ PRODUCTS = [
     {
         "slug": "isolators",
         "wa_name": "Isolators",
-        "category": "switch", "image": "prod-sw-isolator.jpg",
+        "category": "switch", "image": "prod-sw-isolator.webp",
         "name": "Isolators",
         "detail": "DP and TP switch isolators for A/C and equipment isolation",
         "brands": ["MK", "Schneider"],
@@ -429,7 +429,7 @@ PRODUCTS = [
     {
         "slug": "anti-fungal-anti-bacterial-paint",
         "wa_name": "Anti-Fungal Anti-Bacterial Paint",
-        "category": "painting", "image": "prod-antifungal-paint.jpg",
+        "category": "painting", "image": "prod-antifungal-paint.webp",
         "name": "Anti-Fungal / Anti-Bacterial Paint",
         "detail": "Moisture resistant paint for bathrooms, kitchens and hospitals",
         "brands": ["Jotun", "Asian Paints"],
@@ -439,7 +439,7 @@ PRODUCTS = [
     {
         "slug": "exterior-emulsion",
         "wa_name": "Exterior Emulsion",
-        "category": "painting", "image": "prod-exterior-paint.jpg",
+        "category": "painting", "image": "prod-exterior-paint.webp",
         "name": "Exterior Emulsion",
         "detail": "Weather resistant exterior wall emulsion for facades",
         "brands": ["Jotun", "National"],
@@ -449,7 +449,7 @@ PRODUCTS = [
     {
         "slug": "interior-emulsion",
         "wa_name": "Interior Emulsion",
-        "category": "painting", "image": "prod-interior-paint.jpg",
+        "category": "painting", "image": "prod-interior-paint.webp",
         "name": "Interior Emulsion",
         "detail": "Smooth finish interior emulsion, washable, low VOC",
         "brands": ["Jotun", "Asian Paints"],
@@ -459,7 +459,7 @@ PRODUCTS = [
     {
         "slug": "fenomastic-paint",
         "wa_name": "Fenomastic Paint",
-        "category": "painting", "image": "prod-fenomastic.jpg",
+        "category": "painting", "image": "prod-fenomastic.webp",
         "name": "Fenomastic Paint",
         "detail": "Jotun Fenomastic pure colours interior and exterior range",
         "brands": ["Jotun"],
@@ -469,7 +469,7 @@ PRODUCTS = [
     {
         "slug": "emulsion-paint",
         "wa_name": "Emulsion Paint",
-        "category": "painting", "image": "prod-emulsion.jpg",
+        "category": "painting", "image": "prod-emulsion.webp",
         "name": "Emulsion Paint",
         "detail": "Standard emulsion in a wide range of colours",
         "brands": ["National", "Asian Paints"],
@@ -479,7 +479,7 @@ PRODUCTS = [
     {
         "slug": "texture-paint",
         "wa_name": "Texture Paint",
-        "category": "painting", "image": "prod-texture-paint.jpg",
+        "category": "painting", "image": "prod-texture-paint.webp",
         "name": "Texture Paint",
         "detail": "Sand texture, coarse texture, rough cast finish paints",
         "brands": ["Jotun", "National"],
@@ -489,7 +489,7 @@ PRODUCTS = [
     {
         "slug": "enamel-paint",
         "wa_name": "Enamel Paint",
-        "category": "painting", "image": "prod-enamel-paint.jpg",
+        "category": "painting", "image": "prod-enamel-paint.webp",
         "name": "Enamel Paint",
         "detail": "Gloss and semi-gloss enamel for wood, metal and trim",
         "brands": ["Asian Paints", "Jotun"],
@@ -499,7 +499,7 @@ PRODUCTS = [
     {
         "slug": "primers-undercoats",
         "wa_name": "Primers &amp; Undercoats",
-        "category": "painting", "image": "prod-primer.jpg",
+        "category": "painting", "image": "prod-primer.webp",
         "name": "Primers & Undercoats",
         "detail": "Alkali resistant primer, wall filler, sealer and undercoat",
         "brands": ["Jotun", "National"],
@@ -509,7 +509,7 @@ PRODUCTS = [
     {
         "slug": "wall-putty",
         "wa_name": "Wall Putty",
-        "category": "painting", "image": "prod-wall-putty.jpg",
+        "category": "painting", "image": "prod-wall-putty.webp",
         "name": "Wall Putty",
         "detail": "White cement based wall putty for smooth surface preparation",
         "brands": ["Asian Paints"],
@@ -521,7 +521,7 @@ PRODUCTS = [
     {
         "slug": "impact-wrench",
         "wa_name": "Impact Wrench",
-        "category": "tools", "image": "prod-impact-wrench.jpg",
+        "category": "tools", "image": "prod-impact-wrench.webp",
         "name": "Impact Wrench",
         "detail": "Cordless and corded impact wrenches, various torque ratings",
         "brands": ["Makita", "DeWalt"],
@@ -531,7 +531,7 @@ PRODUCTS = [
     {
         "slug": "angle-grinders",
         "wa_name": "Angle Grinders",
-        "category": "tools", "image": "prod-angle-grinder.jpg",
+        "category": "tools", "image": "prod-angle-grinder.webp",
         "name": "Angle Grinders",
         "detail": "4.5\", 5\" and 9\" angle grinders for cutting and grinding",
         "brands": ["Bosch", "Makita"],
@@ -541,7 +541,7 @@ PRODUCTS = [
     {
         "slug": "power-tools-general",
         "wa_name": "Power Tools General",
-        "category": "tools", "image": "prod-power-tools.jpg",
+        "category": "tools", "image": "prod-power-tools.webp",
         "name": "Power Tools (General)",
         "detail": "Sanders, routers, planers and general power tools",
         "brands": ["DeWalt", "Bosch"],
@@ -551,7 +551,7 @@ PRODUCTS = [
     {
         "slug": "hand-tools",
         "wa_name": "Hand Tools",
-        "category": "tools", "image": "prod-hand-tools.jpg",
+        "category": "tools", "image": "prod-hand-tools.webp",
         "name": "Hand Tools",
         "detail": "Pliers, screwdrivers, spanners, wrenches and hand tool sets",
         "brands": ["Stanley", "DeWalt"],
@@ -561,7 +561,7 @@ PRODUCTS = [
     {
         "slug": "tool-accessories",
         "wa_name": "Tool Accessories",
-        "category": "tools", "image": "prod-tool-acc.jpg",
+        "category": "tools", "image": "prod-tool-acc.webp",
         "name": "Tool Accessories",
         "detail": "Drill bits, grinding discs, cutting discs, saw blades",
         "brands": ["Bosch", "Makita"],
@@ -571,7 +571,7 @@ PRODUCTS = [
     {
         "slug": "drills-hammer-drills",
         "wa_name": "Drills &amp; Hammer Drills",
-        "category": "tools", "image": "prod-drill.jpg",
+        "category": "tools", "image": "prod-drill.webp",
         "name": "Drills & Hammer Drills",
         "detail": "Cordless drill drivers, SDS-plus and SDS-max rotary hammers",
         "brands": ["Makita", "Hilti"],
@@ -581,7 +581,7 @@ PRODUCTS = [
     {
         "slug": "routers",
         "wa_name": "Routers",
-        "category": "tools", "image": "prod-router.jpg",
+        "category": "tools", "image": "prod-router.webp",
         "name": "Routers",
         "detail": "Fixed base and plunge routers for woodworking",
         "brands": ["Bosch", "Makita"],
@@ -591,7 +591,7 @@ PRODUCTS = [
     {
         "slug": "chop-saws-miter-saws",
         "wa_name": "Chop Saws Miter Saws",
-        "category": "tools", "image": "prod-miter-saw.jpg",
+        "category": "tools", "image": "prod-miter-saw.webp",
         "name": "Chop Saws (Miter Saws)",
         "detail": "Sliding compound miter saws for accurate cross cuts",
         "brands": ["DeWalt", "Makita"],
@@ -601,7 +601,7 @@ PRODUCTS = [
     {
         "slug": "jig-saws",
         "wa_name": "Jig Saws",
-        "category": "tools", "image": "prod-jigsaw.jpg",
+        "category": "tools", "image": "prod-jigsaw.webp",
         "name": "Jig Saws",
         "detail": "Orbital and straight cut jig saws for curves and shapes",
         "brands": ["Bosch", "DeWalt"],
@@ -611,7 +611,7 @@ PRODUCTS = [
     {
         "slug": "hilti-systems",
         "wa_name": "Hilti Systems",
-        "category": "tools", "image": "prod-hilti.jpg",
+        "category": "tools", "image": "prod-hilti.webp",
         "name": "Hilti Systems",
         "detail": "Hilti anchor systems, fastening, cutting and measuring tools",
         "brands": ["Hilti"],
@@ -623,7 +623,7 @@ PRODUCTS = [
     {
         "slug": "lightning-protection-systems",
         "wa_name": "Lightning Protection Systems",
-        "category": "earthing", "image": "prod-lightning.jpg",
+        "category": "earthing", "image": "prod-lightning.webp",
         "name": "Lightning Protection Systems",
         "detail": "Early streamer emission air terminals, lightning rods and kits",
         "brands": ["Furse"],
@@ -633,7 +633,7 @@ PRODUCTS = [
     {
         "slug": "earthing-systems",
         "wa_name": "Earthing Systems",
-        "category": "earthing", "image": "prod-earthing.jpg",
+        "category": "earthing", "image": "prod-earthing.webp",
         "name": "Earthing Systems",
         "detail": "Earth rods, earth plates, chemical earth electrodes",
         "brands": ["Furse"],
@@ -643,7 +643,7 @@ PRODUCTS = [
     {
         "slug": "furse-copper-tape",
         "wa_name": "Furse Copper Tape",
-        "category": "earthing", "image": "prod-copper-tape.jpg",
+        "category": "earthing", "image": "prod-copper-tape.webp",
         "name": "Furse Copper Tape",
         "detail": "25x3mm and 40x4mm bare copper tape for earthing",
         "brands": ["Furse"],
@@ -653,7 +653,7 @@ PRODUCTS = [
     {
         "slug": "furse-air-terminals",
         "wa_name": "Furse Air Terminals",
-        "category": "earthing", "image": "prod-air-terminal.jpg",
+        "category": "earthing", "image": "prod-air-terminal.webp",
         "name": "Furse Air Terminals",
         "detail": "Stainless steel air terminals, masts and mounting hardware",
         "brands": ["Furse"],
@@ -663,7 +663,7 @@ PRODUCTS = [
     {
         "slug": "protection-accessories",
         "wa_name": "Protection Accessories",
-        "category": "earthing", "image": "prod-prot-acc.jpg",
+        "category": "earthing", "image": "prod-prot-acc.webp",
         "name": "Protection Accessories",
         "detail": "Test links, bonds, clamps, surge protection devices",
         "brands": ["Furse"],
@@ -675,7 +675,7 @@ PRODUCTS = [
     {
         "slug": "sanitary-fittings-ware",
         "wa_name": "Sanitary Fittings &amp; Ware",
-        "category": "sanitary", "image": "prod-sanitary.jpg",
+        "category": "sanitary", "image": "prod-sanitary.webp",
         "name": "Sanitary Fittings & Ware",
         "detail": "WC pans, cisterns, bidets, washbasins and pedestals",
         "brands": ["RAK Ceramics", "Pegler"],
@@ -685,7 +685,7 @@ PRODUCTS = [
     {
         "slug": "water-heaters",
         "wa_name": "Water Heaters",
-        "category": "sanitary", "image": "prod-water-heater.jpg",
+        "category": "sanitary", "image": "prod-water-heater.webp",
         "name": "Water Heaters",
         "detail": "Electric storage, instant, solar water heaters 10L to 100L",
         "brands": ["Ariston", "Everhot"],
@@ -695,7 +695,7 @@ PRODUCTS = [
     {
         "slug": "sensor-taps",
         "wa_name": "Sensor Taps",
-        "category": "sanitary", "image": "prod-sensor-tap.jpg",
+        "category": "sanitary", "image": "prod-sensor-tap.webp",
         "name": "Sensor Taps",
         "detail": "Infra-red touchless basin, kitchen and urinal sensor taps",
         "brands": ["GROHE", "SANWA"],
@@ -705,7 +705,7 @@ PRODUCTS = [
     {
         "slug": "mixer-taps-shower-sets",
         "wa_name": "Mixer Taps &amp; Shower Sets",
-        "category": "sanitary", "image": "prod-shower.jpg",
+        "category": "sanitary", "image": "prod-shower.webp",
         "name": "Mixer Taps & Shower Sets",
         "detail": "Basin mixers, bath mixers, shower heads and thermostatic sets",
         "brands": ["GROHE", "Milano"],
@@ -715,7 +715,7 @@ PRODUCTS = [
     {
         "slug": "ceramics-tiles",
         "wa_name": "Ceramics &amp; Tiles",
-        "category": "sanitary", "image": "prod-tiles.jpg",
+        "category": "sanitary", "image": "prod-tiles.webp",
         "name": "Ceramics & Tiles",
         "detail": "Porcelain, ceramic floor and wall tiles in various sizes",
         "brands": ["RAK Ceramics"],
@@ -725,7 +725,7 @@ PRODUCTS = [
     {
         "slug": "valves-fittings",
         "wa_name": "Valves &amp; Fittings",
-        "category": "sanitary", "image": "prod-valve.jpg",
+        "category": "sanitary", "image": "prod-valve.webp",
         "name": "Valves & Fittings",
         "detail": "Ball valves, gate valves, check valves, copper pipe fittings",
         "brands": ["Pegler", "GROHE"],
@@ -737,7 +737,7 @@ PRODUCTS = [
     {
         "slug": "safety-shoes",
         "wa_name": "Safety Shoes",
-        "category": "safety", "image": "prod-safety-shoes.jpg",
+        "category": "safety", "image": "prod-safety-shoes.webp",
         "name": "Safety Shoes",
         "detail": "Steel toe cap safety shoes, EN20345 certified, various styles",
         "brands": ["Vaultex"],
@@ -747,7 +747,7 @@ PRODUCTS = [
     {
         "slug": "safety-harness",
         "wa_name": "Safety Harness",
-        "category": "safety", "image": "prod-harness.jpg",
+        "category": "safety", "image": "prod-harness.webp",
         "name": "Safety Harness",
         "detail": "Full body safety harness, lanyards and fall arrest systems",
         "brands": ["Vaultex"],
@@ -757,7 +757,7 @@ PRODUCTS = [
     {
         "slug": "safety-helmets",
         "wa_name": "Safety Helmets",
-        "category": "safety", "image": "prod-helmet.jpg",
+        "category": "safety", "image": "prod-helmet.webp",
         "name": "Safety Helmets",
         "detail": "HDPE and ABS safety helmets, EN397 certified, various colours",
         "brands": ["Vaultex", "TUF-FIX"],
@@ -767,7 +767,7 @@ PRODUCTS = [
     {
         "slug": "ear-plugs-protectors",
         "wa_name": "Ear Plugs &amp; Protectors",
-        "category": "safety", "image": "prod-ear-plug.jpg",
+        "category": "safety", "image": "prod-ear-plug.webp",
         "name": "Ear Plugs & Protectors",
         "detail": "Disposable foam ear plugs and reusable ear defenders",
         "brands": ["Vaultex"],
@@ -777,7 +777,7 @@ PRODUCTS = [
     {
         "slug": "safety-gloves",
         "wa_name": "Safety Gloves",
-        "category": "safety", "image": "prod-gloves.jpg",
+        "category": "safety", "image": "prod-gloves.webp",
         "name": "Safety Gloves",
         "detail": "Cut resistant, chemical resistant and general purpose gloves",
         "brands": ["Vaultex", "TUF-FIX"],
@@ -787,7 +787,7 @@ PRODUCTS = [
     {
         "slug": "coveralls-hi-vis-vests",
         "wa_name": "Coveralls &amp; Hi-Vis Vests",
-        "category": "safety", "image": "prod-hi-vis.jpg",
+        "category": "safety", "image": "prod-hi-vis.webp",
         "name": "Coveralls & Hi-Vis Vests",
         "detail": "Disposable and reusable coveralls, high visibility safety vests",
         "brands": ["Vaultex"],
@@ -799,7 +799,7 @@ PRODUCTS = [
     {
         "slug": "copper-coils-tubes",
         "wa_name": "Copper Coils &amp; Tubes",
-        "category": "hvac", "image": "prod-copper-coil.jpg",
+        "category": "hvac", "image": "prod-copper-coil.webp",
         "name": "Copper Coils & Tubes",
         "detail": "ACR copper tubes and coils for refrigeration and air conditioning",
         "brands": ["Maksal", "Mueller"],
@@ -809,7 +809,7 @@ PRODUCTS = [
     {
         "slug": "pipe-insulation-aerofoam",
         "wa_name": "Pipe Insulation Aerofoam",
-        "category": "hvac", "image": "prod-insulation.jpg",
+        "category": "hvac", "image": "prod-insulation.webp",
         "name": "Pipe Insulation (Aerofoam)",
         "detail": "Elastomeric foam insulation tubes and sheets for AC pipes",
         "brands": ["Aerofoam", "GoFlex"],
@@ -819,7 +819,7 @@ PRODUCTS = [
     {
         "slug": "sheet-insulation",
         "wa_name": "Sheet Insulation",
-        "category": "hvac", "image": "prod-sheet-ins.jpg",
+        "category": "hvac", "image": "prod-sheet-ins.webp",
         "name": "Sheet Insulation",
         "detail": "Closed cell rubber insulation sheets for ductwork and tanks",
         "brands": ["Gulf-O-Flex"],
@@ -829,7 +829,7 @@ PRODUCTS = [
     {
         "slug": "refrigerant-gas",
         "wa_name": "Refrigerant Gas",
-        "category": "hvac", "image": "prod-refrigerant.jpg",
+        "category": "hvac", "image": "prod-refrigerant.webp",
         "name": "Refrigerant Gas",
         "detail": "R22, R32, R410A, R404A refrigerant gases in cylinders",
         "brands": ["Refron", "Mafron"],
@@ -839,7 +839,7 @@ PRODUCTS = [
     {
         "slug": "hvac-controls",
         "wa_name": "HVAC Controls",
-        "category": "hvac", "image": "prod-hvac-control.jpg",
+        "category": "hvac", "image": "prod-hvac-control.webp",
         "name": "HVAC Controls",
         "detail": "Thermostats, pressure switches, expansion valves and controls",
         "brands": ["Honeywell", "Heidelberg"],
@@ -849,7 +849,7 @@ PRODUCTS = [
     {
         "slug": "hvac-accessories",
         "wa_name": "HVAC Accessories",
-        "category": "hvac", "image": "prod-hvac-acc.jpg",
+        "category": "hvac", "image": "prod-hvac-acc.webp",
         "name": "HVAC Accessories",
         "detail": "Filter driers, sight glasses, service valves, flaring tools",
         "brands": ["Maksal", "Mueller"],
@@ -861,7 +861,7 @@ PRODUCTS = [
     {
         "slug": "track-lights",
         "wa_name": "Track Lights",
-        "category": "lighting", "image": "prod-track-light.jpg",
+        "category": "lighting", "image": "prod-track-light.webp",
         "name": "Track Lights",
         "detail": "Single phase and three phase LED track lights, 10W to 50W",
         "brands": ["Philips", "OSRAM"],
@@ -871,7 +871,7 @@ PRODUCTS = [
     {
         "slug": "panel-lights",
         "wa_name": "Panel Lights",
-        "category": "lighting", "image": "prod-panel-light.jpg",
+        "category": "lighting", "image": "prod-panel-light.webp",
         "name": "Panel Lights",
         "detail": "LED panel lights 600x600, 1200x600, back-lit and edge-lit",
         "brands": ["Philips", "LGL"],
@@ -881,7 +881,7 @@ PRODUCTS = [
     {
         "slug": "down-lights",
         "wa_name": "Down Lights",
-        "category": "lighting", "image": "prod-downlight.jpg",
+        "category": "lighting", "image": "prod-downlight.webp",
         "name": "Down Lights",
         "detail": "Recessed LED downlights, dimmable, various colour temperatures",
         "brands": ["OSRAM", "Philips"],
@@ -891,7 +891,7 @@ PRODUCTS = [
     {
         "slug": "spot-lights",
         "wa_name": "Spot Lights",
-        "category": "lighting", "image": "prod-spotlight.jpg",
+        "category": "lighting", "image": "prod-spotlight.webp",
         "name": "Spot Lights",
         "detail": "Surface mounted and recessed LED spotlights, adjustable",
         "brands": ["Frater", "Selex"],
@@ -901,7 +901,7 @@ PRODUCTS = [
     {
         "slug": "led-strips-profiles",
         "wa_name": "LED Strips &amp; Profiles",
-        "category": "lighting", "image": "prod-led-strip.jpg",
+        "category": "lighting", "image": "prod-led-strip.webp",
         "name": "LED Strips & Profiles",
         "detail": "IP20 and IP65 LED strip lights, aluminum profiles and diffusers",
         "brands": ["Philips", "LGL"],
@@ -911,7 +911,7 @@ PRODUCTS = [
     {
         "slug": "linear-lights",
         "wa_name": "Linear Lights",
-        "category": "lighting", "image": "prod-linear-light.jpg",
+        "category": "lighting", "image": "prod-linear-light.webp",
         "name": "Linear Lights",
         "detail": "Suspended and recessed LED linear luminaires for offices",
         "brands": ["OSRAM", "Selex"],
@@ -923,7 +923,7 @@ PRODUCTS = [
     {
         "slug": "water-pumps-centrifugal",
         "wa_name": "Water Pumps Centrifugal",
-        "category": "pumps", "image": "prod-centrifugal-pump.jpg",
+        "category": "pumps", "image": "prod-centrifugal-pump.webp",
         "name": "Water Pumps (Centrifugal)",
         "detail": "Single stage centrifugal pumps for domestic and commercial use",
         "brands": ["Grundfos", "ESPA"],
@@ -933,7 +933,7 @@ PRODUCTS = [
     {
         "slug": "pressure-kit-pressure-sets",
         "wa_name": "Pressure Kit Pressure Sets",
-        "category": "pumps", "image": "prod-pressure-pump.jpg",
+        "category": "pumps", "image": "prod-pressure-pump.webp",
         "name": "Pressure Kit / Pressure Sets",
         "detail": "Complete pressure booster sets with pressure tank and controls",
         "brands": ["ESPA", "Grundfos"],
@@ -943,7 +943,7 @@ PRODUCTS = [
     {
         "slug": "transfer-pumps",
         "wa_name": "Transfer Pumps",
-        "category": "pumps", "image": "prod-transfer-pump.jpg",
+        "category": "pumps", "image": "prod-transfer-pump.webp",
         "name": "Transfer Pumps",
         "detail": "Portable transfer pumps for water and non-corrosive liquids",
         "brands": ["Vespa", "ESPA"],
@@ -953,7 +953,7 @@ PRODUCTS = [
     {
         "slug": "booster-pumps",
         "wa_name": "Booster Pumps",
-        "category": "pumps", "image": "prod-booster-pump.jpg",
+        "category": "pumps", "image": "prod-booster-pump.webp",
         "name": "Booster Pumps",
         "detail": "In-line booster pumps for increasing water pressure",
         "brands": ["Grundfos", "ESPA"],
@@ -963,7 +963,7 @@ PRODUCTS = [
     {
         "slug": "control-panels-for-pumps",
         "wa_name": "Control Panels for Pumps",
-        "category": "pumps", "image": "prod-pump-panel.jpg",
+        "category": "pumps", "image": "prod-pump-panel.webp",
         "name": "Control Panels for Pumps",
         "detail": "Motor starter panels, VFD panels and pump control panels",
         "brands": ["Grundfos"],
@@ -973,7 +973,7 @@ PRODUCTS = [
     {
         "slug": "submersible-pumps",
         "wa_name": "Submersible Pumps",
-        "category": "pumps", "image": "prod-submersible.jpg",
+        "category": "pumps", "image": "prod-submersible.webp",
         "name": "Submersible Pumps",
         "detail": "Borehole and drainage submersible pumps, various head ratings",
         "brands": ["Grundfos", "ESPA"],
@@ -985,7 +985,7 @@ PRODUCTS = [
     {
         "slug": "steel-nails",
         "wa_name": "Steel Nails",
-        "category": "hardware", "image": "prod-nails.jpg",
+        "category": "hardware", "image": "prod-nails.webp",
         "name": "Steel Nails",
         "detail": "Common wire nails, masonry nails, roofing nails in all sizes",
         "brands": ["General"],
@@ -995,7 +995,7 @@ PRODUCTS = [
     {
         "slug": "screws",
         "wa_name": "Screws",
-        "category": "hardware", "image": "prod-screws.jpg",
+        "category": "hardware", "image": "prod-screws.webp",
         "name": "Screws",
         "detail": "Wood screws, self-tapping, drywall, machine screws",
         "brands": ["General"],
@@ -1005,7 +1005,7 @@ PRODUCTS = [
     {
         "slug": "nuts-bolts",
         "wa_name": "Nuts &amp; Bolts",
-        "category": "hardware", "image": "prod-nuts-bolts.jpg",
+        "category": "hardware", "image": "prod-nuts-bolts.webp",
         "name": "Nuts & Bolts",
         "detail": "Hex bolts, carriage bolts, stainless and galvanized nuts and bolts",
         "brands": ["General"],
@@ -1015,7 +1015,7 @@ PRODUCTS = [
     {
         "slug": "anchor-bolts",
         "wa_name": "Anchor Bolts",
-        "category": "hardware", "image": "prod-anchor-bolt.jpg",
+        "category": "hardware", "image": "prod-anchor-bolt.webp",
         "name": "Anchor Bolts",
         "detail": "Chemical anchors, expansion anchors, sleeve anchors",
         "brands": ["General"],
@@ -1025,7 +1025,7 @@ PRODUCTS = [
     {
         "slug": "wire-rope-clips-d-shackles",
         "wa_name": "Wire Rope Clips &amp; D-Shackles",
-        "category": "hardware", "image": "prod-wire-rope.jpg",
+        "category": "hardware", "image": "prod-wire-rope.webp",
         "name": "Wire Rope Clips & D-Shackles",
         "detail": "Galvanized wire rope clips, bow shackles and D-shackles",
         "brands": ["General"],
@@ -1035,7 +1035,7 @@ PRODUCTS = [
     {
         "slug": "ladders",
         "wa_name": "Ladders",
-        "category": "hardware", "image": "prod-ladder.jpg",
+        "category": "hardware", "image": "prod-ladder.webp",
         "name": "Ladders",
         "detail": "Aluminium step ladders, extension ladders and platform steps",
         "brands": ["General"],
@@ -1045,7 +1045,7 @@ PRODUCTS = [
     {
         "slug": "wheelbarrow-platform-trolley",
         "wa_name": "Wheelbarrow &amp; Platform Trolley",
-        "category": "hardware", "image": "prod-wheelbarrow.jpg",
+        "category": "hardware", "image": "prod-wheelbarrow.webp",
         "name": "Wheelbarrow & Platform Trolley",
         "detail": "Heavy duty construction wheelbarrows and flat platform trolleys",
         "brands": ["General"],
@@ -1055,7 +1055,7 @@ PRODUCTS = [
     {
         "slug": "ms-tube-steel-sections",
         "wa_name": "MS Tube &amp; Steel Sections",
-        "category": "hardware", "image": "prod-steel-tube.jpg",
+        "category": "hardware", "image": "prod-steel-tube.webp",
         "name": "MS Tube & Steel Sections",
         "detail": "Mild steel hollow sections, RHS, SHS for fabrication",
         "brands": ["General"],
@@ -1065,7 +1065,7 @@ PRODUCTS = [
     {
         "slug": "polythene-sheets-tarpauline",
         "wa_name": "Polythene Sheets &amp; Tarpauline",
-        "category": "hardware", "image": "prod-tarpaulin.jpg",
+        "category": "hardware", "image": "prod-tarpaulin.webp",
         "name": "Polythene Sheets & Tarpauline",
         "detail": "DPM polythene, builder's film, heavy duty tarpaulins",
         "brands": ["General"],
@@ -1075,7 +1075,7 @@ PRODUCTS = [
     {
         "slug": "thermocol-sheets",
         "wa_name": "Thermocol Sheets",
-        "category": "hardware", "image": "prod-thermocol.jpg",
+        "category": "hardware", "image": "prod-thermocol.webp",
         "name": "Thermocol Sheets",
         "detail": "EPS expanded polystyrene boards for insulation and packaging",
         "brands": ["General"],
@@ -1085,7 +1085,7 @@ PRODUCTS = [
     {
         "slug": "masking-tape",
         "wa_name": "Masking Tape",
-        "category": "hardware", "image": "prod-masking-tape.jpg",
+        "category": "hardware", "image": "prod-masking-tape.webp",
         "name": "Masking Tape",
         "detail": "General purpose and high temperature masking tape rolls",
         "brands": ["General"],
@@ -1095,7 +1095,7 @@ PRODUCTS = [
     {
         "slug": "duct-tape",
         "wa_name": "Duct Tape",
-        "category": "hardware", "image": "prod-duct-tape.jpg",
+        "category": "hardware", "image": "prod-duct-tape.webp",
         "name": "Duct Tape",
         "detail": "Heavy duty cloth duct tape, aluminium foil tape",
         "brands": ["General"],
@@ -1105,7 +1105,7 @@ PRODUCTS = [
     {
         "slug": "insulation-tape",
         "wa_name": "Insulation Tape",
-        "category": "hardware", "image": "prod-ins-tape.jpg",
+        "category": "hardware", "image": "prod-ins-tape.webp",
         "name": "Insulation Tape",
         "detail": "PVC electrical insulation tape in various colours",
         "brands": ["General"],
@@ -1115,7 +1115,7 @@ PRODUCTS = [
     {
         "slug": "spanners-hand-tools",
         "wa_name": "Spanners &amp; Hand Tools",
-        "category": "hardware", "image": "prod-spanner.jpg",
+        "category": "hardware", "image": "prod-spanner.webp",
         "name": "Spanners & Hand Tools",
         "detail": "Open end, ring, combination spanners; pipe wrenches",
         "brands": ["Stanley"],
@@ -1125,7 +1125,7 @@ PRODUCTS = [
     {
         "slug": "spirit-level-manhole-cover",
         "wa_name": "Spirit Level &amp; Manhole Cover",
-        "category": "hardware", "image": "prod-spirit-level.jpg",
+        "category": "hardware", "image": "prod-spirit-level.webp",
         "name": "Spirit Level & Manhole Cover",
         "detail": "Professional spirit levels; cast iron and polymer manhole covers",
         "brands": ["General"],
