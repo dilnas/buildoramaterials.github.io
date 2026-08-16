@@ -217,7 +217,7 @@ def render(product):
     extra2 = f"assets/images/products/extra/{slug}-3.webp"
     page_url = f"{SITE_URL}/products/{slug}.html"
 
-    title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora Materials Dubai"
+    title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora Dubai"
     meta_desc = esc(f"{product['detail']}. Available brands: {', '.join(brands)}. Request a quote in Dubai, UAE — fast delivery, competitive prices.")
 
     json_ld = {
