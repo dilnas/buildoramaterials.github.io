@@ -266,7 +266,7 @@ def render(product):
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
   <meta name="author" content="Buildora Materials Trading LLC"/>
   <meta name="geo.region" content="AE-DU"/>
-  <meta name="geo.placename" content="Al Qouz, Dubai, UAE"/>
+  <meta name="geo.placename" content="Al Quoz, Dubai, UAE"/>
   <link rel="canonical" href="{page_url}"/>
 
   <meta property="og:title" content="{esc(name)} | Buildora Materials UAE"/>
@@ -301,9 +301,9 @@ def render(product):
 <div id="top-bar">
   <div class="container">
     <div class="topbar-left">
-      <a href="https://maps.google.com/?q=Al+Qouz+Dubai+UAE" target="_blank" rel="noopener">
+      <a href="https://maps.google.com/?q=Al+Quoz+Dubai+UAE" target="_blank" rel="noopener">
         <svg viewBox="0 0 16 16"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5zm0 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
-        <span>Al Qouz, Dubai, UAE</span>
+        <span>Al Quoz, Dubai, UAE</span>
       </a>
       <div class="sep"></div>
       <a href="tel:+971501018048">
@@ -473,7 +473,7 @@ def render(product):
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <ul class="footer-contact-list">
-        <li><span>📍</span><span>Al Qouz, Dubai, UAE</span></li>
+        <li><span>📍</span><span>Al Quoz, Dubai, UAE</span></li>
         <li><span>📞</span><a href="tel:+971501018048">+971 50 101 8048</a></li>
         <li><span>✉</span><a href="mailto:info@buildoramaterials.com">info@buildoramaterials.com</a></li>
         <li><span>🌐</span><a href="https://www.buildoramaterials.com" target="_blank" rel="noopener">www.buildoramaterials.com</a></li>
