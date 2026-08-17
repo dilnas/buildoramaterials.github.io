@@ -51,6 +51,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>
+    /* skip-to-content */
+    .skip-to-content { position: absolute; top: -100%; left: 0; z-index: 99999;
+      padding: 12px 24px; background: #1A5C50; color: #fff; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; }
+    .skip-to-content:focus { top: 0; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; font-size: 16px; color: #333; line-height: 1.6; overflow-x: hidden; }
@@ -151,7 +156,7 @@
 
     .cta-banner { background: var(--green-dark); color: var(--white); padding: 48px 0; }
     .cta-inner { max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-    .cta-text h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; color: var(--white); margin-bottom: 8px; line-height: 1.1; }
+    .cta-text h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; color: var(--white); margin-bottom: 8px; line-height: 1.1; }
     .cta-text p { color: rgba(255,255,255,0.78); font-size: 15px; }
     .cta-btns { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn-wa { display: inline-flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: #25D366; color: var(--white); padding: 12px 24px; border-radius: 4px; transition: background 0.2s; min-height: 48px; }
@@ -214,9 +219,10 @@
   </style>
 </head>
 <body>
+  <a class="skip-to-content" href="#main">Skip to main content</a>
 
 <!-- TOP BAR -->
-<div id="top-bar">
+<header id="top-bar">
   <div class="container">
     <div class="topbar-left">
       <a href="https://maps.google.com/?q=Al+Quoz+Dubai+UAE" target="_blank" rel="noopener">
@@ -249,7 +255,7 @@
       </a>
     </div>
   </div>
-</div>
+</header>
 
 <!-- NAV -->
 <nav id="main-nav" role="navigation" aria-label="Main navigation">
@@ -290,6 +296,8 @@
 </div>
 
 <!-- PAGE HEADER -->
+<main id="main">
+
 <div class="page-header">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -362,7 +370,7 @@
 <div class="cta-banner" role="complementary" aria-label="Contact procurement">
   <div class="cta-inner">
     <div class="cta-text">
-      <h3>Looking for a Specific Brand?</h3>
+      <h2>Looking for a Specific Brand?</h2>
       <p>Don't see the manufacturer you need? We source any certified brand on request.</p>
     </div>
     <div class="cta-btns">
@@ -378,6 +386,9 @@
 </a>
 
 <!-- FOOTER -->
+
+</main>
+
 <footer id="footer" aria-label="Site footer">
   <div class="footer-grid">
     <div class="footer-brand">

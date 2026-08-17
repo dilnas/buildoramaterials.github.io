@@ -51,6 +51,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>
+    /* skip-to-content */
+    .skip-to-content { position: absolute; top: -100%; left: 0; z-index: 99999;
+      padding: 12px 24px; background: #1A5C50; color: #fff; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; }
+    .skip-to-content:focus { top: 0; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; font-size: 16px; color: #333; line-height: 1.6; overflow-x: hidden; }
@@ -214,9 +219,10 @@
   </style>
 </head>
 <body>
+  <a class="skip-to-content" href="#main">Skip to main content</a>
 
 <!-- TOP BAR -->
-<div id="top-bar">
+<header id="top-bar">
   <div class="container">
     <div class="topbar-left">
       <a href="https://maps.google.com/?q=Al+Quoz+Dubai+UAE" target="_blank" rel="noopener">
@@ -249,7 +255,7 @@
       </a>
     </div>
   </div>
-</div>
+</header>
 
 <!-- NAV -->
 <nav id="main-nav" role="navigation" aria-label="Main navigation">
@@ -290,6 +296,8 @@
 </div>
 
 <!-- PAGE HEADER -->
+<main id="main">
+
 <div class="page-header">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -400,6 +408,9 @@
 </a>
 
 <!-- FOOTER -->
+
+</main>
+
 <footer id="footer" aria-label="Site footer">
   <div class="footer-grid">
     <div class="footer-brand">

@@ -74,6 +74,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>
+    /* skip-to-content */
+    .skip-to-content { position: absolute; top: -100%; left: 0; z-index: 99999;
+      padding: 12px 24px; background: #1A5C50; color: #fff; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; }
+    .skip-to-content:focus { top: 0; }
     /* =========================================================
        RESET & BASE
     ========================================================= */
@@ -506,7 +511,7 @@
       text-align: center;
       padding: 80px 24px;
     }
-    .no-results h3 {
+    .no-results h2 {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 40px;
       font-weight: 800;
@@ -657,7 +662,7 @@
       gap: 32px;
       flex-wrap: wrap;
     }
-    .cta-text h3 {
+    .cta-text h2 {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 36px;
       font-weight: 800;
@@ -713,7 +718,7 @@
       padding: 48px 24px;
       text-align: center;
     }
-    .brochure-bar h3 {
+    .brochure-bar h2 {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 30px;
       font-weight: 800;
@@ -875,9 +880,10 @@
   </style>
 </head>
 <body>
+  <a class="skip-to-content" href="#main">Skip to main content</a>
 
 <!-- TOP BAR -->
-<div id="top-bar">
+<header id="top-bar">
   <div class="container">
     <div class="topbar-left">
       <a href="https://maps.google.com/?q=Al+Quoz+Dubai+UAE" target="_blank" rel="noopener">
@@ -910,7 +916,7 @@
       </a>
     </div>
   </div>
-</div>
+</header>
 
 <!-- NAV -->
 <nav id="main-nav" role="navigation" aria-label="Main navigation">
@@ -951,6 +957,8 @@
 </div>
 
 <!-- PAGE HEADER -->
+<main id="main">
+
 <div class="page-header">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -997,7 +1005,7 @@
   <div class="products-inner">
 
     <div class="no-results" id="noResults" role="status">
-      <h3>NO RESULTS</h3>
+      <h2>NO RESULTS</h2>
       <p>Try a different search term or browse all categories.</p>
     </div>
 
@@ -2028,7 +2036,7 @@
 <div class="cta-banner" role="complementary" aria-label="Contact procurement">
   <div class="cta-inner">
     <div class="cta-text">
-      <h3>Can't Find What You Need?</h3>
+      <h2>Can't Find What You Need?</h2>
       <p>We source any building material. Contact our procurement team.</p>
     </div>
     <div class="cta-btns">
@@ -2040,7 +2048,7 @@
 
 <!-- BROCHURE DOWNLOAD -->
 <div class="brochure-bar" aria-label="Download product brochure">
-  <h3>Download the Full Product Catalogue</h3>
+  <h2>Download the Full Product Catalogue</h2>
   <p>Get our complete product range, brand list, and specifications in one PDF — no login required.</p>
   <a href="/assets/brochure.pdf" download class="btn-dl" aria-label="Download Buildora product catalogue PDF">
     <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 15l-5-5h3V3h4v7h3l-5 5zm-6 2h12v2H4v-2z"/></svg>
@@ -2054,6 +2062,9 @@
 </a>
 
 <!-- FOOTER -->
+
+</main>
+
 <footer id="footer" aria-label="Site footer">
   <div class="footer-grid">
     <div class="footer-brand">

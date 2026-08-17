@@ -174,6 +174,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>
+    /* skip-to-content */
+    .skip-to-content { position: absolute; top: -100%; left: 0; z-index: 99999;
+      padding: 12px 24px; background: #1A5C50; color: #fff; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; }
+    .skip-to-content:focus { top: 0; }
     /* =========================================================
        RESET & BASE
     ========================================================= */
@@ -1139,7 +1144,7 @@
       margin: 0 auto 16px;
       font-size: 26px;
     }
-    .form-success h3 {
+    .form-success h2 {
       font-size: 22px;
       color: var(--green);
       margin-bottom: 8px;
@@ -1359,11 +1364,12 @@
   </style>
 </head>
 <body>
+  <a class="skip-to-content" href="#main">Skip to main content</a>
 
 <!-- ============================================================
      TOP BAR
 ============================================================ -->
-<div id="top-bar">
+<header id="top-bar">
   <div class="container">
     <div class="topbar-left">
       <a href="https://maps.google.com/?q=Al+Quoz+Dubai+UAE" target="_blank" rel="noopener">
@@ -1396,7 +1402,7 @@
       </a>
     </div>
   </div>
-</div>
+</header>
 
 <!-- ============================================================
      STICKY NAV
@@ -1446,6 +1452,8 @@
     <a href="/contact.html" class="btn btn-orange">Get a Quote</a>
   </div>
 </div>
+
+<main id="main">
 
 <!-- ============================================================
      HERO SLIDER
@@ -1790,7 +1798,7 @@
 
       <!-- Left: Contact info -->
       <div class="contact-info reveal">
-        <h3 class="contact-info-title">Our Contact Details</h3>
+        <h2 class="contact-info-title">Our Contact Details</h2>
 
         <div class="contact-item">
           <div class="contact-item-icon">📍</div>
@@ -1881,7 +1889,7 @@
         </div>
         <div class="form-success" id="form-success">
           <div class="success-icon">✓</div>
-          <h3>Enquiry Sent!</h3>
+          <h2>Enquiry Sent!</h2>
           <p>Thank you for reaching out. Our team will review your requirements and get back to you within 1 business day.</p>
           <a href="mailto:info@buildoramaterials.com" style="color:var(--green);font-weight:600;margin-top:12px;display:inline-block;">info@buildoramaterials.com</a>
         </div>
@@ -1894,6 +1902,8 @@
 <!-- ============================================================
      FOOTER
 ============================================================ -->
+</main>
+
 <footer id="footer" aria-label="Site footer">
   <div class="container">
     <div class="footer-grid">
