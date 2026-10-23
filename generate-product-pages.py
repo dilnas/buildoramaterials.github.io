@@ -1,7 +1,7 @@
 """
 Buildora Materials — Product Detail Page Generator
 
-Reads products_data.py and renders products/<slug>.html for all 107
+Reads products_data.py and renders products/<slug>.html for all 462
 products from one shared template (header/nav/footer copied from
 products.html, adjusted for the products/ subdirectory).
 
@@ -30,7 +30,7 @@ WA_NUMBER = "971501018048"
 # ---------------------------------------------------------------------------
 # Sanity checks — fail loudly before writing anything
 # ---------------------------------------------------------------------------
-assert len(PRODUCTS) == 107, f"Expected 107 products, found {len(PRODUCTS)}"
+assert len(PRODUCTS) == 1575, f"Expected 1575 products, found {len(PRODUCTS)}"
 slugs = [p["slug"] for p in PRODUCTS]
 assert len(slugs) == len(set(slugs)), "Duplicate slugs found"
 for p in PRODUCTS:
@@ -137,9 +137,6 @@ STYLE = """
     .pd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
     .pd-main-img-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--grey-bg); }
     .pd-main-img { width: 100%; height: 420px; object-fit: cover; display: block; }
-    .pd-thumbs { display: flex; gap: 12px; margin-top: 12px; }
-    .pd-thumb { width: 88px; height: 88px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; opacity: 0.75; transition: opacity 0.18s, border-color 0.18s; }
-    .pd-thumb:hover, .pd-thumb.active { opacity: 1; border-color: var(--orange); }
     .pd-h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: var(--green); text-transform: uppercase; letter-spacing: 0.04em; margin: 28px 0 12px; }
     .pd-h2:first-child { margin-top: 0; }
     .pd-desc { font-size: 16px; line-height: 1.75; color: #444; }
@@ -397,11 +394,6 @@ def render(product):
         <div class="pd-main-img-wrap">
           <img class="pd-main-img" id="mainImg" src="../{main_img}" alt="{esc(name)}">
         </div>
-        <div class="pd-thumbs">
-          <img class="pd-thumb active" src="../{main_img}" alt="{esc(name)} photo 1" onclick="pdSwap(this)">
-          <img class="pd-thumb" src="../{extra1}" alt="{esc(name)} photo 2" onclick="pdSwap(this)">
-          <img class="pd-thumb" src="../{extra2}" alt="{esc(name)} photo 3" onclick="pdSwap(this)">
-        </div>
       </div>
 
       <div class="pd-info">
@@ -535,11 +527,6 @@ def render(product):
     window.open('https://wa.me/{WA_NUMBER}?text=' + msg, '_blank', 'noopener');
   }};
 
-  window.pdSwap = function (thumb) {{
-    document.getElementById('mainImg').src = thumb.src;
-    document.querySelectorAll('.pd-thumb').forEach(function (t) {{ t.classList.remove('active'); }});
-    thumb.classList.add('active');
-  }};
 }})();
 </script>
 <script src="/js/cart.js"></script>

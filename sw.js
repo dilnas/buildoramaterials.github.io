@@ -7,7 +7,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'buildora-v1';
+var CACHE_VERSION = 'buildora-v2';
 var IMAGE_CACHE = CACHE_VERSION + '-images';
 var ASSET_CACHE = CACHE_VERSION + '-assets';
 

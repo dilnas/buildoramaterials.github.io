@@ -84,9 +84,6 @@
     .pd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
     .pd-main-img-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--grey-bg); }
     .pd-main-img { width: 100%; height: 420px; object-fit: cover; display: block; }
-    .pd-thumbs { display: flex; gap: 12px; margin-top: 12px; }
-    .pd-thumb { width: 88px; height: 88px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; opacity: 0.75; transition: opacity 0.18s, border-color 0.18s; }
-    .pd-thumb:hover, .pd-thumb.active { opacity: 1; border-color: var(--orange); }
     .pd-h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: var(--green); text-transform: uppercase; letter-spacing: 0.04em; margin: 28px 0 12px; }
     .pd-h2:first-child { margin-top: 0; }
     .pd-desc { font-size: 16px; line-height: 1.75; color: #444; }
