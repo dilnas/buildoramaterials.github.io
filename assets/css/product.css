@@ -93,6 +93,7 @@
     .pd-sizes li { font-size: 14.5px; color: #444; padding-left: 22px; position: relative; line-height: 1.5; }
     .pd-sizes li::before { content: '✓'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
     .pd-cta { margin-top: 28px; }
+    .pd-price { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 800; color: var(--green); margin-bottom: 4px; }
 
     .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: #fff; border-top: 1px solid #e8e8e8; border-left: 1px solid #e8e8e8; }
     .item-card { background: var(--white); padding: 0; overflow: hidden; position: relative; cursor: pointer; border-right: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; border-left: 3px solid transparent; transition: background 0.18s, border-left-color 0.18s; display: block; }

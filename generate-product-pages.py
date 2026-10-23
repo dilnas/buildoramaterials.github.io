@@ -217,6 +217,8 @@ def render(product):
     title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora Dubai"
     meta_desc = esc(f"{product['detail']}. Available brands: {', '.join(brands)}. Request a quote in Dubai, UAE — fast delivery, competitive prices.")
 
+    price = product.get("price")
+
     json_ld = {
         "@context": "https://schema.org",
         "@type": "Product",
@@ -227,6 +229,14 @@ def render(product):
         "category": cat["title"],
         "url": page_url,
     }
+    if price is not None:
+        json_ld["offers"] = {
+            "@type": "Offer",
+            "priceCurrency": "AED",
+            "price": price,
+            "url": page_url,
+            "availability": "https://schema.org/InStock",
+        }
     breadcrumb_ld = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -397,6 +407,8 @@ def render(product):
       </div>
 
       <div class="pd-info">
+        {f'<div class="pd-price">AED {price}</div>' if price is not None else ''}
+
         <h2 class="pd-h2">Description</h2>
         <p class="pd-desc">{esc(product['description'])}</p>
 
