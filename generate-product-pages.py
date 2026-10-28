@@ -223,7 +223,7 @@ def render(product):
     page_url = f"{SITE_URL}/products/{slug}.html"
 
     if status == "curated" and brands:
-        title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora UAE"
+        title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora Materials UAE"
     else:
         title = f"{esc(name)} | Buildora Materials UAE"
 
