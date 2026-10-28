@@ -19,13 +19,18 @@ import shutil
 from pathlib import Path
 
 from products_data import PRODUCTS, CATEGORIES
+from site_seo import (
+    SITE_URL, ADDRESS_SHORT, MAPS_URL, GEO_REGION,
+    brand_status, display_brands, clean_description, clean_sizes, is_indexed,
+    canonical_slug,
+)
 
 ROOT = Path(__file__).parent
 OUT_DIR = ROOT / "products"
 IMG_DIR = ROOT / "assets" / "images" / "products"
 EXTRA_DIR = IMG_DIR / "extra"
-SITE_URL = "https://www.buildoramaterials.com"
 WA_NUMBER = "971501018048"
+BRAND_ON_REQUEST = "Multiple brands — confirmed on your quotation"
 
 # ---------------------------------------------------------------------------
 # Sanity checks — fail loudly before writing anything
@@ -208,14 +213,26 @@ def render(product):
     name = product["name"]
     slug = product["slug"]
     wa_name = product["wa_name"]
-    brands = product["brands"]
+    status = brand_status(product)
+    brands = display_brands(product)
+    description = clean_description(product)
+    sizes = clean_sizes(product)
     main_img = f"assets/images/products/{product['image']}"
     extra1 = f"assets/images/products/extra/{slug}-2.webp"
     extra2 = f"assets/images/products/extra/{slug}-3.webp"
     page_url = f"{SITE_URL}/products/{slug}.html"
 
-    title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora Dubai"
-    meta_desc = esc(f"{product['detail']}. Available brands: {', '.join(brands)}. Request a quote in Dubai, UAE — fast delivery, competitive prices.")
+    if status == "curated" and brands:
+        title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora UAE"
+    else:
+        title = f"{esc(name)} | Buildora Materials UAE"
+
+    detail = product["detail"].strip().rstrip(".")
+    lead = detail if name.lower() in detail.lower() else f"{name}: {detail}"
+    brand_clause = f" Brands: {', '.join(brands)}." if brands else ""
+    meta_desc = esc(f"{lead}.{brand_clause} Request a quote from Buildora Materials, Ajman — delivery across the UAE.")
+    robots = ("index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+              if is_indexed(product) else "noindex, follow")
 
     price = product.get("price")
 
@@ -223,12 +240,13 @@ def render(product):
         "@context": "https://schema.org",
         "@type": "Product",
         "name": name,
-        "description": product["description"],
+        "description": description,
         "image": [f"{SITE_URL}/{main_img}", f"{SITE_URL}/{extra1}", f"{SITE_URL}/{extra2}"],
-        "brand": [{"@type": "Brand", "name": b} for b in brands],
         "category": cat["title"],
         "url": page_url,
     }
+    if brands and status != "generic":
+        json_ld["brand"] = [{"@type": "Brand", "name": b} for b in brands]
     if price is not None:
         json_ld["offers"] = {
             "@type": "Offer",
@@ -248,18 +266,24 @@ def render(product):
         ],
     }
 
-    brands_html = "".join(f'<span class="pd-brand">{esc(b)}</span>' for b in brands)
-    sizes_html = "".join(f"<li>{esc(s)}</li>" for s in product["sizes"])
+    if brands:
+        brands_html = "".join(f'<span class="pd-brand">{esc(b)}</span>' for b in brands)
+        if status == "generic":
+            brands_html += '<span class="pd-brand">Other brands on request</span>'
+    else:
+        brands_html = f'<span class="pd-brand">{esc(BRAND_ON_REQUEST)}</span>'
+    sizes_html = "".join(f"<li>{esc(s)}</li>" for s in sizes)
 
     related_html = ""
     for r in related_products(product):
+        r_brands = display_brands(r)
         related_html += f"""
         <a class="item-card" href="{esc(r['slug'])}.html">
           <img class="item-img" src="../assets/images/products/{esc(r['image'])}" alt="{esc(r['name'])}" loading="lazy">
           <div class="item-body">
             <div class="item-name">{esc(r['name'])}</div>
             <div class="item-detail">{esc(r['detail'])}</div>
-            <span class="item-brand">{esc(' · '.join(r['brands']))}</span>
+            <span class="item-brand">{esc(' · '.join(r_brands) if r_brands else 'Brand on request')}</span>
           </div>
         </a>"""
 
@@ -270,11 +294,11 @@ def render(product):
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{title}</title>
   <meta name="description" content="{meta_desc}"/>
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <meta name="robots" content="{robots}"/>
   <meta name="author" content="Buildora Materials Trading LLC"/>
-  <meta name="geo.region" content="AE-DU"/>
-  <meta name="geo.placename" content="Al Quoz, Dubai, UAE"/>
-  <link rel="canonical" href="{page_url}"/>
+  <meta name="geo.region" content="{GEO_REGION}"/>
+  <meta name="geo.placename" content="{ADDRESS_SHORT}"/>
+  <link rel="canonical" href="{SITE_URL}/products/{canonical_slug(product)}.html"/>
 
   <meta property="og:title" content="{esc(name)} | Buildora Materials UAE"/>
   <meta property="og:description" content="{meta_desc}"/>
@@ -308,9 +332,9 @@ def render(product):
 <div id="top-bar">
   <div class="container">
     <div class="topbar-left">
-      <a href="https://maps.google.com/?q=Al+Quoz+Dubai+UAE" target="_blank" rel="noopener">
+      <a href="{MAPS_URL}" target="_blank" rel="noopener">
         <svg viewBox="0 0 16 16"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5zm0 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
-        <span>Al Quoz, Dubai, UAE</span>
+        <span>{ADDRESS_SHORT}</span>
       </a>
       <div class="sep"></div>
       <a href="tel:+971501018048">
@@ -410,7 +434,7 @@ def render(product):
         {f'<div class="pd-price">AED {price}</div>' if price is not None else ''}
 
         <h2 class="pd-h2">Description</h2>
-        <p class="pd-desc">{esc(product['description'])}</p>
+        <p class="pd-desc">{esc(description)}</p>
 
         <h2 class="pd-h2">Available Brands</h2>
         <div class="pd-brands">{brands_html}</div>
@@ -446,7 +470,7 @@ def render(product):
       <a href="/" aria-label="Buildora Materials home">
         <img src="../assets/images/buildora-logo-light.svg" alt="Buildora Materials" height="48" style="display:block;">
       </a>
-      <p>Your trusted B2B building materials supplier in Dubai, UAE. 14 product categories. 50+ globally certified brands. One partner for every phase of your project.</p>
+      <p>Your B2B building materials supplier in Ajman, delivering across the UAE. 21 product categories. 50+ global brands. One partner for every phase of your project.</p>
       <div class="footer-social">
         <a href="https://facebook.com/buildoramaterials" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -477,10 +501,10 @@ def render(product):
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <ul class="footer-contact-list">
-        <li><span>📍</span><span>Al Quoz, Dubai, UAE</span></li>
+        <li><span>📍</span><span>{ADDRESS_SHORT}</span></li>
         <li><span>📞</span><a href="tel:+971501018048">+971 50 101 8048</a></li>
         <li><span>✉</span><a href="mailto:info@buildoramaterials.com">info@buildoramaterials.com</a></li>
-        <li><span>🌐</span><a href="https://www.buildoramaterials.com" target="_blank" rel="noopener">www.buildoramaterials.com</a></li>
+        <li><span>🌐</span><a href="https://buildoramaterials.com/" target="_blank" rel="noopener">buildoramaterials.com</a></li>
       </ul>
     </div>
   </div>
@@ -488,8 +512,7 @@ def render(product):
     <div class="footer-bottom-inner">
       <p>&copy; 2026 Buildora Materials Trading. All rights reserved.</p>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="../privacy.html">Privacy Policy</a>
         <a href="../sitemap.xml">Sitemap</a>
       </div>
     </div>

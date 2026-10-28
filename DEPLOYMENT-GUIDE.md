@@ -302,3 +302,23 @@ buildoramaterials.github.io/
 ---
 
 *Guide prepared for Buildora Materials Trading — May 2025*
+
+## Product pages and sitemap (SEO rules)
+
+Product pages and `sitemap.xml` are generated — edit the sources, not the output:
+
+```
+python3 generate-product-pages.py   # rebuilds products/*.html from products_data.py
+python3 generate-sitemap.py         # rebuilds sitemap.xml
+```
+
+`site_seo.py` holds the shared rules:
+
+- **Canonical host:** `https://buildoramaterials.com` (matches `CNAME`). In Cloudflare, add a
+  301 redirect from `www.buildoramaterials.com/*` to `https://buildoramaterials.com/$1`.
+- **Address:** Amber Gem Tower, Ajman (`ADDRESS_SHORT`, `ADDRESS_FULL`, `MAPS_URL`).
+- **Brands:** generic "type" pages (no specific model) no longer show a rotated brand; they show
+  makers named in their own spec line, or "Multiple brands — confirmed on your quotation".
+- **Indexing:** generic pages stay live and linked but carry `noindex, follow` and are left out of
+  the sitemap. Set `NOINDEX_GENERIC = False` and rerun both scripts to index them again. When you
+  turn a generic page into a real SKU (add the brand to its name), it is indexed automatically.

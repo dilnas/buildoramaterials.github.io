@@ -3,4 +3,4 @@ Allow: /
 Disallow: /node_modules/
 Disallow: /__tests__/
 
-Sitemap: https://www.buildoramaterials.com/sitemap.xml
+Sitemap: https://buildoramaterials.com/sitemap.xml
