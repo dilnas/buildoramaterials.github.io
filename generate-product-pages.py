@@ -32,6 +32,13 @@ EXTRA_DIR = IMG_DIR / "extra"
 WA_NUMBER = "971501018048"
 BRAND_ON_REQUEST = "Multiple brands — confirmed on your quotation"
 
+# Product slugs with a matching blog guide — cross-linked from the product
+# page so the posts aren't orphaned (nothing else on the site links to them).
+BLOG_GUIDE_BY_SLUG = {
+    "cable-trays-ladders": ("/blog/cable-trays-ladders.html", "Cable Trays & Ladders: Sizing, Finish and Selection Guide"),
+    "steel-support-systems": ("/blog/steel-support-systems.html", "Steel Cable Tray Support Systems for UAE Construction and MEP Projects"),
+}
+
 # ---------------------------------------------------------------------------
 # Sanity checks — fail loudly before writing anything
 # ---------------------------------------------------------------------------
@@ -223,38 +230,49 @@ def render(product):
     page_url = f"{SITE_URL}/products/{slug}.html"
 
     if status == "curated" and brands:
-        title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora Materials UAE"
+        title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora"
     else:
-        title = f"{esc(name)} | Buildora Materials UAE"
+        title = f"{esc(name)} | Buildora"
 
     detail = product["detail"].strip().rstrip(".")
     lead = detail if name.lower() in detail.lower() else f"{name}: {detail}"
     brand_clause = f" Brands: {', '.join(brands)}." if brands else ""
-    meta_desc = esc(f"{lead}.{brand_clause} Request a quote from Buildora Materials, Ajman — delivery across the UAE.")
+    meta_desc = esc(f"{lead}.{brand_clause} Request a quote from Buildora Materials, Ajman.")
     robots = ("index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
               if is_indexed(product) else "noindex, follow")
 
     price = product.get("price")
 
-    json_ld = {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": name,
-        "description": description,
-        "image": [f"{SITE_URL}/{main_img}", f"{SITE_URL}/{extra1}", f"{SITE_URL}/{extra2}"],
-        "category": cat["title"],
-        "url": page_url,
-    }
-    if brands and status != "generic":
-        json_ld["brand"] = [{"@type": "Brand", "name": b} for b in brands]
-    if price is not None:
-        json_ld["offers"] = {
-            "@type": "Offer",
-            "priceCurrency": "AED",
-            "price": price,
+    # Product rich results require offers, review, or aggregateRating. We only
+    # have real offers data for curated (priced) products, so indexed pages
+    # without a price skip Product markup entirely rather than ship incomplete
+    # markup that Search Console flags as invalid.
+    if price is None and is_indexed(product):
+        json_ld = None
+    else:
+        json_ld = {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": name,
+            "description": description,
+            "image": [f"{SITE_URL}/{main_img}", f"{SITE_URL}/{extra1}", f"{SITE_URL}/{extra2}"],
+            "category": cat["title"],
             "url": page_url,
-            "availability": "https://schema.org/InStock",
         }
+        if brands and status != "generic":
+            json_ld["brand"] = [{"@type": "Brand", "name": b} for b in brands]
+        if price is not None:
+            json_ld["offers"] = {
+                "@type": "Offer",
+                "priceCurrency": "AED",
+                "price": price,
+                "url": page_url,
+                "availability": "https://schema.org/InStock",
+            }
+    product_ld_script = (
+        f"<script type=\"application/ld+json\">\n  {json.dumps(json_ld, indent=2)}\n  </script>\n  "
+        if json_ld is not None else ""
+    )
     breadcrumb_ld = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -300,7 +318,7 @@ def render(product):
   <meta name="geo.placename" content="{ADDRESS_SHORT}"/>
   <link rel="canonical" href="{SITE_URL}/products/{canonical_slug(product)}.html"/>
 
-  <meta property="og:title" content="{esc(name)} | Buildora Materials UAE"/>
+  <meta property="og:title" content="{esc(name)} | Buildora Materials"/>
   <meta property="og:description" content="{meta_desc}"/>
   <meta property="og:url" content="{page_url}"/>
   <meta property="og:type" content="product"/>
@@ -309,14 +327,11 @@ def render(product):
   <meta property="og:image" content="{SITE_URL}/{main_img}"/>
 
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="{esc(name)} | Buildora Materials UAE"/>
+  <meta name="twitter:title" content="{esc(name)} | Buildora Materials"/>
   <meta name="twitter:description" content="{meta_desc}"/>
   <meta name="twitter:image" content="{SITE_URL}/{main_img}"/>
 
-  <script type="application/ld+json">
-  {json.dumps(json_ld, indent=2)}
-  </script>
-  <script type="application/ld+json">
+  {product_ld_script}<script type="application/ld+json">
   {json.dumps(breadcrumb_ld, indent=2)}
   </script>
 
@@ -435,6 +450,7 @@ def render(product):
 
         <h2 class="pd-h2">Description</h2>
         <p class="pd-desc">{esc(description)}</p>
+        {f'<p class="pd-desc"><a href="{BLOG_GUIDE_BY_SLUG[slug][0]}">Read our guide: {esc(BLOG_GUIDE_BY_SLUG[slug][1])} &rarr;</a></p>' if slug in BLOG_GUIDE_BY_SLUG else ''}
 
         <h2 class="pd-h2">Available Brands</h2>
         <div class="pd-brands">{brands_html}</div>
