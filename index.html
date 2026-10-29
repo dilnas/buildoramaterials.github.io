@@ -981,6 +981,52 @@
     }
 
     /* =========================================================
+       FAQ
+    ========================================================= */
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 4px 28px;
+    }
+    .faq-item summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--green);
+      padding: 20px 0;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary::after { content: '\2212'; }
+    .faq-item p {
+      font-size: 15px;
+      color: var(--grey-text);
+      line-height: 1.65;
+      margin: 0 0 22px;
+    }
+
+    /* =========================================================
        BROCHURE CTA
     ========================================================= */
     #brochure-cta {
@@ -1747,6 +1793,52 @@
         <div class="why-title">Expert Technical Team</div>
         <p class="why-desc">Our experienced team provides technical guidance through every stage — from product selection and specification to procurement and aftersales support. One point of contact for everything you need.</p>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Common Questions</span>
+      <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Quick answers about Buildora Materials, our stock, and how to order.</p>
+    </div>
+    <div class="faq-list reveal">
+
+      <details class="faq-item">
+        <summary>Where is Buildora Materials located?</summary>
+        <p>Buildora Materials is based at CWS-1V-228162, 26th Floor, Amber Gem Tower, Ajman, UAE, and supplies contractors and developers across Ajman, Sharjah, Dubai and the wider UAE.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What building materials does Buildora supply?</summary>
+        <p>Buildora Materials supplies 21 categories: electrical materials, cables and wires, cable management, plumbing pipes and fittings, HVAC equipment, LED lighting, safety equipment and PPE, power tools, paints and coatings, sanitary ware, water pumps, earthing and lightning protection, switch sockets, general hardware, audio &amp; PA systems, seals and o-rings, drywall and gypsum systems, adhesives and sealants, site equipment, formwork and scaffolding, and timber and plywood.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does Buildora Materials supply to contractors and businesses?</summary>
+        <p>Yes. Buildora Materials is a dedicated building materials supplier serving contractors, developers, engineers and project managers across Ajman, Sharjah, Dubai and the wider UAE.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Which brands does Buildora Materials stock?</summary>
+        <p>Buildora stocks 50+ globally certified brands including ABB, Schneider Electric, Ducab, Jotun, Makita, Bosch, Grundfos, Honeywell, Legrand, Philips, Hager, DeWalt, Grohe and many more.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I get a quote from Buildora Materials?</summary>
+        <p>Call +971 50 101 8048, email info@buildoramaterials.com, or use the enquiry form on our website. We respond to all enquiries promptly.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does Buildora deliver building materials across the UAE?</summary>
+        <p>Yes. Buildora Materials serves customers across Ajman, Sharjah, Dubai, Abu Dhabi and the wider UAE. Contact us to discuss your delivery requirements.</p>
+      </details>
 
     </div>
   </div>

@@ -26,6 +26,7 @@ PAGES = [
     ("/contact.html", "monthly", "0.8"),
     ("/brands.html", "monthly", "0.7"),
     ("/why-us.html", "monthly", "0.7"),
+    ("/blog.html", "weekly", "0.7"),
     ("/privacy.html", "yearly", "0.3"),
 ]
 
