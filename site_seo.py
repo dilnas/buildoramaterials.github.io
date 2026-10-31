@@ -25,7 +25,7 @@ GEO_REGION = "AE-AJ"
 # by rotation rather than one we actually supply. They stay live and linked, but
 # are marked noindex until each is replaced with a real SKU. Set to False to
 # index them again — no other change needed.
-NOINDEX_GENERIC = True
+NOINDEX_GENERIC = False
 
 # The first 107 products are the hand-written core catalogue (also in
 # zoho_products_import.csv); their brand lists were chosen deliberately.
