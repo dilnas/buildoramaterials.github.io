@@ -18,6 +18,8 @@ import json
 import shutil
 from pathlib import Path
 
+from PIL import Image
+
 from products_data import PRODUCTS, CATEGORIES
 from site_seo import (
     SITE_URL, ADDRESS_SHORT, MAPS_URL, GEO_REGION,
@@ -225,6 +227,7 @@ def render(product):
     description = clean_description(product)
     sizes = clean_sizes(product)
     main_img = f"assets/images/products/{product['image']}"
+    og_img_w, og_img_h = Image.open(ROOT / main_img).size
     extra1 = f"assets/images/products/extra/{slug}-2.webp"
     extra2 = f"assets/images/products/extra/{slug}-3.webp"
     page_url = f"{SITE_URL}/products/{slug}.html"
@@ -327,6 +330,9 @@ def render(product):
   <meta property="og:site_name" content="Buildora Materials"/>
   <meta property="og:locale" content="en_AE"/>
   <meta property="og:image" content="{SITE_URL}/{main_img}"/>
+  <meta property="og:image:width" content="{og_img_w}"/>
+  <meta property="og:image:height" content="{og_img_h}"/>
+  <meta property="og:image:alt" content="{esc(name)} — Buildora Materials"/>
 
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="{esc(name)} | Buildora Materials"/>
