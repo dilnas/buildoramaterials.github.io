@@ -229,10 +229,12 @@ def render(product):
     extra2 = f"assets/images/products/extra/{slug}-3.webp"
     page_url = f"{SITE_URL}/products/{slug}.html"
 
-    if status == "curated" and brands:
-        title = f"{esc(name)} | {esc(' & '.join(brands))} | Buildora"
-    else:
-        title = f"{esc(name)} | Buildora"
+    title_raw = f"{name} | {' & '.join(brands)} | Buildora" if status == "curated" and brands else f"{name} | Buildora"
+    if len(title_raw) > 65:
+        title_raw = f"{name} | Buildora"
+    if len(title_raw) > 65:
+        title_raw = f"{name[:65 - len(' | Buildora') - 1].rstrip()}… | Buildora"
+    title = esc(title_raw)
 
     detail = product["detail"].strip().rstrip(".")
     lead = detail if name.lower() in detail.lower() else f"{name}: {detail}"
@@ -340,6 +342,14 @@ def render(product):
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>{STYLE}</style>
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){{
+        c[a]=c[a]||function(){{(c[a].q=c[a].q||[]).push(arguments)}};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    }})(window, document, "clarity", "script", "y3p3wafwv8");
+  </script>
 </head>
 <body>
 
