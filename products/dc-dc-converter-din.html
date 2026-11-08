@@ -146,6 +146,10 @@
     .pd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
     .pd-main-img-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--grey-bg); }
     .pd-main-img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .pd-thumbs { display: flex; gap: 10px; margin-top: 12px; }
+    .pd-thumb { width: 80px; height: 80px; object-fit: cover; border-radius: 6px; border: 2px solid var(--border); cursor: pointer; opacity: 0.75; transition: opacity 0.18s, border-color 0.18s; }
+    .pd-thumb:hover { opacity: 1; }
+    .pd-thumb.active { opacity: 1; border-color: var(--green); }
     .pd-h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: var(--green); text-transform: uppercase; letter-spacing: 0.04em; margin: 28px 0 12px; }
     .pd-h2:first-child { margin-top: 0; }
     .pd-desc { font-size: 16px; line-height: 1.75; color: #444; }
@@ -201,6 +205,7 @@
     @media (max-width: 640px) {
       .topbar-left a span, .topbar-left .sep { display: none; }
       .pd-main-img { height: 280px; }
+      .pd-thumb { width: 64px; height: 64px; }
       .related-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
@@ -320,6 +325,11 @@
       <div class="pd-gallery">
         <div class="pd-main-img-wrap">
           <img class="pd-main-img" id="mainImg" src="../assets/images/products/prod-control-panel.webp" alt="DC-DC Converter (DIN)">
+        </div>
+        <div class="pd-thumbs">
+          <img class="pd-thumb active" src="../assets/images/products/prod-control-panel.webp" alt="DC-DC Converter (DIN) thumbnail 1" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img class="pd-thumb" src="../assets/images/products/extra/dc-dc-converter-din-2.webp" alt="DC-DC Converter (DIN) thumbnail 2" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img class="pd-thumb" src="../assets/images/products/extra/dc-dc-converter-din-3.webp" alt="DC-DC Converter (DIN) thumbnail 3" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
         </div>
       </div>
 

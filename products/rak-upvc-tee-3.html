@@ -18,8 +18,8 @@
   <meta property="og:site_name" content="Buildora Materials"/>
   <meta property="og:locale" content="en_AE"/>
   <meta property="og:image" content="https://buildoramaterials.com/assets/images/products/prod-upvc-pipe.webp"/>
-  <meta property="og:image:width" content="467"/>
-  <meta property="og:image:height" content="350"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="654"/>
   <meta property="og:image:alt" content="RAK UPVC Tee 3&quot; — Buildora Materials"/>
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -146,6 +146,10 @@
     .pd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
     .pd-main-img-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--grey-bg); }
     .pd-main-img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .pd-thumbs { display: flex; gap: 10px; margin-top: 12px; }
+    .pd-thumb { width: 80px; height: 80px; object-fit: cover; border-radius: 6px; border: 2px solid var(--border); cursor: pointer; opacity: 0.75; transition: opacity 0.18s, border-color 0.18s; }
+    .pd-thumb:hover { opacity: 1; }
+    .pd-thumb.active { opacity: 1; border-color: var(--green); }
     .pd-h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: var(--green); text-transform: uppercase; letter-spacing: 0.04em; margin: 28px 0 12px; }
     .pd-h2:first-child { margin-top: 0; }
     .pd-desc { font-size: 16px; line-height: 1.75; color: #444; }
@@ -201,6 +205,7 @@
     @media (max-width: 640px) {
       .topbar-left a span, .topbar-left .sep { display: none; }
       .pd-main-img { height: 280px; }
+      .pd-thumb { width: 64px; height: 64px; }
       .related-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
@@ -321,6 +326,11 @@
         <div class="pd-main-img-wrap">
           <img class="pd-main-img" id="mainImg" src="../assets/images/products/prod-upvc-pipe.webp" alt="RAK UPVC Tee 3&quot;">
         </div>
+        <div class="pd-thumbs">
+          <img class="pd-thumb active" src="../assets/images/products/prod-upvc-pipe.webp" alt="RAK UPVC Tee 3&quot; thumbnail 1" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img class="pd-thumb" src="../assets/images/products/extra/rak-upvc-tee-3-2.webp" alt="RAK UPVC Tee 3&quot; thumbnail 2" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img class="pd-thumb" src="../assets/images/products/extra/rak-upvc-tee-3-3.webp" alt="RAK UPVC Tee 3&quot; thumbnail 3" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+        </div>
       </div>
 
       <div class="pd-info">
@@ -362,8 +372,8 @@
           <img class="item-img" src="../assets/images/products/prod-upvc-pipe.webp" alt="UPVC Pipes &amp; Fittings" loading="lazy">
           <div class="item-body">
             <div class="item-name">UPVC Pipes &amp; Fittings</div>
-            <div class="item-detail">UPVC pressure pipes, Class B, C and D for water supply</div>
-            <span class="item-brand">Hepworth · Cosmoplast</span>
+            <div class="item-detail">UPVC pressure pipes and fittings, 50mm–8&quot; for drainage and water supply</div>
+            <span class="item-brand">RAK · Atlas · GF · Cosmoplast</span>
           </div>
         </a>
         <a class="item-card" href="hdpe-pipes-fittings.html">
