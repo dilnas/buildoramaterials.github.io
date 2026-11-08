@@ -836,6 +836,17 @@ PRODUCTS = [
         "sizes": ["Foam plugs: NRR 29dB–33dB, disposable/corded", "Earmuffs: NRR 24dB–30dB, over-ear/helmet-mount", "Pack: bulk box of 100–200 pairs (plugs)", "Colour: high-visibility orange/yellow"],
     },
     {
+        "slug": "allen-marking-tape-dewa-red-150mm",
+        "wa_name": "Allen Marking Tape (DEWA) Red 150mm",
+        "category": "safety", "image": "prod-marking-tape-dewa.webp",
+        "name": "Allen Underground Cable Marking Tape – DEWA Red 150mm",
+        "detail": "DEWA-approved underground power cable warning tape, red, 150mm x 50mtr roll",
+        "price": 120,
+        "brands": ["Allen"],
+        "description": "Red underground electric cable warning tape printed with the bilingual DEWA 'Danger — Electric Power Cable Below' warning in English and Arabic, laid above buried power cables during trenching to alert future excavators. Allen marking tape is supplied in 150mm-wide, 50mtr rolls for long, continuous coverage along cable routes on UAE infrastructure and MEP projects.",
+        "sizes": ["Width: 150mm", "Thickness: 2mm", "Length: 50mtr per roll", "Colour: red, bilingual EN/AR DEWA warning print"],
+    },
+    {
         "slug": "safety-gloves",
         "wa_name": "Safety Gloves",
         "category": "safety", "image": "prod-gloves.webp",
