@@ -849,7 +849,7 @@ PRODUCTS = [
     {
         "slug": "underground-cable-warning-tape-yellow-150mm",
         "wa_name": "Warning Tape Yellow 150mm",
-        "category": "safety", "image": "prod-warning-tape-yellow.webp",
+        "category": "safety", "image": "prod-warning-tape-yellow-roll.webp",
         "name": "Underground Cable Warning Tape Yellow 150mm",
         "detail": "Underground electric cable warning tape, yellow, 150mm x 250mtr roll",
         "price": 70,
