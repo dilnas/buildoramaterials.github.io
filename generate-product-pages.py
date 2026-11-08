@@ -271,7 +271,11 @@ def render(product):
             "url": page_url,
         }
         if brands and status != "generic":
-            json_ld["brand"] = [{"@type": "Brand", "name": b} for b in brands]
+            # Google's Product structured data wants exactly one brand, not a
+            # list -- an array reads as a "Duplicate field 'brand'" error in
+            # Search Console even when every entry is a real supplier. The
+            # page itself still shows every brand chip; schema gets the first.
+            json_ld["brand"] = {"@type": "Brand", "name": brands[0]}
         if price is not None:
             json_ld["offers"] = {
                 "@type": "Offer",
