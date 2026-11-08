@@ -44,7 +44,7 @@ BLOG_GUIDE_BY_SLUG = {
 # ---------------------------------------------------------------------------
 # Sanity checks — fail loudly before writing anything
 # ---------------------------------------------------------------------------
-assert len(PRODUCTS) == 1576, f"Expected 1576 products, found {len(PRODUCTS)}"
+assert len(PRODUCTS) == 1577, f"Expected 1577 products, found {len(PRODUCTS)}"
 slugs = [p["slug"] for p in PRODUCTS]
 assert len(slugs) == len(set(slugs)), "Duplicate slugs found"
 for p in PRODUCTS:

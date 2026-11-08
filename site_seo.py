@@ -29,7 +29,7 @@ NOINDEX_GENERIC = False
 
 # The first 107 products are the hand-written core catalogue (also in
 # zoho_products_import.csv); their brand lists were chosen deliberately.
-CURATED_COUNT = 107
+CURATED_COUNT = 109
 
 UNBRANDED = {"Buildora Materials", "General"}
 
