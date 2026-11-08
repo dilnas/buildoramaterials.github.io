@@ -252,6 +252,7 @@ def render(product):
               if is_indexed(product) else "noindex, follow")
 
     price = product.get("price")
+    unit = product.get("unit")
 
     # Product rich results require offers, review, or aggregateRating. We only
     # have real offers data for curated (priced) products, so indexed pages
@@ -472,7 +473,7 @@ def render(product):
       </div>
 
       <div class="pd-info">
-        {f'<div class="pd-price">AED {price}</div>' if price is not None else ''}
+        {f'<div class="pd-price">AED {price}{f" / {esc(unit)}" if unit else ""}</div>' if price is not None else ''}
 
         <h2 class="pd-h2">Description</h2>
         <p class="pd-desc">{esc(description)}</p>
