@@ -62,6 +62,16 @@ for p in PRODUCTS:
 OUT_DIR.mkdir(exist_ok=True)
 EXTRA_DIR.mkdir(parents=True, exist_ok=True)
 
+_IMG_SIZE_CACHE = {}
+
+
+def img_size(rel_path):
+    """(width, height) of an image under ROOT, cached -- avoids re-decoding
+    the same product photo hundreds of times across related-product cards."""
+    if rel_path not in _IMG_SIZE_CACHE:
+        _IMG_SIZE_CACHE[rel_path] = Image.open(ROOT / rel_path).size
+    return _IMG_SIZE_CACHE[rel_path]
+
 
 def esc(text):
     return html.escape(str(text), quote=True)
@@ -240,9 +250,14 @@ def render(product):
     description = clean_description(product)
     sizes = clean_sizes(product)
     main_img = f"assets/images/products/{product['image']}"
-    og_img_w, og_img_h = Image.open(ROOT / main_img).size
+    og_img_w, og_img_h = img_size(main_img)
     extra1 = f"assets/images/products/extra/{slug}-2.webp"
     extra2 = f"assets/images/products/extra/{slug}-3.webp"
+    # Extra gallery files may not exist yet on a first run (seeded as a copy
+    # of main_img further down) -- fall back to the main image's own size,
+    # since that's exactly what the placeholder copy will be.
+    extra1_w, extra1_h = img_size(extra1) if (ROOT / extra1).exists() else (og_img_w, og_img_h)
+    extra2_w, extra2_h = img_size(extra2) if (ROOT / extra2).exists() else (og_img_w, og_img_h)
     page_url = f"{SITE_URL}/products/{slug}.html"
 
     title_raw = f"{name} | {' & '.join(brands)} | Buildora" if status == "curated" and brands else f"{name} | Buildora"
@@ -318,9 +333,11 @@ def render(product):
     related_html = ""
     for r in related_products(product):
         r_brands = display_brands(r)
+        r_img = f"assets/images/products/{r['image']}"
+        r_w, r_h = img_size(r_img)
         related_html += f"""
         <a class="item-card" href="{esc(r['slug'])}.html">
-          <img class="item-img" src="../assets/images/products/{esc(r['image'])}" alt="{esc(r['name'])}" loading="lazy">
+          <img class="item-img" src="../{esc(r_img)}" alt="{esc(r['name'])}" loading="lazy" width="{r_w}" height="{r_h}">
           <div class="item-body">
             <div class="item-name">{esc(r['name'])}</div>
             <div class="item-detail">{esc(r['detail'])}</div>
@@ -417,7 +434,7 @@ def render(product):
 <nav id="main-nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <a href="/" class="nav-logo" aria-label="Buildora Materials home">
-      <img src="../assets/images/buildora-logo.svg" alt="Buildora Materials" height="48" style="display:block;">
+      <img src="../assets/images/buildora-logo.svg" alt="Buildora Materials" width="248" height="48" style="display:block;">
     </a>
     <div class="nav-links" role="menubar">
       <a href="/" role="menuitem">Home</a>
@@ -475,12 +492,12 @@ def render(product):
 
       <div class="pd-gallery">
         <div class="pd-main-img-wrap">
-          <img class="pd-main-img" id="mainImg" src="../{main_img}" alt="{esc(name)}">
+          <img class="pd-main-img" id="mainImg" src="../{main_img}" alt="{esc(name)}" width="{og_img_w}" height="{og_img_h}">
         </div>
         <div class="pd-thumbs">
-          <img class="pd-thumb active" src="../{main_img}" alt="{esc(name)} thumbnail 1" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img class="pd-thumb" src="../{extra1}" alt="{esc(name)} thumbnail 2" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img class="pd-thumb" src="../{extra2}" alt="{esc(name)} thumbnail 3" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img class="pd-thumb active" src="../{main_img}" alt="{esc(name)} thumbnail 1" width="{og_img_w}" height="{og_img_h}" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img class="pd-thumb" src="../{extra1}" alt="{esc(name)} thumbnail 2" width="{extra1_w}" height="{extra1_h}" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img class="pd-thumb" src="../{extra2}" alt="{esc(name)} thumbnail 3" width="{extra2_w}" height="{extra2_h}" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
         </div>
       </div>
 
@@ -523,7 +540,7 @@ def render(product):
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="/" aria-label="Buildora Materials home">
-        <img src="../assets/images/buildora-logo-light.svg" alt="Buildora Materials" height="48" style="display:block;">
+        <img src="../assets/images/buildora-logo-light.svg" alt="Buildora Materials" width="248" height="48" style="display:block;">
       </a>
       <p>Your B2B building materials supplier in Ajman, delivering across the UAE. 21 product categories. 50+ global brands. One partner for every phase of your project.</p>
       <div class="footer-social">
