@@ -852,7 +852,7 @@ PRODUCTS = [
         "category": "safety", "image": "prod-warning-tape-yellow.webp",
         "name": "Al Samir Underground Cable Warning Tape Yellow 150mm",
         "detail": "Underground electric cable warning tape, yellow, 150mm x 250mtr roll",
-        "price": 63,
+        "price": 70,
         "brands": ["Al Samir"],
         "description": "Yellow underground electric cable warning tape printed with the bilingual 'Danger — Check Electric Cable Below' warning in English and Arabic, laid above buried power cables during trenching to alert future excavators. Manufactured by Al Samir Plastic Factory LLC in Sharjah, supplied in 150mm-wide, 250mtr rolls for long, continuous coverage along cable routes on UAE infrastructure and MEP projects.",
         "sizes": ["Width: 150mm", "Length: 250mtr per roll", "Colour: yellow, bilingual EN/AR electric cable warning print", "Manufacturer: Al Samir Plastic Factory LLC, Sharjah, UAE"],
