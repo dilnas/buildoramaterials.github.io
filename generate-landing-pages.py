@@ -1,0 +1,796 @@
+"""
+Buildora Materials — Keyword Landing Page Generator (SEO Phase 4)
+
+Generates standalone top-level landing pages (not product detail pages,
+not blog posts) targeting specific keyword searches Search Console shows
+impressions for. Reuses the exact header/nav/footer/style chrome from
+why-us.html so these pages look like native site pages, not a bolt-on.
+
+Usage:
+  python3 generate-landing-pages.py
+"""
+import html
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).parent
+SITE_URL = "https://buildoramaterials.com"
+
+
+def esc(text):
+    return html.escape(str(text), quote=True)
+
+
+HEAD_ASSETS = """  <link rel="icon" href="/favicon.ico" sizes="any"/>
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    .skip-to-content { position: absolute; top: -100%; left: 0; z-index: 99999;
+      padding: 12px 24px; background: #1A5C50; color: #fff; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; }
+    .skip-to-content:focus { top: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; font-size: 16px; color: #333; line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    :root {
+      --green: #1A5C50; --green-dark: #134840; --green-light: #1e6b5d;
+      --orange: #F5A020; --orange-dark: #D4880F;
+      --white: #ffffff; --grey-bg: #F5F6F7; --grey-light: #e8e8e8; --grey-text: #666;
+      --border: #e0e0e0; --radius: 8px; --radius-sm: 4px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08); --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+      --nav-h: 68px; --topbar-h: 40px; --section-pad: 80px;
+    }
+
+    h1, h2, h3, h4, h5, h6 { font-family: 'Barlow Condensed', sans-serif; line-height: 1.2; }
+    .section-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 10px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; border-radius: var(--radius-sm); padding: 12px 28px; min-height: 48px; transition: all 0.22s ease; white-space: nowrap; }
+    .btn-orange { background: var(--orange); color: var(--white); }
+    .btn-orange:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(245,160,32,0.35); }
+    .btn-green-outline { background: transparent; color: var(--green); border: 2px solid var(--green); }
+    .btn-green-outline:hover { background: var(--green); color: var(--white); transform: translateY(-1px); }
+    .btn-wa { display: inline-flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: #25D366; color: var(--white); padding: 12px 24px; border-radius: 4px; transition: background 0.2s; min-height: 48px; }
+    .btn-wa:hover { background: #1daa52; }
+
+    #top-bar { background: var(--green); color: var(--white); height: var(--topbar-h); display: flex; align-items: center; font-size: 12.5px; font-weight: 500; position: relative; z-index: 100; }
+    #top-bar .container { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 16px; }
+    .topbar-left { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .topbar-left a { color: var(--white); display: flex; align-items: center; gap: 6px; opacity: 0.92; transition: opacity 0.18s; }
+    .topbar-left a:hover { opacity: 1; }
+    .topbar-left .sep { width: 1px; height: 14px; background: rgba(255,255,255,0.3); }
+    .topbar-left svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+    .topbar-right { display: flex; align-items: center; gap: 14px; }
+    .topbar-right a { color: var(--white); opacity: 0.85; transition: opacity 0.18s; display: flex; align-items: center; }
+    .topbar-right a:hover { opacity: 1; }
+    .topbar-right svg { width: 16px; height: 16px; fill: currentColor; }
+
+    #main-nav { position: sticky; top: 0; z-index: 999; background: var(--white); border-bottom: 1px solid var(--border); height: var(--nav-h); display: flex; align-items: center; transition: box-shadow 0.25s ease; }
+    #main-nav.scrolled { box-shadow: 0 2px 16px rgba(0,0,0,0.1); }
+    #main-nav .container { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 24px; }
+    .nav-logo { flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; color: #222; padding: 8px 14px; border-radius: 4px; transition: color 0.18s, background 0.18s; text-transform: uppercase; }
+    .nav-links a:hover, .nav-links a.active { color: var(--green); background: rgba(26,92,80,0.06); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav-actions .btn { font-size: 13px; padding: 9px 18px; min-height: 40px; }
+
+    .hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; border-radius: 4px; background: transparent; border: 1.5px solid var(--border); cursor: pointer; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #333; border-radius: 2px; transition: all 0.25s ease; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu { display: none; position: fixed; top: calc(var(--topbar-h) + var(--nav-h)); left: 0; right: 0; bottom: 0; background: var(--white); z-index: 998; flex-direction: column; padding: 24px 20px; overflow-y: auto; border-top: 1px solid var(--border); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.04em; color: #222; padding: 14px 0; border-bottom: 1px solid var(--border); text-transform: uppercase; }
+    .mobile-menu a:hover { color: var(--green); }
+    .mobile-menu .mobile-btns { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+    .mobile-menu .mobile-btns .btn { width: 100%; justify-content: center; font-size: 16px; }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    .page-header { background: var(--grey-bg); padding: 64px 0 40px; border-bottom: 1px solid var(--border); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--green); transition: opacity 0.18s; }
+    .breadcrumb a:hover { opacity: 0.75; }
+    .breadcrumb .sep { color: var(--border); }
+    .page-h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(32px, 5.5vw, 52px); font-weight: 800; line-height: 1.08; color: var(--green); margin-bottom: 14px; }
+    .page-sub { font-size: 17px; color: var(--grey-text); max-width: 680px; line-height: 1.65; margin-bottom: 24px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .lp-section { padding: 56px 0; }
+    .lp-section.alt { background: var(--grey-bg); }
+    .lp-section h2 { font-size: clamp(24px, 3.5vw, 32px); font-weight: 800; color: var(--green); margin-bottom: 18px; }
+    .lp-section p { font-size: 16px; line-height: 1.75; color: #444; margin-bottom: 14px; max-width: 880px; }
+    .lp-section ul.lp-list { max-width: 880px; margin-bottom: 14px; }
+    .lp-section ul.lp-list li { font-size: 16px; line-height: 1.7; color: #444; padding-left: 22px; position: relative; margin-bottom: 8px; }
+    .lp-section ul.lp-list li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+    .spec-table-wrap { overflow-x: auto; max-width: 880px; border: 1px solid var(--border); border-radius: var(--radius); }
+    table.spec-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    table.spec-table th { background: var(--green); color: var(--white); text-align: left; padding: 12px 16px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 13px; }
+    table.spec-table td { padding: 12px 16px; border-top: 1px solid var(--border); color: #444; }
+    table.spec-table tr:nth-child(even) { background: var(--grey-bg); }
+    .todo { color: var(--orange-dark); font-weight: 600; background: rgba(245,160,32,0.12); padding: 1px 6px; border-radius: 3px; }
+
+    .related-products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; max-width: 880px; }
+    .rp-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; transition: box-shadow 0.2s, transform 0.2s; }
+    .rp-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .rp-card .rp-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: var(--green); font-size: 17px; margin-bottom: 6px; }
+    .rp-card .rp-detail { font-size: 13.5px; color: var(--grey-text); line-height: 1.5; margin-bottom: 10px; }
+    .rp-card .rp-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: var(--orange-dark); font-size: 15px; }
+
+    .faq-item { max-width: 880px; border-bottom: 1px solid var(--border); padding: 18px 0; }
+    .faq-item h3 { font-size: 18px; color: var(--green); margin-bottom: 8px; font-weight: 700; }
+    .faq-item p { font-size: 15px; color: #444; line-height: 1.65; margin: 0; }
+
+    .cta-banner { background: var(--green-dark); color: var(--white); padding: 48px 0; }
+    .cta-inner { max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .cta-text h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 800; color: var(--white); margin-bottom: 8px; line-height: 1.1; }
+    .cta-text p { color: rgba(255,255,255,0.78); font-size: 15px; }
+    .cta-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-email-outline { display: inline-flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.55); padding: 12px 24px; border-radius: 4px; transition: background 0.2s, border-color 0.2s; min-height: 48px; }
+    .btn-email-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+
+    .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 9999; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,0.45); transition: transform 0.22s, box-shadow 0.22s; text-decoration: none; }
+    .whatsapp-float:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 8px 24px rgba(37,211,102,0.55); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: var(--white); }
+
+    .footer-grid { max-width: 1240px; margin: 0 auto; padding: 64px 24px 40px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; }
+    .footer-brand p { color: rgba(255,255,255,0.72); font-size: 14px; line-height: 1.7; margin: 14px 0 20px; max-width: 340px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .footer-social a:hover { background: var(--orange); border-color: var(--orange); transform: translateY(-2px); }
+    .footer-social svg { width: 16px; height: 16px; fill: var(--white); }
+    .footer-col-title { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); margin-bottom: 18px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.72); font-size: 14px; transition: color 0.18s, padding-left 0.18s; }
+    .footer-links a:hover { color: var(--white); padding-left: 4px; }
+    .footer-contact-list { display: flex; flex-direction: column; gap: 12px; list-style: none; }
+    .footer-contact-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.72); }
+    .footer-contact-list a { color: rgba(255,255,255,0.72); transition: color 0.18s; }
+    .footer-contact-list a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding: 20px 0; }
+    .footer-bottom-inner { max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-bottom p { color: rgba(255,255,255,0.55); font-size: 13px; }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.55); font-size: 13px; transition: color 0.18s; }
+    .footer-bottom-links a:hover { color: var(--white); }
+    #footer { background: var(--green-dark); }
+
+    @media (max-width: 992px) {
+      .nav-links, .nav-actions { display: none; }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      .topbar-left a span, .topbar-left .sep { display: none; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom-inner { flex-direction: column; text-align: center; }
+      .footer-bottom-links { justify-content: center; }
+    }
+    @media (max-width: 375px) {
+      :root { --topbar-h: 0px; }
+    }
+  </style>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "y3p3wafwv8");
+    </script>
+</head>"""
+
+
+HEADER_FOOTER_SCRIPT = """
+<body>
+  <a class="skip-to-content" href="#main">Skip to main content</a>
+
+<header id="top-bar">
+  <div class="container">
+    <div class="topbar-left">
+      <a href="https://maps.google.com/?q=Amber+Gem+Tower+Ajman+UAE" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5zm0 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+        <span>Amber Gem Tower, Ajman, UAE</span>
+      </a>
+      <div class="sep"></div>
+      <a href="tel:+971501018048">
+        <svg viewBox="0 0 16 16"><path d="M3.6 1.6a1.2 1.2 0 0 0-1.7 0L1 2.5C.3 3.2 0 4.1 0 5.1c0 2.1 1.2 4.6 3.2 6.6S8.8 15 11 15c1 0 2-.3 2.7-1l.8-.9a1.2 1.2 0 0 0 0-1.7l-2-2a1.2 1.2 0 0 0-1.7 0l-.6.6a5.6 5.6 0 0 1-3.2-3.2l.6-.6a1.2 1.2 0 0 0 0-1.7z"/></svg>
+        <span>+971 50 101 8048</span>
+      </a>
+      <div class="sep"></div>
+      <a href="mailto:info@buildoramaterials.com">
+        <svg viewBox="0 0 16 16"><path d="M2 3h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm0 1.5V4l6 4 6-4v.5L8 8.5z"/></svg>
+        <span>info@buildoramaterials.com</span>
+      </a>
+    </div>
+    <div class="topbar-right">
+      <a href="https://facebook.com/buildoramaterials" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://instagram.com/buildoramaterials" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="/assets/images/instagram.svg" alt="Instagram" width="16" height="16" style="display:block;border-radius:3px;">
+      </a>
+      <a href="https://linkedin.com/company/buildoramaterials" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://wa.me/971501018048" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="/" class="nav-logo" aria-label="Buildora Materials home">
+      <img src="/assets/images/buildora-logo.svg" alt="Buildora Materials" width="248" height="48" style="display:block;">
+    </a>
+    <div class="nav-links" role="menubar">
+      <a href="/" role="menuitem">Home</a>
+      <a href="/about.html" role="menuitem">About</a>
+      <a href="/products.html" role="menuitem">Products</a>
+      <a href="/blog.html" role="menuitem">Blog</a>
+      <a href="/brands.html" role="menuitem">Brands</a>
+      <a href="/why-us.html" role="menuitem">Why Us</a>
+      <a href="/contact.html" role="menuitem">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="/assets/brochure.pdf" download class="btn btn-green-outline">Download Brochure</a>
+      <a href="/contact.html" class="btn btn-orange">Get a Quote</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/products.html">Products</a>
+  <a href="/blog.html">Blog</a>
+  <a href="/brands.html">Brands</a>
+  <a href="/why-us.html">Why Us</a>
+  <a href="/contact.html">Contact</a>
+  <div class="mobile-btns">
+    <a href="/assets/brochure.pdf" download class="btn btn-green-outline">Download Brochure</a>
+    <a href="/contact.html" class="btn btn-orange">Get a Quote</a>
+  </div>
+</div>
+
+<main id="main">
+"""
+
+FOOTER = """
+</main>
+
+<footer id="footer" aria-label="Site footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" aria-label="Buildora Materials home">
+        <img src="/assets/images/buildora-logo-light.svg" alt="Buildora Materials" width="248" height="48" style="display:block;">
+      </a>
+      <p>Your trusted building materials supplier in Ajman, delivering across the UAE. 21 product categories. 50+ global brands. One partner for every phase of your project.</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/buildoramaterials" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/buildoramaterials" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="/assets/images/instagram.svg" alt="Instagram" width="16" height="16" style="display:block;border-radius:3px;">
+        </a>
+        <a href="https://linkedin.com/company/buildoramaterials" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://wa.me/971501018048" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Quick Links</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/products.html">Products</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/brands.html">Our Brands</a>
+        <a href="/why-us.html">Why Buildora</a>
+        <a href="/contact.html">Contact Us</a>
+        <a href="/assets/brochure.pdf" download>Download Brochure</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-contact-list">
+        <li><span>📍</span><span>Amber Gem Tower, Ajman, UAE</span></li>
+        <li><span>📞</span><a href="tel:+971501018048">+971 50 101 8048</a></li>
+        <li><span>✉</span><a href="mailto:info@buildoramaterials.com">info@buildoramaterials.com</a></li>
+        <li><span>🌐</span><a href="https://buildoramaterials.com" target="_blank" rel="noopener">buildoramaterials.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>&copy; 2026 Buildora Materials Trading. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/971501018048?text=Hello%20Buildora%2C%20I%20would%20like%20a%20quote"
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+(function () {
+  'use strict';
+  var hamburger = document.getElementById('hamburger-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var menuOpen = false;
+  function openMob() {
+    menuOpen = true;
+    hamburger.classList.add('open');
+    mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMob() {
+    menuOpen = false;
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', function () {
+    if (menuOpen) { closeMob(); } else { openMob(); }
+  });
+  mobileMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () { if (menuOpen) closeMob(); });
+  });
+  document.addEventListener('click', function (e) {
+    if (menuOpen && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) { closeMob(); }
+  });
+  var nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+})();
+</script>
+<script src="/js/cart.js"></script>
+</body>
+</html>
+"""
+
+
+def spec_table(rows):
+    out = ['<div class="spec-table-wrap"><table class="spec-table"><thead><tr><th>Spec</th><th>Value</th></tr></thead><tbody>']
+    for label, value in rows:
+        out.append(f"<tr><td>{esc(label)}</td><td>{value}</td></tr>")
+    out.append("</tbody></table></div>")
+    return "".join(out)
+
+
+def todo(text):
+    return f'<span class="todo">[TODO: {esc(text)}]</span>'
+
+
+def related_grid(items):
+    cards = []
+    for slug, name, detail, price in items:
+        price_html = f'<div class="rp-price">AED {price}</div>' if price else ''
+        cards.append(f"""
+      <a class="rp-card" href="/products/{esc(slug)}.html">
+        <div class="rp-name">{esc(name)}</div>
+        <div class="rp-detail">{esc(detail)}</div>
+        {price_html}
+      </a>""")
+    return f'<div class="related-products-grid">{"".join(cards)}</div>'
+
+
+def faq_block(items):
+    out = []
+    for (q, a_html), _a_plain in items:
+        out.append(f'<div class="faq-item"><h3>{esc(q)}</h3><p>{a_html}</p></div>')
+    return "".join(out)
+
+
+def faq_schema(page_url, items):
+    return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": q,
+                "acceptedAnswer": {"@type": "Answer", "text": a_plain},
+            }
+            for (q, _a_html), a_plain in items
+        ],
+    }
+
+
+def render_page(cfg):
+    url = f"{SITE_URL}/{cfg['slug']}.html"
+    faq_items = cfg["faq"]  # list of ((q, a_html), a_plain)
+    faq_ld = faq_schema(url, faq_items)
+    breadcrumb_ld = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Products", "item": f"{SITE_URL}/products.html"},
+            {"@type": "ListItem", "position": 3, "name": cfg["h1"], "item": url},
+        ],
+    }
+
+    head = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{esc(cfg['title'])}</title>
+  <meta name="description" content="{esc(cfg['description'])}"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <meta name="author" content="Buildora Materials Trading LLC"/>
+  <meta name="geo.region" content="AE-AJ"/>
+  <meta name="geo.placename" content="Amber Gem Tower, Ajman, UAE"/>
+  <link rel="canonical" href="{url}"/>
+
+  <meta property="og:title" content="{esc(cfg['title'])}"/>
+  <meta property="og:description" content="{esc(cfg['description'])}"/>
+  <meta property="og:url" content="{url}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Buildora Materials"/>
+  <meta property="og:locale" content="en_AE"/>
+  <meta property="og:image" content="{SITE_URL}/assets/images/hero-1.webp"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="{esc(cfg['title'])}"/>
+  <meta name="twitter:description" content="{esc(cfg['description'])}"/>
+  <meta name="twitter:image" content="{SITE_URL}/assets/images/hero-1.webp"/>
+
+  <script type="application/ld+json">
+{json.dumps(breadcrumb_ld, indent=2)}
+  </script>
+  <script type="application/ld+json">
+{json.dumps(faq_ld, indent=2)}
+  </script>
+
+{HEAD_ASSETS}"""
+
+    body = f"""{HEADER_FOOTER_SCRIPT}
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a href="/products.html">Products</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <span>{esc(cfg['h1'])}</span>
+    </nav>
+    <h1 class="page-h1">{esc(cfg['h1'])}</h1>
+    <p class="page-sub">{cfg['subhead']}</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/971501018048?text={cfg['wa_text']}" target="_blank" rel="noopener" class="btn-wa">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        WhatsApp Quote
+      </a>
+      <a href="/contact.html" class="btn btn-orange">Request Quote</a>
+    </div>
+  </div>
+</div>
+
+{cfg['body']}
+
+<div class="lp-section">
+  <div class="container">
+    <h2>FAQ</h2>
+    {faq_block(faq_items)}
+  </div>
+</div>
+
+<section class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h3>Need a quote today?</h3>
+      <p>Tell us the sizes and quantities — WhatsApp or email, same-day response.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="https://wa.me/971501018048?text={cfg['wa_text']}" target="_blank" rel="noopener" class="btn-wa">WhatsApp Us</a>
+      <a href="mailto:info@buildoramaterials.com" class="btn-email-outline">Email Us</a>
+    </div>
+  </div>
+</section>
+{FOOTER}"""
+
+    return head + body
+
+
+PAGES = []
+
+# ---------------------------------------------------------------------------
+# 1. /pex-pipes-dubai.html -- category hub
+# ---------------------------------------------------------------------------
+PAGES.append({
+    "slug": "pex-pipes-dubai",
+    "title": "PEX Pipes in Dubai & UAE | Buildora Materials",
+    "description": "PEX pipe supply in Dubai and across the UAE — RAKtherm, RAK and Cosmoplast ranges for underfloor heating and plumbing. Get a quote from Buildora.",
+    "h1": "PEX Pipes in Dubai & UAE",
+    "subhead": "Cross-linked polyethylene (PEX) pipe for underfloor heating, hot/cold water plumbing and radiant systems, available from Buildora Materials for delivery across Dubai and the wider UAE.",
+    "wa_text": "Hello%20Buildora%2C%20I%20would%20like%20a%20quote%20for%20PEX%20pipes",
+    "body": f"""
+<div class="lp-section">
+  <div class="container">
+    <h2>Overview</h2>
+    <p>PEX (cross-linked polyethylene) pipe has become the default choice for underfloor heating loops and plumbing distribution on UAE residential and commercial projects, replacing rigid copper and PVC runs where flexibility and fewer joints matter. Buildora supplies PEX pipe in coil form across several brands, so contractors sourcing for Dubai, Ajman, Sharjah or Abu Dhabi projects can match the brand, size and coil length already specified on their drawings without chasing multiple suppliers.</p>
+    <p>We currently carry RAKtherm PEX pipe as our main underfloor-heating and radiant-system range, alongside RAK and Cosmoplast 16mm PEX for general plumbing distribution. If your project specification calls out a brand not listed here, ask us — we add ranges based on project demand.</p>
+
+    <h2>Sizes & Specifications</h2>
+    {spec_table([
+        ("Diameter range (RAKtherm)", "16mm&ndash;32mm"),
+        ("Coil lengths (RAKtherm)", "100m, 200m, 500m"),
+        ("Pressure rating (RAKtherm)", "PN10/PN16, tested to 95&deg;C"),
+        ("Fittings", "Brass compression, press-fit"),
+        ("16mm PEX (RAK, Cosmoplast)", "Roll-supplied, " + todo("confirm roll length in metres for RAK/Cosmoplast 16mm PEX")),
+        ("Oxygen barrier (EVOH)", todo("confirm which ranges are O2-barrier rated for underfloor heating loops")),
+    ])}
+
+    <h2>Applications</h2>
+    <ul class="lp-list">
+      <li>Underfloor and radiant heating loops in villas, apartments and commercial fit-outs</li>
+      <li>Hot and cold water plumbing distribution inside walls and risers</li>
+      <li>Chilled water run-outs in MEP installations where flexibility reduces fitting count</li>
+      <li>Retrofit plumbing where a continuous coil avoids extra joints in tight ceiling voids</li>
+    </ul>
+
+    <h2>Why Buy PEX Pipes From Buildora</h2>
+    <p>We supply PEX pipe from our Ajman base with delivery across Dubai, Sharjah, Abu Dhabi and the rest of the UAE. Stock is held against active project demand — tell us the brand, diameter and coil length on your BOQ and we'll confirm availability and lead time before you commit.</p>
+
+    <h2>Delivery Areas</h2>
+    <p>Dubai, Ajman, Sharjah, Abu Dhabi, and project sites across the wider UAE. {todo("confirm standard delivery lead time and any minimum order quantity for PEX coils")}</p>
+
+    <h2>Related Products</h2>
+    {related_grid([
+        ("pex-pipes", "Pex Pipes", "RAKtherm — underfloor heating and plumbing", 500),
+        ("rak-pex-pipe-16mm-white", "RAK PEX Pipe 16MM White", "16MM plumbing distribution", 230),
+        ("cosmoplast-pex-pipe-16mm-white", "Cosmoplast PEX Pipe 16MM White", "16MM plumbing distribution", None),
+    ])}
+    <p style="margin-top:16px;"><a href="/raktherm-pex-pipes-dubai.html" class="btn btn-green-outline">See RAKtherm PEX Pipes in detail &rarr;</a></p>
+  </div>
+</div>""",
+    "faq": [
+        (("What PEX pipe brands does Buildora supply?",
+          "We currently supply RAKtherm PEX pipe for underfloor heating and radiant systems, plus RAK and Cosmoplast 16mm PEX for general plumbing distribution."),
+         "We currently supply RAKtherm PEX pipe for underfloor heating and radiant systems, plus RAK and Cosmoplast 16mm PEX for general plumbing distribution."),
+        (("Do you deliver PEX pipe in Dubai?",
+          "Yes. We're based in Ajman and deliver PEX pipe to project sites across Dubai, Sharjah, Abu Dhabi and the wider UAE."),
+         "Yes. We're based in Ajman and deliver PEX pipe to project sites across Dubai, Sharjah, Abu Dhabi and the wider UAE."),
+        (("What's the difference between PEX and PVC plumbing pipe?",
+          "PEX is flexible and supplied in continuous coils, so a run can go from manifold to outlet with far fewer joints than rigid PVC or copper &mdash; useful for underfloor heating loops and tight ceiling voids. PVC stays the standard for larger-diameter drainage and water mains where rigidity and solvent-weld jointing are preferred."),
+         "PEX is flexible and supplied in continuous coils, so a run can go from manifold to outlet with far fewer joints than rigid PVC or copper, useful for underfloor heating loops and tight ceiling voids. PVC stays the standard for larger-diameter drainage and water mains where rigidity and solvent-weld jointing are preferred."),
+    ],
+})
+
+# ---------------------------------------------------------------------------
+# 2. /raktherm-pex-pipes-dubai.html
+# ---------------------------------------------------------------------------
+PAGES.append({
+    "slug": "raktherm-pex-pipes-dubai",
+    "title": "RAKtherm PEX Pipes in Dubai | Buildora Materials",
+    "description": "RAKtherm PEX pipe for underfloor heating and plumbing, available from Buildora Materials with delivery across Dubai and the UAE. Get a quote.",
+    "h1": "RAKtherm PEX Pipes in Dubai",
+    "subhead": "RAKtherm cross-linked polyethylene (PEX) pipe for underfloor heating, radiant systems and plumbing distribution, supplied by Buildora Materials for delivery across Dubai and the UAE.",
+    "wa_text": "Hello%20Buildora%2C%20I%20would%20like%20a%20quote%20for%20RAKtherm%20PEX%20pipes",
+    "body": f"""
+<div class="lp-section">
+  <div class="container">
+    <p style="max-width:880px;margin-bottom:28px;color:var(--grey-text);font-size:14px;">{todo("confirm the exact wording of our relationship with RAKtherm before this page goes live — \"we supply\" is used throughout rather than \"authorized distributor,\" please confirm that's accurate")}</p>
+    <h2>Overview</h2>
+    <p>RAKtherm is one of the PEX pipe ranges we stock at Buildora Materials, used on UAE projects for underfloor heating loops, radiant cooling/heating systems and general hot and cold water plumbing distribution. We supply RAKtherm PEX pipe in coil form from our Ajman base, with delivery available to Dubai, Sharjah, Abu Dhabi and sites across the wider UAE.</p>
+    <p>PEX's main advantage over rigid pipe on these runs is continuity: a single coil can run from manifold to outlet with no joints in the slab or screed, which matters directly for underfloor heating where an in-slab leak is expensive to trace and repair.</p>
+
+    <h2>Sizes & Specifications</h2>
+    {spec_table([
+        ("Diameter range", "16mm&ndash;32mm"),
+        ("Coil lengths", "100m, 200m, 500m"),
+        ("Pressure rating", "PN10/PN16, tested to 95&deg;C"),
+        ("Fittings", "Brass compression, press-fit"),
+        ("Oxygen barrier (EVOH)", todo("confirm whether our RAKtherm stock is EVOH O2-barrier rated, since this matters for underfloor heating loop specification")),
+        ("Standard / certification", todo("confirm which EN/ISO standard this RAKtherm range is certified to, for spec-matching on tender documents")),
+    ])}
+
+    <h2>Applications</h2>
+    <ul class="lp-list">
+      <li>Underfloor heating loops in villas, apartments and commercial fit-outs</li>
+      <li>Radiant heating and cooling systems</li>
+      <li>Hot and cold water plumbing distribution</li>
+      <li>Manifold-to-outlet runs where continuous pipe avoids in-slab joints</li>
+    </ul>
+
+    <h2>Why Buy RAKtherm PEX Pipes From Buildora</h2>
+    <p>We hold RAKtherm PEX pipe as part of our regular plumbing range and quote it alongside fittings, manifolds and related pipe-in-pipe accessories your installer needs for a complete underfloor heating or plumbing run. Confirm your diameter, coil length and quantity and we'll turn around pricing the same day.</p>
+
+    <h2>Delivery Areas</h2>
+    <p>Dubai, Ajman, Sharjah, Abu Dhabi, and project sites across the wider UAE. {todo("confirm standard delivery lead time for RAKtherm PEX coils")}</p>
+
+    <h2>Related Products</h2>
+    {related_grid([
+        ("pex-pipes", "Pex Pipes", "RAKtherm — underfloor heating and plumbing", 500),
+    ])}
+    <p style="margin-top:16px;"><a href="/pex-pipes-dubai.html" class="btn btn-green-outline">See all PEX pipe brands we supply &rarr;</a></p>
+  </div>
+</div>""",
+    "faq": [
+        (("Does Buildora supply RAKtherm PEX pipe?",
+          "Yes, RAKtherm PEX pipe is part of our regular plumbing range, supplied from our Ajman base with delivery across Dubai and the UAE."),
+         "Yes, RAKtherm PEX pipe is part of our regular plumbing range, supplied from our Ajman base with delivery across Dubai and the UAE."),
+        (("What is RAKtherm PEX pipe used for?",
+          "Underfloor heating loops, radiant heating/cooling systems and hot/cold water plumbing distribution, where a continuous flexible coil avoids extra joints in the slab or screed."),
+         "Underfloor heating loops, radiant heating/cooling systems and hot/cold water plumbing distribution, where a continuous flexible coil avoids extra joints in the slab or screed."),
+        (("What sizes of RAKtherm PEX pipe are available?",
+          "16mm to 32mm diameter, in 100m, 200m and 500m coils, rated PN10/PN16 and tested to 95°C."),
+         "16mm to 32mm diameter, in 100m, 200m and 500m coils, rated PN10/PN16 and tested to 95°C."),
+    ],
+})
+
+# ---------------------------------------------------------------------------
+# 3. /rak-ceramics-products-dubai.html
+# ---------------------------------------------------------------------------
+PAGES.append({
+    "slug": "rak-ceramics-products-dubai",
+    "title": "RAK Ceramics Products in Dubai | Buildora Materials",
+    "description": "RAK Ceramics tiles, sanitaryware and bathroom fittings available from Buildora Materials, with delivery across Dubai and the UAE. Get a quote today.",
+    "h1": "RAK Ceramics Products in Dubai",
+    "subhead": "RAK Ceramics tiles and sanitary fittings — WC pans, cisterns, basins and porcelain/ceramic tiles — available from Buildora Materials for delivery across Dubai and the UAE.",
+    "wa_text": "Hello%20Buildora%2C%20I%20would%20like%20a%20quote%20for%20RAK%20Ceramics%20products",
+    "body": f"""
+<div class="lp-section">
+  <div class="container">
+    <h2>Overview</h2>
+    <p>RAK Ceramics is one of the brands we stock across two product lines: sanitary fittings and ware (WC pans, cisterns, basins) and porcelain/ceramic floor and wall tiles. We supply both ranges from our Ajman base to contractors and developers working on residential, commercial and hospitality fit-outs across Dubai and the wider UAE.</p>
+    <p>Both ranges are available alongside the rest of our plumbing and finishing catalogue, so a bathroom fit-out order covering sanitaryware, tiles, pipe and fittings can be quoted and delivered as one order rather than several.</p>
+    <p>RAK Ceramics is headquartered in Ras Al Khaimah, UAE, and is one of the larger regional manufacturers of ceramic and porcelain tiles and sanitaryware, which keeps lead times short for UAE buyers compared with imported alternatives — relevant for contractors working to a fixed fit-out schedule where a late tile delivery holds up the whole handover.</p>
+
+    <h2>Sizes & Specifications</h2>
+    {spec_table([
+        ("WC configurations", "Close-coupled, wall-hung, floor-mounted"),
+        ("Cistern", "Dual-flush 3L/6L water-saving"),
+        ("Basin styles", "Countertop, wall-hung, pedestal"),
+        ("Finish (sanitaryware)", "White, and designer finishes on select ranges"),
+        ("Tile sizes", "300x300mm, 300x600mm, 600x600mm, 600x1200mm"),
+        ("Tile finish", "Matt, polished, textured/anti-slip"),
+        ("Tile thickness", "8mm&ndash;10mm (wall/floor)"),
+        ("Specific RAK Ceramics series/collection names in stock", todo("list the exact RAK Ceramics collection/series names currently stocked, for buyers matching a spec sheet")),
+    ])}
+
+    <h2>Applications</h2>
+    <ul class="lp-list">
+      <li>Bathroom and washroom fit-outs — villas, apartments, hotels and commercial buildings</li>
+      <li>Floor and wall tiling for residential and commercial interiors</li>
+      <li>Facade tiling on select ranges</li>
+      <li>New-build and renovation/retrofit sanitaryware replacement</li>
+    </ul>
+
+    <h2>Why Buy RAK Ceramics Products From Buildora</h2>
+    <p>We quote RAK Ceramics sanitaryware and tiles alongside the rest of your bathroom or finishing package — pipe, fittings, adhesives and sealants — so your fit-out contractor orders once instead of chasing separate suppliers for tiles and sanitaryware.</p>
+
+    <h2>Delivery Areas</h2>
+    <p>Dubai, Ajman, Sharjah, Abu Dhabi, and project sites across the wider UAE. {todo("confirm standard delivery lead time and whether tile orders need a minimum quantity (e.g. by box/pallet)")}</p>
+
+    <h2>Related Products</h2>
+    {related_grid([
+        ("sanitary-fittings-ware", "Sanitary Fittings & Ware", "WC pans, cisterns, bidets, washbasins", 800),
+        ("ceramics-tiles", "Ceramics & Tiles", "Porcelain and ceramic floor/wall tiles", 500),
+    ])}
+  </div>
+</div>""",
+    "faq": [
+        (("Does Buildora supply RAK Ceramics tiles and sanitaryware?",
+          "Yes, we supply both RAK Ceramics sanitary fittings (WC pans, cisterns, basins) and porcelain/ceramic tiles, delivered across Dubai and the UAE."),
+         "Yes, we supply both RAK Ceramics sanitary fittings (WC pans, cisterns, basins) and porcelain/ceramic tiles, delivered across Dubai and the UAE."),
+        (("What tile sizes does RAK Ceramics offer through Buildora?",
+          "300x300mm, 300x600mm, 600x600mm and 600x1200mm, in matt, polished and textured/anti-slip finishes."),
+         "300x300mm, 300x600mm, 600x600mm and 600x1200mm, in matt, polished and textured/anti-slip finishes."),
+        (("Can I order RAK Ceramics sanitaryware and tiles together?",
+          "Yes. Since we stock both lines, a bathroom fit-out order covering sanitaryware and tiles can be quoted and delivered together."),
+         "Yes. Since we stock both lines, a bathroom fit-out order covering sanitaryware and tiles can be quoted and delivered together."),
+    ],
+})
+
+# ---------------------------------------------------------------------------
+# 4. /cosmoplast-pipes-uae.html
+# ---------------------------------------------------------------------------
+PAGES.append({
+    "slug": "cosmoplast-pipes-uae",
+    "title": "Cosmoplast Pipes in the UAE | Buildora Materials",
+    "description": "Cosmoplast UPVC, HDPE, PVC and PEX pipe ranges available from Buildora Materials, with delivery across Dubai, Ajman and the UAE. Get a quote today.",
+    "h1": "Cosmoplast Pipes in the UAE",
+    "subhead": "Cosmoplast UPVC, HDPE, PVC and PEX pipe ranges for plumbing, drainage and water distribution, supplied by Buildora Materials for delivery across the UAE.",
+    "wa_text": "Hello%20Buildora%2C%20I%20would%20like%20a%20quote%20for%20Cosmoplast%20pipes",
+    "body": f"""
+<div class="lp-section">
+  <div class="container">
+    <h2>Overview</h2>
+    <p>Cosmoplast is one of the pipe manufacturers we stock across several product lines: UPVC pressure pipe and fittings, HDPE pipe for water mains and sewerage, PVC white pipe for general plumbing, and 16mm PEX for plumbing distribution. We supply these ranges from our Ajman base to contractors across the UAE, usually alongside valves, fittings and solvent cement needed to complete the run.</p>
+    <p>Cosmoplast appears on several of our pipe product pages alongside other brands we stock in the same category (RAK, Atlas, GF, Hepworth, Prime) — if your BOQ specifies Cosmoplast specifically, tell us when requesting a quote and we'll confirm it against current stock.</p>
+
+    <h2>Sizes & Specifications</h2>
+    {spec_table([
+        ("UPVC pressure pipe diameter", "20mm&ndash;315mm"),
+        ("UPVC pressure class", "Class B (6 bar), Class C (9 bar), Class D (12 bar)"),
+        ("HDPE diameter", "20mm&ndash;630mm (PE100)"),
+        ("HDPE pressure rating", "PN6&ndash;PN16"),
+        ("PVC white pipe diameter", "20mm&ndash;160mm"),
+        ("PVC white pipe wall thickness", "Schedule 40 / Schedule 80 options"),
+        ("16mm PEX", todo("confirm roll length in metres for Cosmoplast 16mm PEX")),
+        ("Jointing methods", "Solvent cement weld, rubber ring push-fit (UPVC/PVC); butt fusion, electrofusion (HDPE)"),
+    ])}
+
+    <h2>Applications</h2>
+    <ul class="lp-list">
+      <li>Cold water supply and general plumbing distribution (UPVC)</li>
+      <li>Water mains and sewerage (HDPE)</li>
+      <li>General plumbing and conduit runs (PVC white pipe)</li>
+      <li>Hot/cold water distribution (16mm PEX)</li>
+    </ul>
+
+    <h2>Why Buy Cosmoplast Pipes From Buildora</h2>
+    <p>We quote Cosmoplast pipe ranges alongside the fittings, valves and jointing materials your installation actually needs, from our Ajman stock, with delivery across Dubai, Sharjah, Abu Dhabi and the rest of the UAE.</p>
+
+    <h2>Delivery Areas</h2>
+    <p>Dubai, Ajman, Sharjah, Abu Dhabi, and project sites across the wider UAE. {todo("confirm standard delivery lead time and minimum order quantity for pipe lengths/coils")}</p>
+
+    <h2>Related Products</h2>
+    {related_grid([
+        ("upvc-pipes-fittings", "UPVC Pipes & Fittings", "Pressure pipe, Class B/C/D", 500),
+        ("hdpe-pipes-fittings", "HDPE Pipes & Fittings", "Water mains and sewerage", 600),
+        ("pvc-white-pipes", "PVC White Pipes", "General plumbing conduit and pipe", 400),
+        ("cosmoplast-pex-pipe-16mm-white", "Cosmoplast PEX Pipe 16MM White", "16MM plumbing distribution", None),
+    ])}
+  </div>
+</div>""",
+    "faq": [
+        (("Does Buildora supply Cosmoplast pipes?",
+          "Yes, across UPVC pressure pipe, HDPE pipe, PVC white pipe and 16mm PEX, supplied from our Ajman base with delivery across the UAE."),
+         "Yes, across UPVC pressure pipe, HDPE pipe, PVC white pipe and 16mm PEX, supplied from our Ajman base with delivery across the UAE."),
+        (("What pressure classes does Cosmoplast UPVC pipe come in?",
+          "Class B (6 bar), Class C (9 bar) and Class D (12 bar), in 20mm to 315mm diameter."),
+         "Class B (6 bar), Class C (9 bar) and Class D (12 bar), in 20mm to 315mm diameter."),
+        (("Do you deliver Cosmoplast pipe across the UAE?",
+          "Yes, we deliver to Dubai, Ajman, Sharjah, Abu Dhabi and other project sites across the UAE from our Ajman base."),
+         "Yes, we deliver to Dubai, Ajman, Sharjah, Abu Dhabi and other project sites across the UAE from our Ajman base."),
+    ],
+})
+
+
+def main():
+    for cfg in PAGES:
+        out = render_page(cfg)
+        (ROOT / f"{cfg['slug']}.html").write_text(out, encoding="utf-8")
+        print(f"wrote {cfg['slug']}.html")
+
+
+if __name__ == "__main__":
+    main()

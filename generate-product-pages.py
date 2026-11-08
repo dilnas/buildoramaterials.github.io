@@ -39,6 +39,14 @@ BRAND_ON_REQUEST = "Multiple brands — confirmed on your quotation"
 BLOG_GUIDE_BY_SLUG = {
     "cable-trays-ladders": ("/blog/cable-trays-ladders.html", "Cable Trays & Ladders: Sizing, Finish and Selection Guide"),
     "steel-support-systems": ("/blog/steel-support-systems.html", "Steel Cable Tray Support Systems for UAE Construction and MEP Projects"),
+    "pex-pipes": ("/raktherm-pex-pipes-dubai.html", "RAKtherm PEX Pipes in Dubai"),
+    "rak-pex-pipe-16mm-white": ("/pex-pipes-dubai.html", "PEX Pipes in Dubai & UAE"),
+    "cosmoplast-pex-pipe-16mm-white": ("/pex-pipes-dubai.html", "PEX Pipes in Dubai & UAE"),
+    "sanitary-fittings-ware": ("/rak-ceramics-products-dubai.html", "RAK Ceramics Products in Dubai"),
+    "ceramics-tiles": ("/rak-ceramics-products-dubai.html", "RAK Ceramics Products in Dubai"),
+    "upvc-pipes-fittings": ("/cosmoplast-pipes-uae.html", "Cosmoplast Pipes in the UAE"),
+    "hdpe-pipes-fittings": ("/cosmoplast-pipes-uae.html", "Cosmoplast Pipes in the UAE"),
+    "pvc-white-pipes": ("/cosmoplast-pipes-uae.html", "Cosmoplast Pipes in the UAE"),
 }
 
 # ---------------------------------------------------------------------------

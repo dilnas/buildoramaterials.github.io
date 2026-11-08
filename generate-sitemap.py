@@ -28,6 +28,10 @@ PAGES = [
     ("/why-us.html", "monthly", "0.7"),
     ("/blog.html", "weekly", "0.7"),
     ("/privacy.html", "yearly", "0.3"),
+    ("/pex-pipes-dubai.html", "monthly", "0.7"),
+    ("/raktherm-pex-pipes-dubai.html", "monthly", "0.7"),
+    ("/rak-ceramics-products-dubai.html", "monthly", "0.7"),
+    ("/cosmoplast-pipes-uae.html", "monthly", "0.7"),
 ]
 
 
