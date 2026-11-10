@@ -250,6 +250,17 @@ def render(product):
     description = clean_description(product)
     sizes = clean_sizes(product)
     main_img = f"assets/images/products/{product['image']}"
+    # Creative Commons photos must credit title, author, source and licence on the page.
+    credit = product.get("image_credit")
+    # Inline style so pages without a credit stay byte-identical (no shared CSS change).
+    credit_html = (
+        f'\n        <p class="pd-img-credit" style="font-size:12px;color:#666;margin:8px 0 0;line-height:1.4">'
+        f'Main photo: <a href="{esc(credit["source"])}" rel="noopener nofollow" target="_blank" style="color:inherit">'
+        f'&ldquo;{esc(credit["title"])}&rdquo;</a> by {esc(credit["author"])}, licensed '
+        f'<a href="{esc(credit["license_url"])}" rel="noopener nofollow license" target="_blank" style="color:inherit">{esc(credit["license"])}</a>. '
+        f'{esc(credit.get("note", ""))}</p>'
+        if credit else ""
+    )
     og_img_w, og_img_h = img_size(main_img)
     extra1 = f"assets/images/products/extra/{slug}-2.webp"
     extra2 = f"assets/images/products/extra/{slug}-3.webp"
@@ -335,7 +346,8 @@ def render(product):
     related_html = ""
     for r in related_products(product):
         r_brands = display_brands(r)
-        r_img = f"assets/images/products/{r['image']}"
+        # Cards on other pages carry no credit line, so CC-licensed photos stay on their own page only.
+        r_img = f"assets/images/products/{r.get('card_image', r['image'])}"
         r_w, r_h = img_size(r_img)
         related_html += f"""
         <a class="item-card" href="{esc(r['slug'])}.html">
@@ -502,7 +514,7 @@ def render(product):
           <img class="pd-thumb active" src="../{main_img}" alt="{esc(name)} thumbnail 1" width="{og_img_w}" height="{og_img_h}" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
           <img class="pd-thumb" src="../{extra1}" alt="{esc(name)} thumbnail 2" width="{extra1_w}" height="{extra1_h}" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
           <img class="pd-thumb" src="../{extra2}" alt="{esc(name)} thumbnail 3" width="{extra2_w}" height="{extra2_h}" onclick="document.getElementById('mainImg').src=this.src; document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-        </div>
+        </div>{credit_html}
       </div>
 
       <div class="pd-info">
