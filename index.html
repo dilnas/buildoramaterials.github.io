@@ -163,7 +163,8 @@
   <link rel="manifest" href="/site.webmanifest"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="image" href="assets/images/hero-1.webp" fetchpriority="high"/>
+  <link rel="preload" as="image" href="assets/images/hero-1-mobile.webp" media="(max-width: 640px)" fetchpriority="high"/>
+  <link rel="preload" as="image" href="assets/images/hero-1.webp" media="(min-width: 641px)" fetchpriority="high"/>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap"/></noscript>
 
   <style>
@@ -561,6 +562,16 @@
       display: flex;
       align-items: center;
       overflow: hidden;
+    }
+    /* Slide 1 is the LCP element: phones get a portrait crop (560x853, 72 KB)
+       instead of the 1280px landscape image, matching the preload media queries. */
+    .slide-hero-1 {
+      background-image: linear-gradient(rgba(26,92,80,0.80),rgba(26,92,80,0.84)), url('assets/images/hero-1.webp');
+    }
+    @media (max-width: 640px) {
+      .slide-hero-1 {
+        background-image: linear-gradient(rgba(26,92,80,0.80),rgba(26,92,80,0.84)), url('assets/images/hero-1-mobile.webp');
+      }
     }
     .slide-curves {
       position: absolute;
@@ -1513,7 +1524,7 @@
   <div class="slider-track" id="slider-track">
 
     <!-- SLIDE 1 -->
-    <div class="slide" role="group" aria-label="Slide 1 of 3" style="background-image:linear-gradient(rgba(26,92,80,0.80),rgba(26,92,80,0.84)),url('assets/images/hero-1.webp');background-size:cover;background-position:center;">
+    <div class="slide slide-hero-1" role="group" aria-label="Slide 1 of 3" style="background-size:cover;background-position:center;">
       <!-- Decorative curves -->
       <svg class="slide-curves" width="460" height="460" viewBox="0 0 460 460" fill="none" aria-hidden="true">
         <path d="M460 0 Q 420 180 260 220 Q 160 240 80 460" stroke="#F5A020" stroke-width="52" stroke-linecap="round" fill="none" opacity="0.22"/>
