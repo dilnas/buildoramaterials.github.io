@@ -274,7 +274,9 @@ def render(product):
     robots = ("index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
               if is_indexed(product) else "noindex, follow")
 
-    price = product.get("price")
+    # A price of 0 in the data means "not known", not "free": treat it as no price
+    # so the page shows no AED 0 and the schema gets no offers with price 0.
+    price = product.get("price") or None
     unit = product.get("unit")
 
     # Product rich results require offers, review, or aggregateRating. We only
