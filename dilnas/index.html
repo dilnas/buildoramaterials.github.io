@@ -2,165 +2,139 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dilnas Kasim | Buildora Materials Trading</title>
 <meta name="description" content="Digital business card of Dilnas Kasim, Buildora Materials Trading, Ajman, UAE.">
+<meta name="theme-color" content="#0B0B0B">
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
-body{margin:0;background:#E7EBE9}
-a{color:#10141A;text-decoration:none}a:hover{color:#000000}
-input::placeholder{color:#9AA4B1}
-button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #B8480A;outline-offset:2px}
+*{box-sizing:border-box}
+html{background:#8C8C8C}
+body{margin:0;min-height:100vh;font-family:Inter,system-ui,sans-serif;color:#111;background:linear-gradient(160deg,#DCDCDC 0%,#A9A9A9 55%,#8C8C8C 100%) fixed}
+a{color:inherit;text-decoration:none}
+h1,h2,p{margin:0}
+svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.page{max-width:480px;margin:0 auto;padding:14px 14px 120px;display:flex;flex-direction:column;gap:12px}
+.dark{background:linear-gradient(180deg,#1C1C1C 0%,#050505 100%);color:#fff;border-radius:34px;padding:26px 20px 20px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;text-align:center}
+.stat b{display:block;font-size:20px;font-weight:600;letter-spacing:.2px}
+.stat span{font-size:12px;color:#B5B5B5}
+.avatar{width:132px;height:132px;border-radius:50%;border:3px solid #fff;padding:5px;display:flex}
+.avatar i{flex:1;border-radius:50%;background:linear-gradient(145deg,#6E6E6E,#232323);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:44px;font-weight:600;letter-spacing:1px}
+.dark h1{font-size:22px;font-weight:600;text-align:center;margin-top:16px}
+.role{font-size:13px;color:#C9C9C9;text-align:center;margin-top:6px}
+.tags{font-size:12px;color:#B5B5B5;text-align:center;margin-top:10px;letter-spacing:.3px}
+.pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.pill{height:50px;border-radius:999px;border:1.5px solid #fff;background:transparent;color:#fff;font:600 14px Inter,sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+.pill:hover{background:#fff;color:#0B0B0B}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.glass{background:linear-gradient(150deg,#F4F4F4 0%,#C4C4C4 100%);border:1px solid rgba(255,255,255,.75);border-radius:28px;padding:18px;box-shadow:0 12px 28px rgba(0,0,0,.18)}
+.glass.deep{background:linear-gradient(150deg,#B9B9B9 0%,#7D7D7D 100%);border-color:rgba(255,255,255,.35)}
+.tile{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;min-height:206px}
+.mini{width:52px;height:52px;border-radius:50%;border:2px solid #111;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600}
+.tile b{font-size:13px;font-weight:600}
+.tile p{font-size:12.5px;line-height:18px;color:#2E2E2E}
+.btn{margin-top:auto;width:100%;height:46px;border:0;border-radius:999px;background:#0B0B0B;color:#fff;font:600 14px Inter,sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+.btn:hover{background:#2A2A2A}
+.orb{width:84px;height:84px;border-radius:26px;background:linear-gradient(145deg,#F7F7F7,#8E8E8E);box-shadow:inset 0 2px 6px rgba(255,255,255,.9),0 10px 18px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;color:#111;margin-top:14px}
+.chip{margin-top:auto;display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 14px;border-radius:999px;background:#0B0B0B;color:#fff;font-size:12.5px;font-weight:600}
+.wide{display:grid;grid-template-columns:1fr 112px;gap:14px;padding:0;overflow:hidden}
+.wide .txt{padding:18px 0 18px 18px;display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-size:12px;font-weight:500;color:#2E2E2E;display:flex;align-items:center;gap:6px}
+.wide h2{font-size:18px;line-height:24px;font-weight:500}
+.more{font-size:13px;font-weight:600;margin-top:6px;text-decoration:underline}
+.wide .art{background:linear-gradient(150deg,#D9D9D9,#8A8A8A);display:flex;align-items:center;justify-content:center}
+.list h2{font-size:16px;font-weight:600;margin-bottom:4px}
+.row{padding:12px 0;border-top:1px solid rgba(0,0,0,.14)}
+.row:first-of-type{border-top:0}
+.row b{display:block;font-size:14.5px;font-weight:600}
+.row span{font-size:13px;line-height:19px;color:#2E2E2E}
+.form{display:flex;flex-direction:column;gap:12px}
+.form h2{font-size:18px;font-weight:600}
+.form p{font-size:13.5px;line-height:20px;color:#C9C9C9}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:500;color:#DCDCDC}
+.form input{height:48px;border-radius:16px;border:1px solid #6A6A6A;background:#1F1F1F;color:#fff;font:400 15px Inter,sans-serif;padding:0 14px}
+.form input::placeholder{color:#9A9A9A}
+.light{height:50px;border:0;border-radius:999px;background:#fff;color:#0B0B0B;font:600 14px Inter,sans-serif;cursor:pointer}
+.foot{text-align:center;font-size:12px;color:#1A1A1A;padding:6px 0}
+.dock{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:10px;padding:9px;border-radius:999px;background:#0B0B0B;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.dock a,.dock button{width:50px;height:50px;border-radius:50%;border:0;background:#4E4E4E;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.dock a:first-child{background:#8C8C8C}
+.dock a:hover,.dock button:hover{background:#A3A3A3}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 5px #0B0B0B}
 </style>
 </head>
 <body>
-<div id="profile" style="max-width: 480px; min-height: 100vh; margin: 0 auto; box-sizing: border-box; background: #F3F5F4; color: #10141A; font-family: Inter, system-ui, sans-serif; display: flex; flex-direction: column">
+<main class="page" id="profile">
 
-<div style="height: 148px; box-sizing: border-box; background: #0E3B2C; padding: 20px; display: flex; justify-content: space-between; align-items: flex-start">
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 2px; color: #FFFFFF">BUILDORA MATERIALS</span>
-<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #DDE3EA; border: 1px solid #3A4450; border-radius: 999px; padding: 5px 10px">
-<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a5 5 0 0 1 0 7"></path><path d="M10 6a9 9 0 0 1 0 12"></path><path d="M14 3.5a13 13 0 0 1 0 17"></path></svg>
-Digital card
-</span>
+<section class="dark">
+<div class="top">
+<div class="stat"><b>Ajman</b><span>UAE office</span></div>
+<div class="avatar"><i>DK</i></div>
+<div class="stat"><b>B2B</b><span>supply</span></div>
 </div>
-
-<div style="padding: 0 20px; margin-top: -48px; display: flex; flex-direction: column; gap: 4px">
-<div style="width: 96px; height: 96px; box-sizing: border-box; border-radius: 50%; background: #B8480A; border: 4px solid #F3F5F4; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 600; color: #FFFFFF; margin-bottom: 8px">DK</div>
-<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 28px; line-height: 34px; font-weight: 700">Dilnas Kasim</h1>
-<p style="margin: 0; font-size: 15px; line-height: 22px; color: #2B333E">Buildora Materials Trading</p>
-<p style="margin: 0; font-size: 14px; line-height: 20px; color: #55606E; display: flex; align-items: center; gap: 6px">
-<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.800 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
-Ajman, United Arab Emirates
-</p>
-</div>
-
-<div style="padding: 20px 20px 0; display: flex; gap: 10px">
-<button type="button" id="save" style="flex-grow: 1; height: 52px; border: 0; border-radius: 14px; background: #B8480A; color: #FFFFFF; font-family: Inter, sans-serif; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer">
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"></path><path d="M7.5 10.500 12 15l4.500-4.500"></path><path d="M5 20h14"></path></svg>
-Save contact
-</button>
-<button type="button" id="share" aria-label="Share this profile" style="width: 52px; height: 52px; border: 1px solid #C9D0D8; border-radius: 14px; background: #FFFFFF; color: #10141A; display: flex; align-items: center; justify-content: center; cursor: pointer">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4"></path><path d="M8 7.500 12 3.500l4 4"></path><path d="M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"></path></svg>
-</button>
-</div>
-
-<div style="padding: 12px 20px 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
-<a href="tel:+971501018048" style="height: 76px; background: #FFFFFF; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 500; color: #2B333E">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg>
-Call
-</a>
-<a href="https://wa.me/971501018048" style="height: 76px; background: #FFFFFF; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 500; color: #2B333E">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.500a8 8 0 0 1-11.800 7L4 20l1.500-4A8 8 0 1 1 20 11.500z"></path></svg>
-WhatsApp
-</a>
-<a href="mailto:sales@buildoramaterials.com" style="height: 76px; background: #FFFFFF; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 500; color: #2B333E">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.500 7 12 13l8.500-6"></path></svg>
-Email
-</a>
-<a href="https://maps.google.com/?q=Amber+Gem+Tower+Ajman" style="height: 76px; background: #FFFFFF; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 500; color: #2B333E">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6.500v13.500l6-2.500 6 2.500 6-2.500V4l-6 2.500L9 4z"></path><path d="M9 4v13.500"></path><path d="M15 6.500V20"></path></svg>
-Location
-</a>
-</div>
-
-<div style="padding: 24px 20px 0; display: flex; flex-direction: column; gap: 16px">
-
-<section style="background: #FFFFFF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 17px; line-height: 24px; font-weight: 600">About</h2>
-<p style="margin: 0; font-size: 15px; line-height: 23px; color: #3A424E">Buildora Materials Trading supplies building and MEP materials to contractors and project teams from a single source. Send me your BOQ or enquiry and I will come back with a quotation.</p>
-<p style="margin: 0; font-size: 14px; line-height: 21px; color: #55606E">B2B supply · Build Beyond Limits</p>
-</section>
-
-<section style="background: #FFFFFF; border-radius: 16px; padding: 18px 18px 6px; display: flex; flex-direction: column">
-<h2 style="margin: 0 0 6px; font-family: 'Space Grotesk', sans-serif; font-size: 17px; line-height: 24px; font-weight: 600">What we supply</h2>
-<div style="padding: 12px 0; border-bottom: 1px solid #E6EAEE; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; line-height: 21px; font-weight: 600">Electrical</span>
-<span style="font-size: 13px; line-height: 19px; color: #55606E">LV distribution, cables, cable management, lighting, switch sockets</span>
-</div>
-<div style="padding: 12px 0; border-bottom: 1px solid #E6EAEE; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; line-height: 21px; font-weight: 600">Plumbing and HVAC</span>
-<span style="font-size: 13px; line-height: 19px; color: #55606E">Plumbing, sanitary, pumps, HVAC accessories</span>
-</div>
-<div style="padding: 12px 0; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; line-height: 21px; font-weight: 600">Tools, safety and hardware</span>
-<span style="font-size: 13px; line-height: 19px; color: #55606E">Hand and power tools, safety, earthing, painting</span>
+<h1>Dilnas Kasim</h1>
+<p class="role">Buildora Materials Trading</p>
+<p class="tags">Electrical &nbsp;|&nbsp; Plumbing &nbsp;|&nbsp; HVAC &nbsp;|&nbsp; Tools</p>
+<div class="pills">
+<button type="button" class="pill" id="save"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24"><path d="M12 4v11"></path><path d="M7.500 10.500 12 15l4.500-4.500"></path><path d="M5 20h14"></path></svg>Save contact</button>
+<a class="pill" href="https://wa.me/971501018048"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24"><path d="M20 11.500a8 8 0 0 1-11.800 7L4 20l1.500-4A8 8 0 1 1 20 11.500z"></path></svg>WhatsApp</a>
 </div>
 </section>
 
-<section style="background: #FFFFFF; border-radius: 16px; padding: 18px 18px 6px; display: flex; flex-direction: column">
-<h2 style="margin: 0 0 6px; font-family: 'Space Grotesk', sans-serif; font-size: 17px; line-height: 24px; font-weight: 600">Office</h2>
-<div style="padding: 12px 0; border-bottom: 1px solid #E6EAEE; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; line-height: 21px; font-weight: 600">Amber Gem Tower, Ajman</span>
-<span style="font-size: 13px; line-height: 19px; color: #55606E">CWS-1V-228162, 26th Floor</span>
+<div class="grid">
+<section class="glass tile">
+<div class="mini" aria-hidden="true">DK</div>
+<b>Dilnas Kasim</b>
+<p>Send me your BOQ or enquiry and I will come back with a quotation.</p>
+<a class="btn" href="tel:+971501018048"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg>Call</a>
+</section>
+<a class="glass deep tile" href="https://maps.google.com/?q=Amber+Gem+Tower+Ajman">
+<div class="orb"><svg aria-hidden="true" width="38" height="38" viewBox="0 0 24 24"><path d="M12 21s7-6.200 7-11.500a7 7 0 0 0-14 0C5 14.800 12 21 12 21z"></path><circle cx="12" cy="9.500" r="2.500"></circle></svg></div>
+<b style="color:#0B0B0B">Amber Gem Tower, Ajman</b>
+<span class="chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"></path></svg>Open map</span>
+</a>
 </div>
-<div style="padding: 12px 0; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; line-height: 21px; font-weight: 600">Phone</span>
-<span style="font-size: 13px; line-height: 19px; color: #55606E">+971 50 101 8048</span>
+
+<a class="glass wide" href="https://buildoramaterials.com">
+<div class="txt">
+<span class="eyebrow"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M3 12h18"></path><path d="m6 6 12 12"></path><path d="m18 6-12 12"></path></svg>Single source</span>
+<h2>Building and MEP materials for your project</h2>
+<span class="more">Visit buildoramaterials.com</span>
 </div>
+<div class="art"><div class="orb" style="margin:0"><svg aria-hidden="true" width="38" height="38" viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M5 21V8l7-4 7 4v13"></path><path d="M9 21v-6h6v6"></path><path d="M9 10h.010"></path><path d="M15 10h.010"></path></svg></div></div>
+</a>
+
+<section class="glass list">
+<h2>What we supply</h2>
+<div class="row"><b>Electrical</b><span>LV distribution, cables, cable management, lighting, switch sockets</span></div>
+<div class="row"><b>Plumbing and HVAC</b><span>Plumbing, sanitary, pumps, HVAC accessories</span></div>
+<div class="row"><b>Tools, safety and hardware</b><span>Hand and power tools, safety, earthing, painting</span></div>
 </section>
 
-<section style="background: #FFFFFF; border-radius: 16px; padding: 18px 18px 6px; display: flex; flex-direction: column">
-<h2 style="margin: 0 0 6px; font-family: 'Space Grotesk', sans-serif; font-size: 17px; line-height: 24px; font-weight: 600">Find me online</h2>
-<a href="https://buildoramaterials.com" style="padding: 10px 0; border-bottom: 1px solid #E6EAEE; display: flex; align-items: center; gap: 12px">
-<span style="width: 36px; height: 36px; border-radius: 10px; background: #EEF1F3; color: #B8480A; display: flex; align-items: center; justify-content: center">
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"></path></svg>
-</span>
-<span style="flex-grow: 1; display: flex; flex-direction: column">
-<span style="font-size: 15px; line-height: 21px; font-weight: 600">Website</span>
-<span style="font-size: 13px; line-height: 19px; color: #55606E">buildoramaterials.com</span>
-</span>
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#55606E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"></path></svg>
-</a>
-<a href="https://www.linkedin.com/in/dilnas-kasim" style="padding: 10px 0; border-bottom: 1px solid #E6EAEE; display: flex; align-items: center; gap: 12px">
-<span style="width: 36px; height: 36px; border-radius: 10px; background: #EEF1F3; color: #B8480A; display: flex; align-items: center; justify-content: center">
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7"></path><path d="M8 7v.010"></path><path d="M12 17v-4a2.500 2.500 0 0 1 5 0v4"></path><path d="M12 10v7"></path></svg>
-</span>
-<span style="flex-grow: 1; display: flex; flex-direction: column">
-<span style="font-size: 15px; line-height: 21px; font-weight: 600">LinkedIn</span>
-<span style="font-size: 13px; line-height: 19px; color: #55606E">linkedin.com/in/dilnas-kasim</span>
-</span>
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#55606E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"></path></svg>
-</a>
-<a href="mailto:sales@buildoramaterials.com" style="padding: 10px 0; display: flex; align-items: center; gap: 12px">
-<span style="width: 36px; height: 36px; border-radius: 10px; background: #EEF1F3; color: #B8480A; display: flex; align-items: center; justify-content: center">
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.500 7 12 13l8.500-6"></path></svg>
-</span>
-<span style="flex-grow: 1; display: flex; flex-direction: column">
-<span style="font-size: 15px; line-height: 21px; font-weight: 600">Email</span>
-<span style="font-size: 13px; line-height: 19px; color: #55606E">sales@buildoramaterials.com</span>
-</span>
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#55606E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"></path></svg>
-</a>
+<section class="dark form">
+<h2>Send me your details</h2>
+<p>Leave your name and number and I will get back to you.</p>
+<label for="lead-name">Your name<input id="lead-name" type="text" autocomplete="name" placeholder="Full name"></label>
+<label for="lead-phone">Phone or WhatsApp<input id="lead-phone" type="tel" autocomplete="tel" placeholder="+971 5X XXX XXXX"></label>
+<button type="button" class="light" id="send">Send to Dilnas</button>
 </section>
 
-<section style="background: #0E3B2C; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; color: #FFFFFF">
-<div style="display: flex; flex-direction: column; gap: 6px">
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 19px; line-height: 26px; font-weight: 600">Send me your details</h2>
-<p style="margin: 0; font-size: 14px; line-height: 21px; color: #C5CCD6">Leave your name and number and I will get back to you.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 6px">
-<label for="lead-name" style="font-size: 13px; line-height: 18px; font-weight: 500; color: #DDE3EA">Your name</label>
-<input id="lead-name" type="text" placeholder="Full name" style="height: 46px; box-sizing: border-box; border: 1px solid #6B9A88; border-radius: 12px; background: #165040; color: #FFFFFF; font-family: Inter, sans-serif; font-size: 15px; padding: 0 14px">
-</div>
-<div style="display: flex; flex-direction: column; gap: 6px">
-<label for="lead-phone" style="font-size: 13px; line-height: 18px; font-weight: 500; color: #DDE3EA">Phone or WhatsApp</label>
-<input id="lead-phone" type="tel" placeholder="+966 5X XXX XXXX" style="height: 46px; box-sizing: border-box; border: 1px solid #6B9A88; border-radius: 12px; background: #165040; color: #FFFFFF; font-family: Inter, sans-serif; font-size: 15px; padding: 0 14px">
-</div>
-<button type="button" id="send" style="height: 50px; border: 0; border-radius: 12px; background: #FFFFFF; color: #10141A; font-family: Inter, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">Send to Dilnas</button>
-</section>
+<p class="foot">Buildora Materials Trading · Build Beyond Limits</p>
+</main>
 
-</div>
+<nav class="dock" aria-label="Quick actions">
+<a href="tel:+971501018048" aria-label="Call"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></a>
+<a href="mailto:sales@buildoramaterials.com" aria-label="Email"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.500 7 12 13l8.500-6"></path></svg></a>
+<a href="https://www.linkedin.com/in/dilnas-kasim" aria-label="LinkedIn"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7"></path><path d="M8 7v.010"></path><path d="M12 17v-4a2.500 2.500 0 0 1 5 0v4"></path><path d="M12 10v7"></path></svg></a>
+<button type="button" id="share" aria-label="Share this card"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><path d="M12 15V4"></path><path d="M8 7.500 12 3.500l4 4"></path><path d="M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"></path></svg></button>
+</nav>
 
-<p style="margin: auto 0 0; padding: 24px 20px; text-align: center; font-size: 12px; line-height: 18px; color: #55606E">Buildora Materials Trading · Build Beyond Limits</p>
-
-</div>
 <script>
 (function(){
-document.getElementById("save").addEventListener("click",function(){
-location.href="dilnas-kasim.vcf";
-});
+document.getElementById("save").addEventListener("click",function(){location.href="dilnas-kasim.vcf";});
 document.getElementById("share").addEventListener("click",function(){
 var d={title:document.title,url:location.href};
 if(navigator.share){navigator.share(d).catch(function(){});}
